@@ -6,13 +6,13 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/02/27 23:43:08 by gkintana         ###   ########.fr        #
+#    Updated: 2022/02/28 20:26:56 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	megaphone
+NAME		=	phonebook
 
-SRCS		=	megaphone.cpp
+SRCS		=	phonebook.cpp
 OBJS		=	$(SRCS:%cpp=%o)
 
 CC			=	c++
@@ -36,28 +36,20 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@
-			@echo $(DEFAULT)$(GREEN)"Megaphone Ready 📣"$(DEFAULT)
+			@echo $(DEFAULT)$(GREEN)"Phonebook Ready 📖"$(DEFAULT)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted megaphone object file 🗃️"$(DEFAULT)
+			@echo $(RED)"Deleted phonebook object file 🗃️"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted megaphone executable 😢"$(DEFAULT)
+			@echo $(RED)"Deleted phonebook executable 😢"$(DEFAULT)
 
 norm:
-			@echo $(DEFAULT)$(YELLOW_BU)"megaphone .cpp file"$(DEFAULT)$(CYAN_I)
+			@echo $(DEFAULT)$(YELLOW_BU)"phonebook .cpp file"$(DEFAULT)$(CYAN_I)
 			@norminette -R CheckForbiddenSourceHeader ./*.c
 
 re:			fclean all
-
-test:
-			@printf $(YELLOW)
-			./megaphone "shhhhh... I think the students are asleep..."
-			@echo $(CYAN)
-			./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
-			@echo $(PURPLE)
-			./megaphone
 
 .PHONY:		all clean fclean re test
