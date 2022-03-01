@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/02/27 23:43:08 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/01 17:35:14 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,10 +45,6 @@ clean:
 fclean:		clean
 			@$(RM) $(NAME)
 			@echo $(RED)"Deleted megaphone executable 😢"$(DEFAULT)
-
-norm:
-			@echo $(DEFAULT)$(YELLOW_BU)"megaphone .cpp file"$(DEFAULT)$(CYAN_I)
-			@norminette -R CheckForbiddenSourceHeader ./*.c
 
 re:			fclean all
 
