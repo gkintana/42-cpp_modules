@@ -6,13 +6,16 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/01 15:37:26 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/02 00:51:07 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	phonebook
 
-SRCS		=	phonebook.cpp
+SRCS		=	main.cpp \
+				Contact.cpp \
+				PhoneBook.cpp
+				
 OBJS		=	$(SRCS:%cpp=%o)
 
 CC			=	c++
@@ -45,10 +48,6 @@ clean:
 fclean:		clean
 			@$(RM) $(NAME)
 			@echo $(RED)"Deleted phonebook executable 😢"$(DEFAULT)
-
-norm:
-			@echo $(DEFAULT)$(YELLOW_BU)"phonebook .cpp file"$(DEFAULT)$(CYAN_I)
-			@norminette -R CheckForbiddenSourceHeader ./*.cpp
 
 re:			fclean all
 
