@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/02/28 23:41:31 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:28:38 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /*------------------------------- COLOR CODES -------------------------------*/
 # define DEFAULT		"\033[0m"
-# define RED			"\033[1;31m"
+# define RED			"\033[0;31m"
 # define GREEN			"\033[1;32m"
 # define YELLOW			"\033[1;33m"
 // # define PURPLE			"\033[0;35m"
@@ -42,26 +42,29 @@
 
 
 /*-------------------------------- LIBRARIES --------------------------------*/
+# include <iomanip>
 # include <iostream>
 # include <cstring>
 
 /*--------------------------------- CLASSES ---------------------------------*/
-class	phonebook
-{
+class	PhoneBook {
 	private:
-		std::string		first_name;
-		std::string		last_name;
+		std::string		firstName;
+		std::string		lastName;
 		std::string		nickname;
 		std::string		number;
 		std::string		secret;
 
 	public:
-		void			register_contact(void);
-		// void			save_first_name(std::string);
-		// std::string		save_last_name(std::string);
-		// std::string		save_nickname(std::string);
-		// std::string		save_number(std::string);
-		// std::string		save_secret(std::string);
+		void			registerContact(void);
+		// void			displayContacts(void);
+		// std::string		printFirstName;
+		// std::string		printLastName;
+		// std::string		printNickname;
+};
+
+class	Contact {
+	
 };
 
 #endif

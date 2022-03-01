@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/02/28 20:26:56 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/01 15:37:26 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ fclean:		clean
 
 norm:
 			@echo $(DEFAULT)$(YELLOW_BU)"phonebook .cpp file"$(DEFAULT)$(CYAN_I)
-			@norminette -R CheckForbiddenSourceHeader ./*.c
+			@norminette -R CheckForbiddenSourceHeader ./*.cpp
 
 re:			fclean all
 
