@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/02 21:33:42 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/03 02:18:32 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,13 @@
 # define COM_SEARCH	"   Search  = Show All Saved Contacts"
 # define COM_EXIT	"   Exit\t   = Close Phonebook\n"
 
-# define LINE_01	"+-------------------------------------------+"
-# define LINE_02	"+----------+----------+----------+----------+"
-
 # define ADD		"Adding New Contact 📇"
 # define SEARCH		"Displaying Contact Information 🧐"
 # define EXIT		"Terminating Program 👋"
 # define ZERO		"0 Contacts Available 😅"
 # define ERROR		"Please Enter a Valid Command (Add or Search or Exit)"
 
+# define LINE		"+----------+----------+----------+----------+"
 # define COL_01		"Index"
 # define COL_02		"First Name"
 # define COL_03		"Last Name"
@@ -51,6 +49,7 @@
 # define SEARCH_01	"\nChoose an index number to learn more about a specific"
 # define SEARCH_02	" contact,\nor press {ENTER} to end search process\n\n"
 # define SEARCH_03	"Index Number: "
+# define SEARCH_04	"Search Process Complete.\n"
 # define CANCEL		"Search Process Cancelled"
 # define ALPHA_01	"Alphabetic characters don't represent an index number,\n"
 # define ALPHA_02	"please provide a valid index number. You may use either\n"
@@ -65,9 +64,9 @@
 # define SPEC_06	"Phone Number\t: "
 # define SPEC_07	"Darkest Secret\t: "
 
-
+/*------------------------------- IDENTIFIERS -------------------------------*/
 # define NEW		42
-# define REP		-42
+# define REPLACE	-42
 
 /*-------------------------------- LIBRARIES --------------------------------*/
 # include "Contact.hpp"

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/02 21:38:56 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/03 02:18:53 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ bool	PhoneBook::checkRegistration(int type) {
 			return (false);
 		if (!this->list[index].giveDarkestSecret().length())
 			return (false);
-	} else if (type == REP) {
+	} else if (type == REPLACE) {
 		if (!this->list[oldest].giveFirstName().length())
 			return (false);
 		if (!this->list[oldest].giveLastName().length())
@@ -68,7 +68,7 @@ void	PhoneBook::registrationType(int type) {
 		std::cout << REG_DS;
 		std::getline(std::cin, temp);
 		this->list[index].saveDarkestSecret(temp);
-	} else if (type == REP) {
+	} else if (type == REPLACE) {
 		std::cout << REG_FN;
 		std::getline(std::cin, temp);
 		this->list[oldest].saveFirstName(temp);
@@ -98,8 +98,8 @@ void	PhoneBook::registerContact(void) {
 			return;
 		}
 	} else {
-		registrationType(REP);
-		if (checkRegistration(REP) == true) {
+		registrationType(REPLACE);
+		if (checkRegistration(REPLACE) == true) {
 			std::cout << GREEN REG_OK DEFAULT << std::endl;
 			this->oldest++;
 		} else {
@@ -118,6 +118,7 @@ void	PhoneBook::displaySpecificContact(int index) {
 	std::cout << SPEC_05 << list[index].giveNickname() << std::endl;
 	std::cout << SPEC_06 << list[index].givePhoneNumber() << std::endl;
 	std::cout << SPEC_07 << list[index].giveDarkestSecret() << std::endl;
+	std::cout << GREEN SEARCH_04 DEFAULT << std::endl;
 }
 
 bool	indexIsDigit(std::string index) {
@@ -158,12 +159,12 @@ void	PhoneBook::displayAllContacts(void) {
 	if (!this->index) {
 		std::cout << CYAN ZERO DEFAULT << std::endl;
 	} else {
-		std::cout << LINE_01 << std::endl;
+		std::cout << LINE << std::endl;
 		std::cout << "|" << std::setw(10) << COL_01;
 		std::cout << "|" << std::setw(10) << COL_02;
 		std::cout << "|" << std::setw(10) << COL_03;
 		std::cout << "|" << std::setw(10) << COL_04 << "|" << std::endl;
-		std::cout << LINE_02 << std::endl;
+		std::cout << LINE << std::endl;
 		int i = -1;
 		while (++i < this->index) {
 			std::cout << "|" << std::setw(10) << i + 1;
@@ -172,7 +173,7 @@ void	PhoneBook::displayAllContacts(void) {
 			std::cout << "|" << std::setw(10) << checkLength(list[i].giveNickname());
 			std::cout << "|" << std::endl;
 		}
-		std::cout << LINE_02 << std::endl;
+		std::cout << LINE << std::endl;
 		askSpecificContact(i);
 	}
 }

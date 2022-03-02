@@ -6,11 +6,11 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/02 15:30:33 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/03 02:22:02 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	phonebook
+NAME		=	PhoneBook
 
 SRCS		=	main.cpp \
 				Contact.cpp \
@@ -39,15 +39,15 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@
-			@echo $(DEFAULT)$(GREEN)"Phonebook Ready 📖"$(DEFAULT)
+			@echo $(DEFAULT)$(GREEN)"PhoneBook Ready 📖"$(DEFAULT)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted phonebook object file 🗃️"$(DEFAULT)
+			@echo $(RED)"Deleted PhoneBook object file 🗃️"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted phonebook executable 😢"$(DEFAULT)
+			@echo $(RED)"Deleted PhoneBook executable 😢"$(DEFAULT)
 
 re:			fclean all
 

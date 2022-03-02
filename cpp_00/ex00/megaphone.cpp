@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/01 17:36:58 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/03 02:00:12 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	ft_toupper(char c) {
 }
 
 int	main(int argc, char **argv) {
-	if (argc == 1)
+	if (argc == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else {
+	} else {
 		int	i = 0;
 		while (++i < argc) {
 			int	j = 0;
