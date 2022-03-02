@@ -6,11 +6,19 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/02 11:38:50 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:20:06 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+void	printWelcomeMsg(void) {
+	std::cout << "My Awesome PhoneBook!\n" << std::endl;
+	std::cout << "Available Commands:" << std::endl;
+	std::cout << COM_ADD << std::endl;
+	std::cout << COM_SEARCH << std::endl;
+	std::cout << COM_EXIT << std::endl;
+}
 
 std::string	strUpper(std::string command) {
 	int	i = -1;
@@ -23,12 +31,8 @@ int	main(void) {
 	PhoneBook	content;
 	std::string	command;
 
-	std::cout << "My Awesome PhoneBook!\n" << std::endl;
-	std::cout << "Available Commands:" << std::endl;
-	std::cout << COM_ADD << std::endl;
-	std::cout << COM_SEARCH << std::endl;
-	std::cout << COM_EXIT << std::endl;
-
+	printWelcomeMsg();
+	content.initialize();
 	while (1) {
 		std::getline(std::cin, command);
 		if (strUpper(command) == "ADD")	{

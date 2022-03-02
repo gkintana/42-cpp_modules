@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/02 12:13:49 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:33:42 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,10 @@
 # define SPEC_06	"Phone Number\t: "
 # define SPEC_07	"Darkest Secret\t: "
 
+
+# define NEW		42
+# define REP		-42
+
 /*-------------------------------- LIBRARIES --------------------------------*/
 # include "Contact.hpp"
 # include <cstring>
@@ -79,10 +83,13 @@ class	PhoneBook {
 		int			oldest;
 
 	public:
+		void		initialize(void);
+		void		registrationType(int type);
+		bool		checkRegistration(int type);
 		void		registerContact(void);
 		void		displayAllContacts(void);
+		void		askSpecificContact(int i);
 		void		displaySpecificContact(int total);
-		bool		checkRegistration();
 };
 
 #endif
