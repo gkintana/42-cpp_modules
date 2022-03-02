@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/02 01:45:11 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:13:49 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define PHONEBOOK_HPP
 
 /*------------------------------- COLOR CODES -------------------------------*/
-# define DEFAULT		"\033[0m"
-# define RED			"\033[0;31m"
-# define GREEN			"\033[1;32m"
-# define YELLOW			"\033[1;33m"
-# define PURPLE			"\033[0;35m"
-# define CYAN			"\033[0;36m"
+# define DEFAULT	"\033[0m"
+# define RED		"\033[0;31m"
+# define GREEN		"\033[1;32m"
+# define YELLOW		"\033[1;33m"
+# define PURPLE		"\033[0;35m"
+# define CYAN		"\033[0;36m"
 
 /*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
 # define REG_FN		"Enter First Name: "
@@ -27,7 +27,8 @@
 # define REG_NN		"Enter Nickname: "
 # define REG_PN		"Enter Phone Number: "
 # define REG_DS		"Enter Darkest Secret: "
-# define REG_OK		"'s Contact Information Successfully Registered\n"
+# define REG_OK		"Contact Information Successfully Registered\n"
+# define REG_KO		"Found an empty field. Contact list not updated"
 
 # define COM_ADD	"   Add\t   = Register a New Contact"
 # define COM_SEARCH	"   Search  = Show All Saved Contacts"
@@ -47,10 +48,13 @@
 # define COL_03		"Last Name"
 # define COL_04		"Nickname"
 
-# define SEARCH_01	"\nChoose an Index Number to Learn More About a Specific"
-# define SEARCH_02	" Contact,\nor press {ENTER} to End Search Process\n\n"
+# define SEARCH_01	"\nChoose an index number to learn more about a specific"
+# define SEARCH_02	" contact,\nor press {ENTER} to end search process\n\n"
 # define SEARCH_03	"Index Number: "
 # define CANCEL		"Search Process Cancelled"
+# define ALPHA_01	"Alphabetic characters don't represent an index number,\n"
+# define ALPHA_02	"please provide a valid index number. You may use either\n"
+# define ALPHA_03	"0 (or simply leave it blank) to end search process."
 # define NO_INDEX	"Contact Index Does Not Exist"
 
 # define SPEC_01	"\nContact ["
@@ -75,9 +79,10 @@ class	PhoneBook {
 		int			oldest;
 
 	public:
-		void		registerContact();
-		void		displayAllContacts();
+		void		registerContact(void);
+		void		displayAllContacts(void);
 		void		displaySpecificContact(int total);
+		bool		checkRegistration();
 };
 
 #endif
