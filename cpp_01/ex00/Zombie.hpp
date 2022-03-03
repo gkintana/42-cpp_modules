@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:28:36 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/03 15:32:53 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 03:00:06 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 /*---------------------------------- CLASS ----------------------------------*/
 class	Zombie {
 	private:
-		std::string		name;
+		std::string		m_name;
 	public:
 		Zombie(std::string name);
 		~Zombie(void);
@@ -39,7 +39,7 @@ class	Zombie {
 };
 
 /*--------------------------- FUNCTION PROTOTYPES ---------------------------*/
-Zombie*	newZombie(std::string name);
+Zombie	*newZombie(std::string name);
 void	randomChump(std::string name);
 
 #endif

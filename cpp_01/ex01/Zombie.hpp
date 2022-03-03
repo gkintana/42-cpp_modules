@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:28:36 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/03 15:32:47 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 02:55:00 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,11 @@
 
 /*---------------------------------- CLASS ----------------------------------*/
 class	Zombie {
-	private:
-		std::string		name;
 	public:
 		void			announce(void);
 };
 
 /*--------------------------- FUNCTION PROTOTYPE ----------------------------*/
-Zombie*	zombieHorde(int N, std::string name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif

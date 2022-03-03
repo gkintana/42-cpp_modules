@@ -6,14 +6,14 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:28:21 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/03 14:43:40 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 03:00:32 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 int	main(void) {
-	Zombie* special;
+	Zombie	*special;
 	
 	Zombie(TYPE_N);
 	randomChump(TYPE_R);
