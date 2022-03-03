@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:28:36 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/03 15:32:53 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:32:47 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@
 
 /*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
 # define BRAINZ		": BraiiiiiiinnnzzzZ..."
-# define TYPE_N		"Zombie"
-# define TYPE_S		"Screamer"
-# define TYPE_R		"Random Zombie"
-# define END		" has been slain"
+# define ZOMBIE		"Zombie "
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 # include <iostream>
@@ -33,13 +30,10 @@ class	Zombie {
 	private:
 		std::string		name;
 	public:
-		Zombie(std::string name);
-		~Zombie(void);
 		void			announce(void);
 };
 
-/*--------------------------- FUNCTION PROTOTYPES ---------------------------*/
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
+/*--------------------------- FUNCTION PROTOTYPE ----------------------------*/
+Zombie*	zombieHorde(int N, std::string name);
 
 #endif
