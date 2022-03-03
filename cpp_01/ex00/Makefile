@@ -6,11 +6,11 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 13:26:58 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/03 14:06:42 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/03 22:20:36 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Zombie
+NAME		=	exercise_00
 
 SRCS		=	main.cpp \
 				newZombie.cpp \
@@ -20,35 +20,31 @@ SRCS		=	main.cpp \
 OBJS		=	$(SRCS:%cpp=%o)
 
 CC			=	c++
-CFLAGS		=	-g -Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 
 DEFAULT		=	"\033[0m"
 RED			=	"\033[0;31m"
 GREEN		=	"\033[1;32m"
-YELLOW		=	"\033[0;33m"
-YELLOW_BU	=	"\033[1;4;33m"
-CYAN		=	"\033[0;36m"
-CYAN_I		=	"\033[3;36m"
-PURPLE		=	"\033[0;35m"
+CYAN		=	"\033[3;36m"
 
 %.o : %.cpp
-			@printf $(CYAN_I)
+			@printf $(CYAN)
 			$(CC) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@
-			@echo $(DEFAULT)$(GREEN)"🧟🧟🧟  Zombies Ready 🧟🧟🧟"$(DEFAULT)
+			@echo $(DEFAULT)$(GREEN)"C++ Module 01: Exercise 00 Ready"$(DEFAULT)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted Zombie object files 🗃️"$(DEFAULT)
+			@echo $(RED)"Deleted object files 🗃️"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted Zombie executable 😢"$(DEFAULT)
+			@echo $(RED)"Deleted executable 😢"$(DEFAULT)
 
 re:			fclean all
 

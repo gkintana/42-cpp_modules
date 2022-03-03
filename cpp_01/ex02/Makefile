@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 20:09:08 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/03 22:11:42 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/03 22:16:02 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS		=	main.cpp
 OBJS		=	$(SRCS:%cpp=%o)
 
 CC			=	c++
-CFLAGS		=	-g -Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 
 DEFAULT		=	"\033[0m"
