@@ -5,17 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/03 13:26:58 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/03 22:54:27 by gkintana         ###   ########.fr        #
+#    Created: 2022/03/03 22:59:53 by gkintana          #+#    #+#              #
+#    Updated: 2022/03/04 00:38:58 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	exercise_01
+NAME		=	exercise_03
 
 SRCS		=	main.cpp \
-				Zombie.cpp \
-				zombieHorde.cpp
-				
+				HumanA.cpp \
+				HumanB.cpp \
+				Weapon.cpp
+		
 OBJS		=	$(SRCS:%cpp=%o)
 
 CC			=	c++
@@ -35,7 +36,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@
-			@echo $(DEFAULT)$(GREEN)"C++ Module 01: Exercise 01 Ready"$(DEFAULT)
+			@echo $(DEFAULT)$(GREEN)"C++ Module 01: Exercise 03 Ready"$(DEFAULT)
 
 clean:
 			@$(RM) $(OBJS)
