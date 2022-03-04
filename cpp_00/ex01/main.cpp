@@ -6,18 +6,17 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/02 18:20:06 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:46:34 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void	printWelcomeMsg(void) {
-	std::cout << "My Awesome PhoneBook!\n" << std::endl;
-	std::cout << "Available Commands:" << std::endl;
+void	printWelcomeMessage(void) {
+	std::cout << YELLOW TITLE << std::endl;
 	std::cout << COM_ADD << std::endl;
 	std::cout << COM_SEARCH << std::endl;
-	std::cout << COM_EXIT << std::endl;
+	std::cout << COM_EXIT DEFAULT << std::endl;
 }
 
 std::string	strUpper(std::string command) {
@@ -31,9 +30,9 @@ int	main(void) {
 	PhoneBook	content;
 	std::string	command;
 
-	printWelcomeMsg();
-	content.initialize();
+	printWelcomeMessage();
 	while (1) {
+		std::cout << COMMAND;
 		std::getline(std::cin, command);
 		if (strUpper(command) == "ADD")	{
 			std::cout << YELLOW ADD DEFAULT << std::endl;
@@ -43,8 +42,9 @@ int	main(void) {
 		} else if (strUpper(command) == "EXIT") {
 			std::cout << PURPLE EXIT DEFAULT << std::endl;
 			break;
-		} else
+		} else {
 			std::cout << RED ERROR DEFAULT << std::endl;
+		}
 	}
 	return (0);
 }

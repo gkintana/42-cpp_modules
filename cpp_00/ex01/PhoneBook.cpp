@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 11:36:48 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 16:25:39 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,38 @@
 // https://www.delftstack.com/howto/cpp/how-to-determine-if-a-string-is-number-cpp/
 // https://stackoverflow.com/questions/9047671/invalid-use-of-this-in-non-member-function
 
-void	PhoneBook::initialize(void) {
+PhoneBook::PhoneBook(void) {
 	this->m_index = 0;
 	this->m_replace = 0;
 }
 
+PhoneBook::~PhoneBook(void) {}
+
 bool	PhoneBook::checkRegistration(int type) {
 	if (type == NEW) {
-		if (!this->m_list[m_index].getFirstName().length())
+		if (!this->m_list[m_index].getFirstName().length()) {
 			return (false);
-		if (!this->m_list[m_index].getLastName().length())
+		} if (!this->m_list[m_index].getLastName().length()) {
 			return (false);
-		if (!this->m_list[m_index].getNickname().length())
+		} if (!this->m_list[m_index].getNickname().length()) {
 			return (false);
-		if (!this->m_list[m_index].getPhoneNumber().length())
+		} if (!this->m_list[m_index].getPhoneNumber().length()) {
 			return (false);
-		if (!this->m_list[m_index].getDarkestSecret().length())
+		} if (!this->m_list[m_index].getDarkestSecret().length()) {
 			return (false);
+		}
 	} else if (type == REPLACE) {
-		if (!this->m_list[m_replace].getFirstName().length())
+		if (!this->m_list[m_replace].getFirstName().length()) {
 			return (false);
-		if (!this->m_list[m_replace].getLastName().length())
+		} if (!this->m_list[m_replace].getLastName().length()) {
 			return (false);
-		if (!this->m_list[m_replace].getNickname().length())
+		} if (!this->m_list[m_replace].getNickname().length()) {
 			return (false);
-		if (!this->m_list[m_replace].getPhoneNumber().length())
+		} if (!this->m_list[m_replace].getPhoneNumber().length()) {
 			return (false);
-		if (!this->m_list[m_replace].getDarkestSecret().length())
+		} if (!this->m_list[m_replace].getDarkestSecret().length()) {
 			return (false);
+		}
 	}
 	return (true);
 }
@@ -106,13 +110,14 @@ void	PhoneBook::registerContact(void) {
 			std::cout << RED REG_KO DEFAULT << std::endl;
 			return;
 		}
-		if (this->m_replace == 8)
+		if (this->m_replace == 8) {
 			this->m_replace = 0;
+		}
 	}
 }
 
 void	PhoneBook::displaySpecificContact(int index) {
-	std::cout << SPEC_01 << index + 1 << SPEC_02 << std::endl;
+	std::cout << CYAN SPEC_01 << index + 1 << SPEC_02 DEFAULT << std::endl;
 	std::cout << SPEC_03 << m_list[index].getFirstName() << std::endl;
 	std::cout << SPEC_04 << m_list[index].getLastName() << std::endl;
 	std::cout << SPEC_05 << m_list[index].getNickname() << std::endl;
@@ -123,9 +128,11 @@ void	PhoneBook::displaySpecificContact(int index) {
 
 bool	indexIsDigit(std::string index) {
 	int	i = 0;
-	while (index[i])
-		if (!isdigit(index[i++]))
+	while (index[i]) {
+		if (!isdigit(index[i++])) {
 			return (false);
+		}
+	}
 	return (true);
 }
 
@@ -144,6 +151,7 @@ void	PhoneBook::askSpecificContact(int i) {
 		std::getline(std::cin, index);
 		if (!indexIsDigit(index)) {
 			std::cout << RED ALPHA_01 ALPHA_02 ALPHA_03 DEFAULT << std::endl;
+			std::cout << SEARCH_03;
 		} else if (atoi(index.c_str()) >= 1 && atoi(index.c_str()) <= i) {
 			displaySpecificContact(atoi(index.c_str()) - 1);
 			break;
@@ -152,6 +160,7 @@ void	PhoneBook::askSpecificContact(int i) {
 			break;
 		} else {
 			std::cout << RED NO_INDEX DEFAULT << std::endl;
+			std::cout << SEARCH_03;
 		}
 	}
 }
@@ -168,7 +177,7 @@ void	PhoneBook::displayAllContacts(void) {
 	if (!this->m_index) {
 		std::cout << CYAN ZERO DEFAULT << std::endl;
 	} else {
-		std::cout << LINE << std::endl;
+		std::cout << PURPLE LINE << std::endl;
 		setWidth10(COL_01, 0);
 		setWidth10(COL_02, 0);
 		setWidth10(COL_03, 0);
@@ -181,7 +190,7 @@ void	PhoneBook::displayAllContacts(void) {
 			setWidth10(checkLength(m_list[i].getLastName()), 0);
 			setWidth10(checkLength(m_list[i].getNickname()), 1);
 		}
-		std::cout << LINE << std::endl;
+		std::cout << LINE DEFAULT << std::endl;
 		askSpecificContact(i);
 	}
 }

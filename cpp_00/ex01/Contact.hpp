@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 11:12:57 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 16:26:56 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class	Contact {
 		std::string		m_darkestSecret;
 	
 	public:
-		void			setFirstName(std::string userInput);
-		void			setLastName(std::string userInput);
-		void			setNickname(std::string userInput);
-		void			setPhoneNumber(std::string userInput);
-		void			setDarkestSecret(std::string userInput);		
+		void			setFirstName(std::string firstName);
+		void			setLastName(std::string lastName);
+		void			setNickname(std::string nickname);
+		void			setPhoneNumber(std::string phoneNumber);
+		void			setDarkestSecret(std::string darkestSecret);		
 		std::string		getFirstName(void);
 		std::string		getLastName(void);
 		std::string		getNickname(void);

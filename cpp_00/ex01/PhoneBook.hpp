@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 11:18:09 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:46:18 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,16 @@
 # define CYAN		"\033[0;36m"
 
 /*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
-# define REG_FN		"Enter First Name: "
-# define REG_LN		"Enter Last Name: "
-# define REG_NN		"Enter Nickname: "
-# define REG_PN		"Enter Phone Number: "
-# define REG_DS		"Enter Darkest Secret: "
+# define REG_FN		"Enter First Name\t: "
+# define REG_LN		"Enter Last Name\t\t: "
+# define REG_NN		"Enter Nickname\t\t: "
+# define REG_PN		"Enter Phone Number\t: "
+# define REG_DS		"Enter Darkest Secret\t: "
 # define REG_OK		"Contact Information Successfully Registered\n"
 # define REG_KO		"Found an empty field. Contact list not updated"
 
+# define TITLE		"My Awesome PhoneBook!\n\nAvailable Commands:"
+# define COMMAND	"Command: "
 # define COM_ADD	"   Add\t   = Register a New Contact"
 # define COM_SEARCH	"   Search  = Show All Saved Contacts"
 # define COM_EXIT	"   Exit\t   = Close Phonebook\n"
@@ -49,7 +51,7 @@
 # define SEARCH_01	"\nChoose an index number to learn more about a specific"
 # define SEARCH_02	" contact,\nor press {ENTER} to end search process\n\n"
 # define SEARCH_03	"Index Number: "
-# define SEARCH_04	"Search Process Complete.\n"
+# define SEARCH_04	"Search Process Complete\n"
 # define CANCEL		"Search Process Cancelled"
 # define ALPHA_01	"Alphabetic characters don't represent an index number,\n"
 # define ALPHA_02	"please provide a valid index number. You may use either\n"
@@ -82,7 +84,8 @@ class	PhoneBook {
 		int			m_replace;
 
 	public:
-		void		initialize(void);
+		PhoneBook(void);
+		~PhoneBook(void);
 		void		registrationType(int type);
 		bool		checkRegistration(int type);
 		void		registerContact(void);
