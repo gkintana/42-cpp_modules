@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/01 17:35:14 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/04 11:04:37 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,28 +23,26 @@ DEFAULT		=	"\033[0m"
 RED			=	"\033[0;31m"
 GREEN		=	"\033[1;32m"
 YELLOW		=	"\033[0;33m"
-YELLOW_BU	=	"\033[1;4;33m"
 CYAN		=	"\033[0;36m"
-CYAN_I		=	"\033[3;36m"
 PURPLE		=	"\033[0;35m"
 
 %.o : %.cpp
-			@printf $(CYAN_I)
+			@printf $(CYAN)
 			$(CC) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@
-			@echo $(DEFAULT)$(GREEN)"Megaphone Ready 📣"$(DEFAULT)
+			@echo $(DEFAULT)$(GREEN)"C++ Module 00: Exercise 00 Ready"$(DEFAULT)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted megaphone object file 🗃️"$(DEFAULT)
+			@echo $(RED)"Deleted object file 🗃️"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted megaphone executable 😢"$(DEFAULT)
+			@echo $(RED)"Deleted executable 😢"$(DEFAULT)
 
 re:			fclean all
 

@@ -6,48 +6,48 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/02 11:15:31 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 11:14:14 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-void	Contact::saveFirstName(std::string userInput) {
-	firstName = userInput;
+void	Contact::setFirstName(std::string firstName) {
+	m_firstName = firstName;
 }
 
-void	Contact::saveLastName(std::string userInput) {
-	lastName = userInput;
+void	Contact::setLastName(std::string lastName) {
+	m_lastName = lastName;
 }
 
-void	Contact::saveNickname(std::string userInput) {
-	nickname = userInput;
+void	Contact::setNickname(std::string nickname) {
+	m_nickname = nickname;
 }
 
-void	Contact::savePhoneNumber(std::string userInput) {
-	phoneNumber = userInput;
+void	Contact::setPhoneNumber(std::string phoneNumber) {
+	m_phoneNumber = phoneNumber;
 }
 
-void	Contact::saveDarkestSecret(std::string userInput) {
-	darkestSecret = userInput;
+void	Contact::setDarkestSecret(std::string darkestSecret) {
+	m_darkestSecret = darkestSecret;
 }
 
-std::string	Contact::giveFirstName(void) {
-	return (firstName);
+std::string	Contact::getFirstName(void) {
+	return (m_firstName);
 }
 
-std::string	Contact::giveLastName(void) {
-	return (lastName);
+std::string	Contact::getLastName(void) {
+	return (m_lastName);
 }
 
-std::string	Contact::giveNickname(void) {
-	return (nickname);
+std::string	Contact::getNickname(void) {
+	return (m_nickname);
 }
 
-std::string	Contact::givePhoneNumber(void) {
-	return (phoneNumber);
+std::string	Contact::getPhoneNumber(void) {
+	return (m_phoneNumber);
 }
 
-std::string	Contact::giveDarkestSecret(void) {
-	return (darkestSecret);
+std::string	Contact::getDarkestSecret(void) {
+	return (m_darkestSecret);
 }

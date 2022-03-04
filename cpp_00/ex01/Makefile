@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/03 22:54:44 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/04 11:06:42 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,35 +19,31 @@ SRCS		=	main.cpp \
 OBJS		=	$(SRCS:%cpp=%o)
 
 CC			=	c++
-CFLAGS		=	-g -Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 
 DEFAULT		=	"\033[0m"
 RED			=	"\033[0;31m"
 GREEN		=	"\033[1;32m"
-YELLOW		=	"\033[0;33m"
-YELLOW_BU	=	"\033[1;4;33m"
 CYAN		=	"\033[0;36m"
-CYAN_I		=	"\033[3;36m"
-PURPLE		=	"\033[0;35m"
 
 %.o : %.cpp
-			@printf $(CYAN_I)
+			@printf $(CYAN)
 			$(CC) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@
-			@echo $(DEFAULT)$(GREEN)"PhoneBook Ready 📖"$(DEFAULT)
+			@echo $(DEFAULT)$(GREEN)"C++ Module 00: Exercise 01 Ready"$(DEFAULT)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted PhoneBook object file 🗃️"$(DEFAULT)
+			@echo $(RED)"Deleted object file 🗃️"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted PhoneBook executable 😢"$(DEFAULT)
+			@echo $(RED)"Deleted executable 😢"$(DEFAULT)
 
 re:			fclean all
 

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/03 02:18:32 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 11:18:09 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@
 /*---------------------------------- CLASS ----------------------------------*/
 class	PhoneBook {
 	private:
-		Contact		list[8];
-		int			index;
-		int			oldest;
+		Contact		m_list[8];
+		int			m_index;
+		int			m_replace;
 
 	public:
 		void		initialize(void);

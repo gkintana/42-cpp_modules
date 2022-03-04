@@ -6,17 +6,11 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/03 02:00:12 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 11:03:29 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-char	ft_toupper(char c) {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
-}
 
 int	main(int argc, char **argv) {
 	if (argc == 1) {
@@ -25,8 +19,9 @@ int	main(int argc, char **argv) {
 		int	i = 0;
 		while (++i < argc) {
 			int	j = 0;
-			while (argv[i][j])
-				std::cout << ft_toupper(argv[i][j++]);
+			while (argv[i][j]) {
+				std::cout << (char)toupper(argv[i][j++]);
+			}
 		}
 		std::cout << std::endl;
 	}

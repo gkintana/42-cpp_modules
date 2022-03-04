@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/02 00:45:08 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 11:12:57 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,23 @@
 /*---------------------------------- CLASS ----------------------------------*/
 class	Contact {
 	private:
-		std::string		firstName;
-		std::string		lastName;
-		std::string		nickname;
-		std::string		phoneNumber;
-		std::string		darkestSecret;
+		std::string		m_firstName;
+		std::string		m_lastName;
+		std::string		m_nickname;
+		std::string		m_phoneNumber;
+		std::string		m_darkestSecret;
 	
 	public:
-		void			saveFirstName(std::string userInput);
-		void			saveLastName(std::string userInput);
-		void			saveNickname(std::string userInput);
-		void			savePhoneNumber(std::string userInput);
-		void			saveDarkestSecret(std::string userInput);		
-		std::string		giveFirstName(void);
-		std::string		giveLastName(void);
-		std::string		giveNickname(void);
-		std::string		givePhoneNumber(void);
-		std::string		giveDarkestSecret(void);
+		void			setFirstName(std::string userInput);
+		void			setLastName(std::string userInput);
+		void			setNickname(std::string userInput);
+		void			setPhoneNumber(std::string userInput);
+		void			setDarkestSecret(std::string userInput);		
+		std::string		getFirstName(void);
+		std::string		getLastName(void);
+		std::string		getNickname(void);
+		std::string		getPhoneNumber(void);
+		std::string		getDarkestSecret(void);
 };
 
 #endif
