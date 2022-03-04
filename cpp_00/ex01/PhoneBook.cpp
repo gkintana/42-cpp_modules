@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 16:25:39 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:05:15 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,70 +25,51 @@ PhoneBook::PhoneBook(void) {
 PhoneBook::~PhoneBook(void) {}
 
 bool	PhoneBook::checkRegistration(int type) {
+	int	i;
+	
 	if (type == NEW) {
-		if (!this->m_list[m_index].getFirstName().length()) {
-			return (false);
-		} if (!this->m_list[m_index].getLastName().length()) {
-			return (false);
-		} if (!this->m_list[m_index].getNickname().length()) {
-			return (false);
-		} if (!this->m_list[m_index].getPhoneNumber().length()) {
-			return (false);
-		} if (!this->m_list[m_index].getDarkestSecret().length()) {
-			return (false);
-		}
-	} else if (type == REPLACE) {
-		if (!this->m_list[m_replace].getFirstName().length()) {
-			return (false);
-		} if (!this->m_list[m_replace].getLastName().length()) {
-			return (false);
-		} if (!this->m_list[m_replace].getNickname().length()) {
-			return (false);
-		} if (!this->m_list[m_replace].getPhoneNumber().length()) {
-			return (false);
-		} if (!this->m_list[m_replace].getDarkestSecret().length()) {
-			return (false);
-		}
+		i = this->m_index;
+	} else {
+		i = this->m_replace;
+	}
+	if (!this->m_list[i].getFirstName().length()) {
+		return (false);
+	} if (!this->m_list[i].getLastName().length()) {
+		return (false);
+	} if (!this->m_list[i].getNickname().length()) {
+		return (false);
+	} if (!this->m_list[i].getPhoneNumber().length()) {
+		return (false);
+	} if (!this->m_list[i].getDarkestSecret().length()) {
+		return (false);
 	}
 	return (true);
 }
 
 void	PhoneBook::registrationType(int type) {
+	int	i;
 	std::string	temp;
 
 	if (type == NEW) {
-		std::cout << REG_FN;
-		std::getline(std::cin, temp);
-		this->m_list[m_index].setFirstName(temp);
-		std::cout << REG_LN;
-		std::getline(std::cin, temp);
-		this->m_list[m_index].setLastName(temp);
-		std::cout << REG_NN;
-		std::getline(std::cin, temp);
-		this->m_list[m_index].setNickname(temp);
-		std::cout << REG_PN;
-		std::getline(std::cin, temp);
-		this->m_list[m_index].setPhoneNumber(temp);
-		std::cout << REG_DS;
-		std::getline(std::cin, temp);
-		this->m_list[m_index].setDarkestSecret(temp);
-	} else if (type == REPLACE) {
-		std::cout << REG_FN;
-		std::getline(std::cin, temp);
-		this->m_list[m_replace].setFirstName(temp);
-		std::cout << REG_LN;
-		std::getline(std::cin, temp);
-		this->m_list[m_replace].setLastName(temp);
-		std::cout << REG_NN;
-		std::getline(std::cin, temp);
-		this->m_list[m_replace].setNickname(temp);
-		std::cout << REG_PN;
-		std::getline(std::cin, temp);
-		this->m_list[m_replace].setPhoneNumber(temp);
-		std::cout << REG_DS;
-		std::getline(std::cin, temp);
-		this->m_list[m_replace].setDarkestSecret(temp);
+		i = this->m_index;
+	} else {
+		i = this->m_replace;
 	}
+	std::cout << REG_FN;
+	std::getline(std::cin, temp);
+	this->m_list[i].setFirstName(temp);
+	std::cout << REG_LN;
+	std::getline(std::cin, temp);
+	this->m_list[i].setLastName(temp);
+	std::cout << REG_NN;
+	std::getline(std::cin, temp);
+	this->m_list[i].setNickname(temp);
+	std::cout << REG_PN;
+	std::getline(std::cin, temp);
+	this->m_list[i].setPhoneNumber(temp);
+	std::cout << REG_DS;
+	std::getline(std::cin, temp);
+	this->m_list[i].setDarkestSecret(temp);
 }
 
 void	PhoneBook::registerContact(void) {
@@ -147,6 +128,7 @@ std::string	checkLength(std::string contactInfo) {
 void	PhoneBook::askSpecificContact(int i) {
 	std::cout << SEARCH_01 SEARCH_02 SEARCH_03;
 	std::string	index;
+
 	while (1) {
 		std::getline(std::cin, index);
 		if (!indexIsDigit(index)) {
@@ -155,7 +137,7 @@ void	PhoneBook::askSpecificContact(int i) {
 		} else if (atoi(index.c_str()) >= 1 && atoi(index.c_str()) <= i) {
 			displaySpecificContact(atoi(index.c_str()) - 1);
 			break;
-		} else if (atoi(index.c_str()) == 0) {
+		} else if (!atoi(index.c_str())) {
 			std::cout << PURPLE CANCEL DEFAULT << std::endl;
 			break;
 		} else {

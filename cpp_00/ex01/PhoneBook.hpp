@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 15:46:18 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:33:53 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@
 
 # define TITLE		"My Awesome PhoneBook!\n\nAvailable Commands:"
 # define COMMAND	"Command: "
-# define COM_ADD	"   Add\t   = Register a New Contact"
-# define COM_SEARCH	"   Search  = Show All Saved Contacts"
-# define COM_EXIT	"   Exit\t   = Close Phonebook\n"
+# define COM_ADD	"  • Add\t   = Register a New Contact"
+# define COM_SEARCH	"  • Search = Show All Saved Contacts"
+# define COM_EXIT	"  • Exit   = Close Phonebook\n"
 
 # define ADD		"Adding New Contact 📇"
 # define SEARCH		"Displaying Contact Information 🧐"
