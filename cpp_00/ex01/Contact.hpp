@@ -6,15 +6,15 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 16:26:56 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/06 02:36:52 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-# define CONTACT_HPP
+#define CONTACT_HPP
 
 /*--------------------------------- LIBRARY ---------------------------------*/
-# include <iostream>
+#include <iostream>
 
 /*---------------------------------- CLASS ----------------------------------*/
 class	Contact {
@@ -24,8 +24,9 @@ class	Contact {
 		std::string		m_nickname;
 		std::string		m_phoneNumber;
 		std::string		m_darkestSecret;
-	
 	public:
+		Contact(void);
+		~Contact(void);
 		void			setFirstName(std::string firstName);
 		void			setLastName(std::string lastName);
 		void			setNickname(std::string nickname);
