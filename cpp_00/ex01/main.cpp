@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 15:46:34 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/05 20:51:12 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	printWelcomeMessage(void) {
 
 std::string	strUpper(std::string command) {
 	int	i = -1;
-	while (command[++i])
+	while (command[++i]) {
 		command[i] = toupper(command[i]);
+	}
 	return (command);
 }
 
