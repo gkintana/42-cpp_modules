@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 22:17:31 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/05 01:48:33 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/05 15:29:30 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,4 +46,7 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+test:
+			./exercise_04 examples Test Sample
+
+.PHONY:		all clean fclean re test
