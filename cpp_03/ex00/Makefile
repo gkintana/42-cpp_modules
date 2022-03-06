@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/05 22:15:59 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/06 17:24:10 by gkintana         ###   ########.fr        #
+#    Created: 2022/03/06 17:26:29 by gkintana          #+#    #+#              #
+#    Updated: 2022/03/06 17:26:54 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	exercise_01
+NAME		=	exercise_00
 
 SRCS		=	main.cpp \
-				Fixed.cpp
+				ClapTrap.cpp
 		
 OBJS		=	$(SRCS:%cpp=%o)
 
@@ -34,7 +34,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@
-			@echo $(DEFAULT)$(GREEN)"C++ Module 02: Exercise 01 Ready"$(DEFAULT)
+			@echo $(DEFAULT)$(GREEN)"C++ Module 03: Exercise 00 Ready"$(DEFAULT)
 
 clean:
 			@$(RM) $(OBJS)

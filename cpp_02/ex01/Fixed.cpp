@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:02:35 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/06 02:33:07 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/06 22:51:28 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,18 @@ int		Fixed::getRawBits(void) const {
 	return (this->m_fixedPoint);
 }
 
-// setRawBits for Constant Integers
-void	Fixed::setRawBits(int const a_integer) {
-	this->m_fixedPoint = a_integer;
-}
+// // setRawBits for Constant Integers
+// void	Fixed::setRawBits(int const a_integer) {
+// 	this->m_fixedPoint = a_integer;
+// }
 
-// setRawBits for Constant Floats
-void	Fixed::setRawBits(float const a_float) {
-	this->m_fixedPoint = a_float;
-}
+// // setRawBits for Constant Floats
+// void	Fixed::setRawBits(float const a_float) {
+// 	this->m_fixedPoint = a_float;
+// }
 
 float	Fixed::toFloat(void) const {
-	return (roundf(this->m_fixedPoint) / (1 << this->m_fractionalBit));	
+	return (roundf(this->m_fixedPoint) / (1 << this->m_fractionalBit));
 }
 
 int		Fixed::toInt(void) const {

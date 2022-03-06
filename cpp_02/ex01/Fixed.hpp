@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:55:19 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/06 02:26:19 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/06 19:47:11 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class	Fixed {
 		~Fixed(void);
 		Fixed	&operator=(Fixed const &num);
 		int		getRawBits(void) const;
-		void	setRawBits(int const a_integer);
-		void	setRawBits(float const a_float);
+		// void	setRawBits(int const a_integer);
+		// void	setRawBits(float const a_float);
 		float	toFloat(void) const;
 		int		toInt(void) const;
 };
