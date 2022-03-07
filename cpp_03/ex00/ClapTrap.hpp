@@ -6,15 +6,23 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:27:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/06 22:52:13 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/07 10:01:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
+/*------------------------------- COLOR CODES -------------------------------*/
+# define DEFAULT	"\033[0m"
+# define RED		"\033[0;31m"
+# define GREEN		"\033[0;32m"
+# define YELLOW		"\033[0;33m"
+# define PURPLE		"\033[0;35m"
+# define CYAN		"\033[0;36m"
+
 /*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
-#define CREATE		"Created ClapTrap Model No. "
+#define CREATE		"Created ClapTrap Model: "
 #define CREATE_U	"Unknown ClapTrap generated"
 #define UNKNOWN		"(unknown)"
 #define UNDEFINED	"(undefined)"
@@ -30,13 +38,16 @@
 #define REP_01		" repaired itself for ["
 #define REP_02		"] hit points"
 #define DESTROYED	" has been destroyed"
+#define NO_TARGET	"???"
 #define INVALID_D	"Invalid damage amount of ["
 #define INVALID_R	"Invalid repair amount of ["
 
-#define LINE		"+----------------------------------------------------------+\n"
-#define LINE_ATK	"|                      ATTACK TESTS                        |\n"
-#define LINE_DMG	"|                      DAMAGE TESTS                        |\n"
-#define LINE_REP	"|                      REPAIR TESTS                        |\n"
+#define LINE		"+--------------------------------------------------------------+\n"
+#define LINE_CON	"|                        CONSTRUCTORS                          |\n"
+#define LINE_DES	"|                         DESTRUCTOR                           |\n"
+#define LINE_ATK	"|                        ATTACK TESTS                          |\n"
+#define LINE_DMG	"|                        DAMAGE TESTS                          |\n"
+#define LINE_REP	"|                        REPAIR TESTS                          |\n"
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>
