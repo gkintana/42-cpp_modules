@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/06 02:36:25 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/07 11:46:01 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@
 #define ALPHA_02	"please provide a valid index number. You may use either\n"
 #define ALPHA_03	"0 (or simply leave it blank) to end search process."
 #define NO_INDEX	"Contact Index Does Not Exist"
+#define NUM_KO		"Invalid Phone Number"
 
 #define SPEC_01		"\nContact ["
 #define SPEC_02		"]'s Complete Information"

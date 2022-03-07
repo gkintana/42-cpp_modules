@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 18:05:15 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/07 11:46:12 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,17 @@ bool	PhoneBook::checkRegistration(int type) {
 	return (true);
 }
 
+bool	checkPhoneNumber(std::string phoneNumber) {
+	for (size_t i = 0; i < phoneNumber.length(); ) {
+		if (isdigit(phoneNumber[i])) {
+			i++;
+		} else {
+			return (false);
+		}
+	}
+	return (true);
+}
+
 void	PhoneBook::registrationType(int type) {
 	int	i;
 	std::string	temp;
@@ -66,7 +77,16 @@ void	PhoneBook::registrationType(int type) {
 	this->m_list[i].setNickname(temp);
 	std::cout << REG_PN;
 	std::getline(std::cin, temp);
-	this->m_list[i].setPhoneNumber(temp);
+	while (1) {
+		if (checkPhoneNumber(temp)) {
+			this->m_list[i].setPhoneNumber(temp);
+			break ;
+		} else {
+			std::cout << RED NUM_KO DEFAULT << std::endl;
+			std::cout << REG_PN;
+			std::getline(std::cin, temp);
+		}
+	}
 	std::cout << REG_DS;
 	std::getline(std::cin, temp);
 	this->m_list[i].setDarkestSecret(temp);
