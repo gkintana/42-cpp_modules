@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:27:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/08 12:27:11 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:34:51 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@
 
 /*---------------------------------- CLASS ----------------------------------*/
 class	ClapTrap {
-	private:
+	protected:
 		std::string		m_name;
 		unsigned int	m_hitPoints;
 		unsigned int	m_energyPoints;
@@ -62,7 +62,7 @@ class	ClapTrap {
 	public:
 		ClapTrap(void);
 		ClapTrap(std::string modelName);
-		ClapTrap(ClapTrap const &source);
+		ClapTrap(ClapTrap const &source);		
 		~ClapTrap(void);
 		ClapTrap		&operator=(ClapTrap const &data);
 		void			attack(const std::string &target);
