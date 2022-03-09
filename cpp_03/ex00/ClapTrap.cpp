@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:51:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/08 12:21:13 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:00:30 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ ClapTrap::~ClapTrap(void) {
 }
 
 void	ClapTrap::attack(const std::string &target) {
+	if (!this->m_energyPoints) {
+		std::cout << RED MODEL << this->m_name << NO_ENERGY << std::endl;
+		return;
+	}
 	if (!target.length()) {
 		std::cout << MODEL << this->m_name << ATK_01 NO_TARGET ATK_02;
 		std::cout << this->m_attackDamage << ATK_03 << std::endl;
@@ -74,6 +78,10 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
+	if (!this->m_energyPoints) {
+		std::cout << RED MODEL << this->m_name << NO_ENERGY << std::endl;
+		return;
+	}
 	if ((int)amount < 0) {
 		std::cout << INVALID_R << (int)amount << "]" << std::endl;
 		return;
