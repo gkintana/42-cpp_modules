@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:51:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/09 22:00:30 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/10 00:39:56 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(std::string modelName) {
 	this->m_hitPoints = 10;
 	this->m_energyPoints = 10;
 	this->m_attackDamage = 0;
-	std::cout << CREATE << m_name << std::endl;
+	std::cout << CREATE << m_name << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &source) {

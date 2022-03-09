@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:45:30 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 00:20:15 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/10 00:33:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(std::string modelName) {
 	this->m_hitPoints = 100;
 	this->m_energyPoints = 50;
 	this->m_attackDamage = 20;
-	std::cout << S_CREATE << this->m_name << std::endl;
+	std::cout << S_CREATE << this->m_name << std::endl << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &source): ClapTrap(source) {

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 20:44:06 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 00:16:23 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/10 00:37:52 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void) {
 								 "a Lance Shock Trooper", "a Scorpio Turret",
 								 "a Spiderant King", };
 
-	std::cout << std::endl << RED LINE LINE_ATK LINE;
+	std::cout << RED LINE LINE_ATK LINE;
 	for (int i = 0; i < 4; i++) {
 		modelEmpty.attack(strCases[i]);
 		std::cout << std::endl;
@@ -44,7 +44,7 @@ int	main(void) {
 	// 	std::cout << std::endl;
 	// }
 	std::cout << YELLOW LINE LINE_E_ATK LINE;
-	for (int i = 0; i < 55; i++) {
+	for (int i = 0; i < 51; i++) {
 		// if (i > 40) {
 			modelWarrior.attack(strCases[i % 10]);
 			std::cout << std::endl;
@@ -55,6 +55,10 @@ int	main(void) {
 	// 	modelEmpty.beRepaired(1);
 	// 	std::cout << std::endl;
 	// }
+	std::cout << PURPLE LINE LINE_GATE LINE;
+	modelDummy.guardGate();
+	modelEmpty.guardGate();
+	modelWarrior.guardGate();
 	std::cout << CYAN LINE LINE_DES LINE;
 	return (0);
 }
