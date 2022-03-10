@@ -6,21 +6,21 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:45:30 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 12:03:26 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/11 00:56:02 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) {
-	std::cout << S_CREATE_U << std::endl;
+	std::cout << S_CREATE_U << std::endl << std::endl;
 	this->m_name = UNKNOWN;
 	this->m_hitPoints = 100;
 	this->m_energyPoints = 50;
 	this->m_attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string modelName) {
+ScavTrap::ScavTrap(std::string modelName): ClapTrap(modelName) {
 	this->m_name = modelName;
 	if (!this->m_name.length()) {
 		this->m_name = UNDEFINED;
@@ -46,7 +46,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &data) {
 }
 
 ScavTrap::~ScavTrap(void) {
-	std::cout << S_MODEL << this->m_name << DESTROYED << std::endl;
+	std::cout << S_MODEL << this->m_name << DESTROYED;
 }
 
 void	ScavTrap::attack(const std::string &target) {

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:27:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 12:35:17 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/11 00:55:35 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 /*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
 #define CREATE		"Created ClapTrap Model: "
-#define CREATE_U	"Unknown ClapTrap generated\n"
+#define CREATE_U	"Unknown ClapTrap generated"
 #define UNKNOWN		"(unknown)"
 #define UNDEFINED	"(unidentified)"
 #define CLONE		"A ClapTrap clone was generated using the "

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:45:28 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 12:34:01 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/11 00:54:34 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
 #define S_CREATE	"Created ScavTrap Model: "
-#define S_CREATE_U	"Unknown ScavTrap generated\n"
+#define S_CREATE_U	"Unknown ScavTrap generated"
 #define S_CLONE		"A ScavTrap clone was generated using the "
 #define S_MODEL		"ScavTrap Model: "
 #define S_GKM		" is now in gate keeper mode\n"
