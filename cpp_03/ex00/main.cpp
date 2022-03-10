@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 20:44:06 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 00:40:08 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/10 12:18:09 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,12 @@ int	main(void) {
 	ClapTrap	modelWarrior("ATK-01");
 	ClapTrap	modelTank("DMG-02");
 	ClapTrap	modelMedic("REP-03");
-	long		numCases[6] = { -2147483648, -42, 0, 42, 2147483647, 4294967295 };
-	std::string	strCases[10] = { "", "Handsome Jack", "an Alpha Skag", 
-								 "a Bandit Raider", "a Bruiser",
-								 "a Guardian Spectre", "a Hyperion Soldier",
-								 "a Lance Shock Trooper", "a Scorpio Turret",
-								 "a Spiderant King", };
+	long		numCases[6] = { NUM_01, NUM_02, NUM_03, NUM_04, NUM_05, NUM_06 };
+	std::string	strCases[10] = { STR_01, STR_02, STR_03, STR_04, STR_05,
+								 STR_06, STR_07, STR_08, STR_09, STR_10, };
 
 	std::cout << PURPLE LINE LINE_ATK LINE;
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 10; i++) {
 		modelWarrior.attack(strCases[i]);
 		std::cout << std::endl;
 	}

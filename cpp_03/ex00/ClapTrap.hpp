@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:27:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 00:40:17 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/10 12:15:22 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,25 @@
 #define LINE_REP	"|                      REPAIR TESTS                        |\n"
 #define LINE_E_ATK	"|                  ENERGY TESTS (ATTACK)                   |\n"
 #define LINE_E_REP	"|                  ENERGY TESTS (REPAIR)                   |\n"
+
+/*------------------------------- TEST CASES --------------------------------*/
+#define STR_01		""
+#define STR_02		"Handsome Jack"
+#define STR_03		"an Alpha Skag"
+#define STR_04		"a Bandit Raider"
+#define STR_05		"a Bruiser"
+#define STR_06		"a Guardian Spectre"
+#define STR_07		"a Hyperion Soldier"
+#define STR_08		"a Lance Shock Trooper"
+#define STR_09		"a Scorpio Turret"
+#define STR_10		"a Spiderant King"
+
+#define NUM_01		-2147483648
+#define NUM_02		-42
+#define NUM_03		0
+#define NUM_04		42
+#define NUM_05		2147483647
+#define NUM_06		4294967295
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>

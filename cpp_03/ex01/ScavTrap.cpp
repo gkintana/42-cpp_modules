@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:45:30 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 00:33:26 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/10 12:03:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,13 @@ void	ScavTrap::attack(const std::string &target) {
 		std::cout << RED S_MODEL << this->m_name << NO_ENERGY << std::endl;
 		return;
 	}
-	std::cout << S_MODEL << this->m_name << ATK_01 << target << ATK_02;
-	std::cout << this->m_attackDamage << ATK_03 << std::endl;
+	if (!target.length()) {
+		std::cout << S_MODEL << this->m_name << ATK_01 NO_TARGET ATK_02;
+		std::cout << this->m_attackDamage << ATK_03 << std::endl;
+	} else {
+		std::cout << S_MODEL << this->m_name << ATK_01 << target << ATK_02;
+		std::cout << this->m_attackDamage << ATK_03 << std::endl;
+	}
 	this->m_energyPoints--;
 }
 

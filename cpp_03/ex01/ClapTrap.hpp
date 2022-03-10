@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:27:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 00:33:30 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/10 12:35:17 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 #define	CC			"copy constructor"
 #define CAO			"copy assignment operator"
 #define MODEL		"ClapTrap Model: "
-#define ATK_01		" attacks "
+#define ATK_01		" attacks an intruder named "
 #define ATK_02		", causing ["
 #define ATK_03		"] points of damage!"
 #define DMG_01		" received ["
@@ -51,6 +51,25 @@
 #define LINE_REP	"|                      REPAIR TESTS                        |\n"
 #define LINE_E_ATK	"|                  ENERGY TESTS (ATTACK)                   |\n"
 #define LINE_E_REP	"|                  ENERGY TESTS (REPAIR)                   |\n"
+
+/*------------------------------- TEST CASES --------------------------------*/
+#define STR_01		""
+#define STR_02		"Handsome Jack"
+#define STR_03		"Alpha Skag"
+#define STR_04		"Bandit Raider"
+#define STR_05		"Bruiser"
+#define STR_06		"Guardian Spectre"
+#define STR_07		"Hyperion Soldier"
+#define STR_08		"Lance Shock Trooper"
+#define STR_09		"Scorpio Turret"
+#define STR_10		"Spiderant King"
+
+#define NUM_01		-2147483648
+#define NUM_02		-42
+#define NUM_03		0
+#define NUM_04		42
+#define NUM_05		2147483647
+#define NUM_06		4294967295
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>
