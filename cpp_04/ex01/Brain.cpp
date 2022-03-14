@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/13 18:25:33 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/14 23:54:11 by gkintana         ###   ########.fr       */
+/*   Created: 2022/03/14 21:06:40 by gkintana          #+#    #+#             */
+/*   Updated: 2022/03/14 23:45:52 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat(void) {
-	std::cout << CAT_CON << std::endl;
-	this->m_type = CAT;
+Brain::Brain(void) {
+	std::cout << "+42 IQ from Brain Contructor" << std::endl;	
 }
 
-Cat::Cat(Cat const &source) {
-	std::cout << CAT_CPY << std::endl;
+Brain::Brain(Brain const &source) {
+	std::cout << "+42 IQ from Brain Copy Constructor" << std::endl;
 	*this = source;
 }
 
-Cat	&Cat::operator=(Cat const &data) {
-	std::cout << CAT_CAO << std::endl;
-	this->m_type = data.m_type;
+Brain	&Brain::operator=(Brain const &data) {
+	std::cout << "+42 IQ from Brain Copy Assignment Operator" << std::endl;
 	return (*this);
 }
 
-Cat::~Cat(void) {
-	std::cout << CAT_DEC << std::endl;
-}
-
-void	Cat::makeSound(void) const {
-	std::cout << CAT_SND << std::endl;
+Brain::~Brain(void) {
+	std::cout << "-42 IQ due to Brain Deconstructor" << std::endl;
 }

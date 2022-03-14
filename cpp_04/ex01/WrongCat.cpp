@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/13 18:25:33 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/14 23:54:11 by gkintana         ###   ########.fr       */
+/*   Created: 2022/03/14 13:19:59 by gkintana          #+#    #+#             */
+/*   Updated: 2022/03/14 13:24:34 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat(void) {
-	std::cout << CAT_CON << std::endl;
-	this->m_type = CAT;
+WrongCat::WrongCat(void) {
+	std::cout << WRONGC_CON << std::endl;
+	this->m_type = WRONGC;
 }
 
-Cat::Cat(Cat const &source) {
-	std::cout << CAT_CPY << std::endl;
+WrongCat::WrongCat(WrongCat const &source) {
+	std::cout << WRONGC_CPY << std::endl;
 	*this = source;
 }
 
-Cat	&Cat::operator=(Cat const &data) {
-	std::cout << CAT_CAO << std::endl;
+WrongCat	&WrongCat::operator=(WrongCat const &data) {
 	this->m_type = data.m_type;
 	return (*this);
 }
 
-Cat::~Cat(void) {
-	std::cout << CAT_DEC << std::endl;
+WrongCat::~WrongCat(void) {
+	std::cout << WRONGC_DEC << std::endl;
 }
 
-void	Cat::makeSound(void) const {
-	std::cout << CAT_SND << std::endl;
+void	WrongCat::makeSound(void) const {
+	std::cout << WRONGC_SND << std::endl;
 }

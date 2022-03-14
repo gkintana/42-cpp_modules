@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:25:33 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/14 23:54:11 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/14 23:51:46 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat(void) {
 	std::cout << CAT_CON << std::endl;
 	this->m_type = CAT;
+	this->m_brain = new Brain();
 }
 
 Cat::Cat(Cat const &source) {
