@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/13 23:54:36 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/13 23:55:04 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/14 13:24:18 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME		=	exercise_00
 SRCS		=	main.cpp \
 				Animal.cpp \
 				Cat.cpp \
-				Dog.cpp
+				Dog.cpp \
+				WrongAnimal.cpp \
+				WrongCat.cpp
 		
 OBJS		=	$(SRCS:%cpp=%o)
 

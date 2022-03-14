@@ -6,12 +6,20 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:20:58 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/13 23:53:45 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/03/14 12:48:20 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
+
+/*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
+#define CAT_CON	"Cat Constructor"
+#define CAT_CPY	"Cat Copy Constructor"
+#define CAT_CAO	"Cat Copy Assignment Operator"
+#define CAT_DEC	"Cat Deconstructor"
+#define CAT_SND	"\"Meow\""
+#define CAT		"Cat"
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include "Animal.hpp"
@@ -23,7 +31,6 @@ class	Cat: public Animal {
 		Cat(Cat const &source);
 		~Cat(void);
 		Cat				&operator=(Cat const &data);
-		// std::string		getType(void) const;
 		void			makeSound(void) const;
 };
 

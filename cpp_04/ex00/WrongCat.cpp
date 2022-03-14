@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 09:58:40 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/14 12:57:10 by gkintana         ###   ########.fr       */
+/*   Created: 2022/03/14 13:19:59 by gkintana          #+#    #+#             */
+/*   Updated: 2022/03/14 13:24:34 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog(void) {
-	std::cout << DOG_CON << std::endl;
-	this->m_type = DOG;
+WrongCat::WrongCat(void) {
+	std::cout << WRONGC_CON << std::endl;
+	this->m_type = WRONGC;
 }
 
-Dog::Dog(Dog const &source) {
-	std::cout << DOG_CPY << std::endl;
+WrongCat::WrongCat(WrongCat const &source) {
+	std::cout << WRONGC_CPY << std::endl;
 	*this = source;
 }
 
-Dog	&Dog::operator=(Dog const &data) {
-	std::cout << DOG_CAO << std::endl;
+WrongCat	&WrongCat::operator=(WrongCat const &data) {
 	this->m_type = data.m_type;
 	return (*this);
 }
 
-Dog::~Dog(void) {
-	std::cout << DOG_DEC << std::endl;
+WrongCat::~WrongCat(void) {
+	std::cout << WRONGC_DEC << std::endl;
 }
 
-void	Dog::makeSound(void) const {
-	std::cout << DOG_SND << std::endl;
+void	WrongCat::makeSound(void) const {
+	std::cout << WRONGC_SND << std::endl;
 }
