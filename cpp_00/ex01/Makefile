@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/04 11:06:42 by gkintana         ###   ########.fr        #
+#    Updated: 2022/05/08 23:23:48 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS		=	main.cpp \
 				
 OBJS		=	$(SRCS:%cpp=%o)
 
-CC			=	c++
+# https://stackoverflow.com/questions/12606713/enforcing-the-c98-standard-in-gcc
+CC			=	c++ -std=c++98
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 

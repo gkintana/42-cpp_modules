@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/07 11:46:12 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/08 23:59:41 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,39 +57,83 @@ bool	checkPhoneNumber(std::string phoneNumber) {
 	return (true);
 }
 
-void	PhoneBook::registrationType(int type) {
-	int	i;
-	std::string	temp;
+bool	checkInput(std::string registrationInfo) {
+	int valid = false;
 
-	if (type == NEW) {
-		i = this->m_index;
-	} else {
-		i = this->m_replace;
+	for (size_t i = 0; i < registrationInfo.length(); i++) {
+		if (isalnum(registrationInfo[i])) {
+			valid = true;
+		} else if (registrationInfo[i] == 32) {
+			;
+		} else {
+			return (false);
+		}
 	}
-	std::cout << REG_FN;
-	std::getline(std::cin, temp);
-	this->m_list[i].setFirstName(temp);
-	std::cout << REG_LN;
-	std::getline(std::cin, temp);
-	this->m_list[i].setLastName(temp);
-	std::cout << REG_NN;
-	std::getline(std::cin, temp);
-	this->m_list[i].setNickname(temp);
-	std::cout << REG_PN;
-	std::getline(std::cin, temp);
-	while (1) {
+	return (valid);
+}
+
+void	registrationError(std::string temp, bool forPhoneNumber) {
+	if (!forPhoneNumber) {
+		if (temp.length()) {
+			std::cout << RED "Input contains invalid characters, please try again" DEFAULT << std::endl;
+		} else {
+			std::cout << RED "Field cannot be left empty" DEFAULT << std::endl; 
+		}
+	} else {
+		std::cout << RED NUM_KO DEFAULT << std::endl;
+	}
+}
+
+// https://stackoverflow.com/questions/48493256/ignore-tabs-and-line-breaks-in-user-input-using-getline
+void	PhoneBook::registrationType(int type) {
+	std::string temp;
+	int i;
+
+	type == NEW ? i = this->m_index : i = this->m_replace;
+	while (std::cout << REG_FN && std::getline(std::cin, temp)) {
+		if (checkInput(temp)) {
+			this->m_list[i].setFirstName(temp);
+			break ;
+		}
+		else {
+			registrationError(temp, false);
+		}
+	}
+	while (std::cout << REG_LN && std::getline(std::cin, temp)) {
+		if (checkInput(temp)) {
+			this->m_list[i].setLastName(temp);
+			break ;
+		}
+		else {
+			registrationError(temp, false);
+		}
+	}
+	while (std::cout << REG_NN && std::getline(std::cin, temp)) {
+		if (checkInput(temp)) {
+			this->m_list[i].setNickname(temp);
+			break ;
+		}
+		else {
+			registrationError(temp, false);
+		}
+	}
+	while (std::cout << REG_PN && std::getline(std::cin, temp)) {
 		if (checkPhoneNumber(temp)) {
 			this->m_list[i].setPhoneNumber(temp);
 			break ;
 		} else {
-			std::cout << RED NUM_KO DEFAULT << std::endl;
-			std::cout << REG_PN;
-			std::getline(std::cin, temp);
+			registrationError(temp, true);
 		}
 	}
-	std::cout << REG_DS;
-	std::getline(std::cin, temp);
-	this->m_list[i].setDarkestSecret(temp);
+	while (std::cout << REG_DS && std::getline(std::cin, temp)) {
+		if (checkInput(temp)) {
+			this->m_list[i].setDarkestSecret(temp);
+			break ;
+		}
+		else {
+			registrationError(temp, false);
+		}
+	}
 }
 
 void	PhoneBook::registerContact(void) {
@@ -149,8 +193,7 @@ void	PhoneBook::askSpecificContact(int i) {
 	std::cout << SEARCH_01 SEARCH_02 SEARCH_03;
 	std::string	index;
 
-	while (1) {
-		std::getline(std::cin, index);
+	while (std::getline(std::cin, index)) {
 		if (!indexIsDigit(index)) {
 			std::cout << RED ALPHA_01 ALPHA_02 ALPHA_03 DEFAULT << std::endl;
 			std::cout << SEARCH_03;

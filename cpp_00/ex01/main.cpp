@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/05 20:51:12 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/08 23:08:34 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,13 @@ std::string	strUpper(std::string command) {
 	return (command);
 }
 
+// https://stackoverflow.com/questions/1598514/infinite-loop-on-eof-in-c
 int	main(void) {
 	PhoneBook	content;
 	std::string	command;
 
 	printWelcomeMessage();
-	while (1) {
-		std::cout << COMMAND;
-		std::getline(std::cin, command);
+	while (std::cout << COMMAND && std::getline(std::cin, command)) {
 		if (strUpper(command) == "ADD")	{
 			std::cout << YELLOW ADD DEFAULT << std::endl;
 			content.registerContact();
