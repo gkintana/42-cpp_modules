@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/05/08 23:23:48 by gkintana         ###   ########.fr        #
+#    Updated: 2022/05/09 23:21:07 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS		=	$(SRCS:%cpp=%o)
 
 # https://stackoverflow.com/questions/12606713/enforcing-the-c98-standard-in-gcc
 CC			=	c++ -std=c++98
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g
 RM			=	rm -rf
 
 DEFAULT		=	"\033[0m"

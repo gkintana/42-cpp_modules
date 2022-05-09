@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/08 23:59:41 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/09 23:19:03 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,10 @@ PhoneBook::PhoneBook(void) {
 
 PhoneBook::~PhoneBook(void) {}
 
-bool	PhoneBook::checkRegistration(int type) {
-	int	i;
+bool PhoneBook::checkRegistration(int type) {
+	int i;
 	
-	if (type == NEW) {
-		i = this->m_index;
-	} else {
-		i = this->m_replace;
-	}
+	type == NEW ? i = this->m_index : i = this->m_replace;
 	if (!this->m_list[i].getFirstName().length()) {
 		return (false);
 	} if (!this->m_list[i].getLastName().length()) {
@@ -46,46 +42,43 @@ bool	PhoneBook::checkRegistration(int type) {
 	return (true);
 }
 
-bool	checkPhoneNumber(std::string phoneNumber) {
-	for (size_t i = 0; i < phoneNumber.length(); ) {
-		if (isdigit(phoneNumber[i])) {
-			i++;
-		} else {
+bool checkPhoneNumber(std::string phoneNumber) {
+	if (!phoneNumber.length()) {
+		return (false);
+	}
+	for (size_t i = 0; i < phoneNumber.length(); i++) {
+		if (!isdigit(phoneNumber[i])) {
 			return (false);
 		}
 	}
 	return (true);
 }
 
-bool	checkInput(std::string registrationInfo) {
-	int valid = false;
+bool checkInput(std::string registrationInfo) {
+	int isValid = false;
 
 	for (size_t i = 0; i < registrationInfo.length(); i++) {
 		if (isalnum(registrationInfo[i])) {
-			valid = true;
+			isValid = true;
 		} else if (registrationInfo[i] == 32) {
 			;
 		} else {
-			return (false);
+			return (isValid);
 		}
 	}
-	return (valid);
+	return (isValid);
 }
 
-void	registrationError(std::string temp, bool forPhoneNumber) {
-	if (!forPhoneNumber) {
-		if (temp.length()) {
-			std::cout << RED "Input contains invalid characters, please try again" DEFAULT << std::endl;
-		} else {
-			std::cout << RED "Field cannot be left empty" DEFAULT << std::endl; 
-		}
+void registrationError(std::string temp) {
+	if (temp.length()) {
+		std::cout << RED "Input contains invalid characters, please try again" DEFAULT << std::endl;
 	} else {
-		std::cout << RED NUM_KO DEFAULT << std::endl;
+		std::cout << RED "Field cannot be left empty" DEFAULT << std::endl; 
 	}
 }
 
 // https://stackoverflow.com/questions/48493256/ignore-tabs-and-line-breaks-in-user-input-using-getline
-void	PhoneBook::registrationType(int type) {
+void PhoneBook::registrationType(int type) {
 	std::string temp;
 	int i;
 
@@ -96,7 +89,7 @@ void	PhoneBook::registrationType(int type) {
 			break ;
 		}
 		else {
-			registrationError(temp, false);
+			registrationError(temp);
 		}
 	}
 	while (std::cout << REG_LN && std::getline(std::cin, temp)) {
@@ -105,7 +98,7 @@ void	PhoneBook::registrationType(int type) {
 			break ;
 		}
 		else {
-			registrationError(temp, false);
+			registrationError(temp);
 		}
 	}
 	while (std::cout << REG_NN && std::getline(std::cin, temp)) {
@@ -114,7 +107,7 @@ void	PhoneBook::registrationType(int type) {
 			break ;
 		}
 		else {
-			registrationError(temp, false);
+			registrationError(temp);
 		}
 	}
 	while (std::cout << REG_PN && std::getline(std::cin, temp)) {
@@ -122,7 +115,7 @@ void	PhoneBook::registrationType(int type) {
 			this->m_list[i].setPhoneNumber(temp);
 			break ;
 		} else {
-			registrationError(temp, true);
+			registrationError(temp);
 		}
 	}
 	while (std::cout << REG_DS && std::getline(std::cin, temp)) {
@@ -131,12 +124,12 @@ void	PhoneBook::registrationType(int type) {
 			break ;
 		}
 		else {
-			registrationError(temp, false);
+			registrationError(temp);
 		}
 	}
 }
 
-void	PhoneBook::registerContact(void) {
+void PhoneBook::registerContact(void) {
 	if (this->m_index >= 0 && this->m_index < 8) {
 		registrationType(NEW);
 		if (checkRegistration(NEW) == true) {
@@ -161,7 +154,7 @@ void	PhoneBook::registerContact(void) {
 	}
 }
 
-void	PhoneBook::displaySpecificContact(int index) {
+void PhoneBook::displaySpecificContact(int index) {
 	std::cout << CYAN SPEC_01 << index + 1 << SPEC_02 DEFAULT << std::endl;
 	std::cout << SPEC_03 << m_list[index].getFirstName() << std::endl;
 	std::cout << SPEC_04 << m_list[index].getLastName() << std::endl;
@@ -171,7 +164,7 @@ void	PhoneBook::displaySpecificContact(int index) {
 	std::cout << GREEN SEARCH_04 DEFAULT << std::endl;
 }
 
-bool	indexIsDigit(std::string index) {
+bool indexIsDigit(std::string index) {
 	int	i = 0;
 	while (index[i]) {
 		if (!isdigit(index[i++])) {
@@ -181,7 +174,7 @@ bool	indexIsDigit(std::string index) {
 	return (true);
 }
 
-std::string	checkLength(std::string contactInfo) {
+std::string checkLength(std::string contactInfo) {
 	if (contactInfo.length() > 10) {
 		contactInfo.resize(9);
 		contactInfo.append(".");
@@ -189,13 +182,13 @@ std::string	checkLength(std::string contactInfo) {
 	return (contactInfo);
 }
 
-void	PhoneBook::askSpecificContact(int i) {
+void PhoneBook::askSpecificContact(int i) {
 	std::cout << SEARCH_01 SEARCH_02 SEARCH_03;
-	std::string	index;
+	std::string index;
 
 	while (std::getline(std::cin, index)) {
 		if (!indexIsDigit(index)) {
-			std::cout << RED ALPHA_01 ALPHA_02 ALPHA_03 DEFAULT << std::endl;
+			std::cout << RED KO_INDEX DEFAULT << std::endl;
 			std::cout << SEARCH_03;
 		} else if (atoi(index.c_str()) >= 1 && atoi(index.c_str()) <= i) {
 			displaySpecificContact(atoi(index.c_str()) - 1);
@@ -210,15 +203,15 @@ void	PhoneBook::askSpecificContact(int i) {
 	}
 }
 
-void	setWidth10(std::string info, int endl) {
-	if (!endl) {
+void setWidth10(std::string info, int addNewline) {
+	if (!addNewline) {
 		std::cout << "|" << std::setw(10) << info;
 	} else {
 		std::cout << "|" << std::setw(10) << info << "|" << std::endl;
 	}
 }
 
-void	PhoneBook::displayAllContacts(void) {
+void PhoneBook::displayAllContacts(void) {
 	if (!this->m_index) {
 		std::cout << CYAN ZERO DEFAULT << std::endl;
 	} else {

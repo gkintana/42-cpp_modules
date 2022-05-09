@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/08 23:27:40 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/09 22:59:07 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,16 @@
 #define COL_03		"Last Name"
 #define COL_04		"Nickname"
 
-#define SEARCH_01	"\nChoose an index number to learn more about a specific"
-#define SEARCH_02	" contact,\nor press {ENTER} to end search process\n\n"
+#define SEARCH_01	"\nProvide an index number to learn more about a specific contact.\n"
+#define SEARCH_02	"To end search process, leave field empty or set it to zero.\n\n"
 #define SEARCH_03	"Index Number: "
 #define SEARCH_04	"Search Process Complete\n"
 #define CANCEL		"Search Process Cancelled"
-#define ALPHA_01	"Alphabetic characters don't represent an index number,\n"
-#define ALPHA_02	"please provide a valid index number. You may use either\n"
-#define ALPHA_03	"0 (or simply leave it blank) to end search process."
+#define KO_INDEX	"Invalid Contact Index"
 #define NO_INDEX	"Contact Index Does Not Exist"
 #define NUM_KO		"Invalid Phone Number"
 
-#define SPEC_01		"\nContact ["
+#define SPEC_01		"\nContact Index ["
 #define SPEC_02		"]'s Complete Information"
 #define SPEC_03		"First Name\t: "
 #define SPEC_04		"Last Name\t: "
@@ -74,6 +72,7 @@
 /*-------------------------------- LIBRARIES --------------------------------*/
 #include "Contact.hpp"
 #include <cstring>
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
 
