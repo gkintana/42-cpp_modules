@@ -6,32 +6,32 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:28:36 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/04 02:55:00 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/10 21:37:32 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 /*------------------------------- COLOR CODES -------------------------------*/
-# define DEFAULT	"\033[0m"
-# define RED		"\033[0;31m"
-# define GREEN		"\033[0;32m"
+#define DEFAULT		"\033[0m"
+#define RED			"\033[0;31m"
+#define GREEN		"\033[0;32m"
 
 /*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
-# define BRAINZ		": BraiiiiiiinnnzzzZ..."
-# define ZOMBIE		"Zombie "
+#define BRAINZ		": BraiiiiiiinnnzzzZ..."
+#define ZOMBIE		"Zombie "
 
 /*--------------------------------- LIBRARY ---------------------------------*/
-# include <iostream>
+#include <iostream>
 
 /*---------------------------------- CLASS ----------------------------------*/
-class	Zombie {
+class Zombie {
 	public:
-		void			announce(void);
+		void announce(void);
 };
 
 /*--------------------------- FUNCTION PROTOTYPE ----------------------------*/
-Zombie	*zombieHorde(int N, std::string name);
+Zombie *zombieHorde(int N, std::string name);
 
 #endif

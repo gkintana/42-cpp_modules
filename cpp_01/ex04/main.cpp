@@ -6,14 +6,14 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 22:17:29 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/05 15:01:42 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/10 21:52:44 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "File.hpp"
 
-int	main(int argc, char **argv) {
-	File	manager;
+int main(int argc, char **argv) {
+	File manager;
 	
 	if (argc != 4) {
 		std::cout << RED ARG_INC DEFAULT << std::endl;

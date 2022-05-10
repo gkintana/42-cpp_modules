@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 01:42:10 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/05 15:18:39 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/10 21:56:54 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ File::File() {}
 
 File::~File() {}
 
-void	File::initialize(std::string filename, std::string s1, std::string s2) {
+void File::initialize(std::string filename, std::string s1, std::string s2) {
 	m_filename = filename;
 	m_s1 = s1;
 	m_s2 = s2;
 }
 
-bool	File::openFileRef() {
-	m_fileRef.open(m_filename);
+bool File::openFileRef() {
+	m_fileRef.open(m_filename.c_str());
 	if (!m_fileRef) {
 		std::cout << m_filename << NO_FILE << std::endl;
 		return (false);
@@ -33,10 +33,10 @@ bool	File::openFileRef() {
 	}
 }
 
-bool	File::createRep() {
+bool File::createRep() {
 	std::string	fileRep = m_filename + DOT_REP;
 	std::cout << CYAN CREATE << fileRep << DEFAULT << std::endl;
-	m_fileRep.open(fileRep);
+	m_fileRep.open(fileRep.c_str());
 	if (!m_fileRep) {
 		std::cout << RED FAILED << fileRep << DEFAULT << std::endl;
 		return (false);
@@ -47,7 +47,7 @@ bool	File::createRep() {
 	}
 }
 
-void	File::copyToRep() {
+void File::copyToRep() {
 	std::string	temp;
 	int	i = 1;
 	
@@ -65,7 +65,7 @@ void	File::copyToRep() {
 	}
 }
 
-void	File::closeFiles() {
+void File::closeFiles() {
 	m_fileRef.close();
 	std::cout << "\n" PURPLE CLOSE << m_filename << std::endl;
 	m_fileRep.close();

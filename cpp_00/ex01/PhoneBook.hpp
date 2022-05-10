@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/09 22:59:07 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:31:39 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,20 +77,20 @@
 #include <iostream>
 
 /*---------------------------------- CLASS ----------------------------------*/
-class	PhoneBook {
+class PhoneBook {
 	private:
-		Contact		m_list[8];
-		int			m_index;
-		int			m_replace;
+		Contact m_list[8];
+		int m_index;
+		int m_replace;
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void		registrationType(int type);
-		bool		checkRegistration(int type);
-		void		registerContact(void);
-		void		displayAllContacts(void);
-		void		askSpecificContact(int i);
-		void		displaySpecificContact(int total);
+		void registrationType(int type);
+		bool checkRegistration(int type);
+		void registerContact(void);
+		void displayAllContacts(void);
+		void askSpecificContact(int i);
+		void displaySpecificContact(int total);
 };
 
 #endif

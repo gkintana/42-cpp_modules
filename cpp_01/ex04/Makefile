@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 22:17:31 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/05 15:29:30 by gkintana         ###   ########.fr        #
+#    Updated: 2022/05/10 21:52:13 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS		=	main.cpp \
 		
 OBJS		=	$(SRCS:%cpp=%o)
 
-CC			=	c++
+CC			=	c++ -std=c++98
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 

@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/04 11:04:37 by gkintana         ###   ########.fr        #
+#    Updated: 2022/05/10 21:06:24 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME		=	megaphone
 SRCS		=	megaphone.cpp
 OBJS		=	$(SRCS:%cpp=%o)
 
-CC			=	c++
+CC			=	c++ -std=c++98
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 
