@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:51:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/11 01:03:03 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/12 23:34:56 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ ClapTrap::~ClapTrap(void) {
 	std::cout << MODEL << this->m_name << DESTROYED << std::endl;
 }
 
-void	ClapTrap::attack(const std::string &target) {
+void ClapTrap::attack(const std::string &target) {
 	if (!this->m_energyPoints) {
 		std::cout << RED MODEL << this->m_name << NO_ENERGY << std::endl;
 		return;
@@ -64,7 +64,7 @@ void	ClapTrap::attack(const std::string &target) {
 	this->m_energyPoints--;
 }
 
-void	ClapTrap::takeDamage(unsigned int amount) {
+void ClapTrap::takeDamage(unsigned int amount) {
 	if ((int)amount < 0) {
 		amount = 0;
 	}
@@ -77,7 +77,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << MODEL << this->m_name << DMG_02 << this->m_hitPoints << std::endl;
 }
 
-void	ClapTrap::beRepaired(unsigned int amount) {
+void ClapTrap::beRepaired(unsigned int amount) {
 	if (!this->m_energyPoints) {
 		std::cout << RED MODEL << this->m_name << NO_ENERGY << std::endl;
 		return;

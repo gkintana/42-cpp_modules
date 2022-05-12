@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:05:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/11 00:36:36 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/12 23:48:28 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ FragTrap::FragTrap(FragTrap const &source): ClapTrap(source) {
 	*this = source;
 }
 
-FragTrap	&FragTrap::operator=(FragTrap const &data) {
+FragTrap &FragTrap::operator=(FragTrap const &data) {
 	std::cout << F_CLONE CAO << std::endl;
 	this->m_name = data.m_attackDamage;
 	this->m_hitPoints = data.m_hitPoints;
@@ -49,6 +49,6 @@ FragTrap::~FragTrap(void) {
 	std::cout << F_MODEL << this->m_name << DESTROYED;
 }
 
-void	FragTrap::hiFivesGuys(void) {
+void FragTrap::hiFivesGuys(void) {
 	std::cout << F_MODEL << this->m_name << HIGH_FIVE << std::endl;
 }

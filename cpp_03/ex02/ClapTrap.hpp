@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:27:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/11 00:36:00 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/12 23:48:00 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,21 @@
 #include <iostream>
 
 /*---------------------------------- CLASS ----------------------------------*/
-class	ClapTrap {
+class ClapTrap {
 	protected:
-		std::string		m_name;
-		unsigned int	m_hitPoints;
-		unsigned int	m_energyPoints;
-		unsigned int	m_attackDamage;
+		std::string m_name;
+		unsigned int m_hitPoints;
+		unsigned int m_energyPoints;
+		unsigned int m_attackDamage;
 	public:
 		ClapTrap(void);
 		ClapTrap(std::string modelName);
 		ClapTrap(ClapTrap const &source);
 		~ClapTrap(void);
-		ClapTrap		&operator=(ClapTrap const &data);
-		void			attack(const std::string &target);
-		void			takeDamage(unsigned int amount);
-		void			beRepaired(unsigned int amount);
+		ClapTrap &operator=(ClapTrap const &data);
+		void attack(const std::string &target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 
 #endif

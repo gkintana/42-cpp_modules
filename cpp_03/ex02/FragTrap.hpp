@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:03:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/11 00:50:52 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/12 23:48:35 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@
 #include "ClapTrap.hpp" 
 
 /*---------------------------------- CLASS ----------------------------------*/
-class	FragTrap: public ClapTrap {
+class FragTrap: public ClapTrap {
 	public:
 		FragTrap(void);
 		FragTrap(std::string modelName);
 		FragTrap(FragTrap const &source);
 		~FragTrap(void);
-		FragTrap	&operator=(FragTrap const &data);
-		void		hiFivesGuys(void);
+		FragTrap &operator=(FragTrap const &data);
+		void hiFivesGuys(void);
 };
 
 #endif

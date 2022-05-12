@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 20:44:06 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/11 01:05:26 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/12 23:40:43 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 int	main(void) {
 	std::cout << std::endl << CYAN LINE LINE_CON LINE;
 
-	ScavTrap	modelDummy;
-	ScavTrap	modelEmpty("");
-	ScavTrap	modelWarrior("ATK-01");
-	ScavTrap	modelTank("DMG-02");
-	ScavTrap	modelMedic("REP-03");
-	long		numCases[6] = { NUM_01, NUM_02, NUM_03, NUM_04, NUM_05, NUM_06 };
-	std::string	strCases[10] = { STR_01, STR_02, STR_03, STR_04, STR_05,
+	ScavTrap modelDummy;
+	ScavTrap modelEmpty("");
+	ScavTrap modelWarrior("ATK-01");
+	ScavTrap modelTank("DMG-02");
+	ScavTrap modelMedic("REP-03");
+	long numCases[6] = { NUM_01, NUM_02, NUM_03, NUM_04, NUM_05, NUM_06 };
+	std::string strCases[10] = { STR_01, STR_02, STR_03, STR_04, STR_05,
 								 STR_06, STR_07, STR_08, STR_09, STR_10, };
 
 	std::cout << DEFAULT LINE LINE_GATE LINE;

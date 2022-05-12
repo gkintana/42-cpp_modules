@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 20:44:06 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 12:18:09 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/12 23:29:56 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int	main(void) {
 	std::cout << std::endl << CYAN LINE LINE_CON LINE;
 
-	ClapTrap	modelDummy;
-	ClapTrap	modelEmpty("");
-	ClapTrap	modelWarrior("ATK-01");
-	ClapTrap	modelTank("DMG-02");
-	ClapTrap	modelMedic("REP-03");
-	long		numCases[6] = { NUM_01, NUM_02, NUM_03, NUM_04, NUM_05, NUM_06 };
-	std::string	strCases[10] = { STR_01, STR_02, STR_03, STR_04, STR_05,
+	ClapTrap modelDummy;
+	ClapTrap modelEmpty("");
+	ClapTrap modelWarrior("ATK-01");
+	ClapTrap modelTank("DMG-02");
+	ClapTrap modelMedic("REP-03");
+	long numCases[6] = { NUM_01, NUM_02, NUM_03, NUM_04, NUM_05, NUM_06 };
+	std::string strCases[10] = { STR_01, STR_02, STR_03, STR_04, STR_05,
 								 STR_06, STR_07, STR_08, STR_09, STR_10, };
 
 	std::cout << PURPLE LINE LINE_ATK LINE;
