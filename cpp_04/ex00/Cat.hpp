@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:20:58 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/14 12:48:20 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:30:06 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@
 #include "Animal.hpp"
 
 /*---------------------------------- CLASS ----------------------------------*/
-class	Cat: public Animal {
+class Cat: public Animal {
 	public:
 		Cat(void);
 		Cat(Cat const &source);
 		~Cat(void);
-		Cat				&operator=(Cat const &data);
-		void			makeSound(void) const;
+		Cat &operator=(Cat const &data);
+		void makeSound(void) const;
 };
 
 #endif

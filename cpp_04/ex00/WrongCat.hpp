@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:23:10 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/14 13:25:27 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:24:02 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@
 #include "WrongAnimal.hpp"
 
 /*---------------------------------- CLASS ----------------------------------*/
-class	WrongCat: public WrongAnimal {
+class WrongCat: public WrongAnimal {
 	public:
 		WrongCat(void);
 		WrongCat(WrongCat const &source);
 		~WrongCat(void);
-		WrongCat		&operator=(WrongCat const &data);
-		void			makeSound(void) const;
+		WrongCat &operator=(WrongCat const &data);
+		void makeSound(void) const;
 };
 
 #endif

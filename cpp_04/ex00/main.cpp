@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/14 13:35:54 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/17 22:43:30 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,60 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int	main(void) {
-	std::cout << "Recommended Tests" << std::endl;
-	
-	const Animal	*meta = new Animal();
-	const Animal	*j = new Dog();
-	const Animal	*i = new Cat;
-	
-	std::cout << j->getType() << " " << std::endl;
+void doRecommendedTests(void) {
+	const Animal *meta = new Animal;
+	const Animal *j = new Dog;
+	const Animal *i = new Cat;
+
+	std::cout << CYAN << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+	std::cout << DEFAULT;
 
-	/*-----------------------------------------------------------------------*/
-	std::cout << "\nAdditional Tests" << std::endl;
+	delete meta;
+	delete j;
+	delete i;
+}
+
+void doWrongAnimalTests(void) {
+	const WrongAnimal *wrongAnimal = new WrongAnimal;
+	const WrongAnimal *wrongCat = new WrongCat;
+
+	std::cout << CYAN << wrongAnimal->getType() << ": ";
+	wrongAnimal->makeSound();
+	std::cout << wrongCat->getType() << ": ";
+	wrongCat->makeSound();
+	std::cout << DEFAULT;
 	
-	const WrongAnimal *w_meta = new WrongAnimal();
-	const WrongAnimal *w_i = new WrongCat();
+	delete wrongAnimal;
+	delete wrongCat;
+}
 
-	std::cout << w_meta->getType() << ":\t";
-	w_meta->makeSound();
-	std::cout << w_i->getType() << ":\t";
-	w_i->makeSound();
+void doExtraTests(void) {
+	Animal animal;
+	Dog dogClass;
+	Cat catClass;
+	Animal &dog = dogClass;
+	Animal &cat = catClass;
+	
+	std::cout << CYAN << animal.getType() << ": ";
+	animal.makeSound();
+	std::cout << dog.getType() << ": ";
+	dog.makeSound();
+	std::cout << cat.getType() << ": ";
+	cat.makeSound();
+	std::cout << DEFAULT;
+}
 
-	return (0);
+int	main(void) {
+	std::cout << YELLOW "Recommended Tests" DEFAULT << std::endl;
+	doRecommendedTests();
+	std::cout << std::endl << YELLOW "Wrong Animal Tests" DEFAULT << std::endl;
+	doWrongAnimalTests();
+	std::cout << std::endl << YELLOW "Extra Tests" DEFAULT << std::endl;
+	doExtraTests();
+
+	return 0;
 }

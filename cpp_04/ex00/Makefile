@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/13 23:54:36 by gkintana          #+#    #+#              #
-#    Updated: 2022/03/14 13:24:18 by gkintana         ###   ########.fr        #
+#    Updated: 2022/05/17 22:46:18 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ SRCS		=	main.cpp \
 				Dog.cpp \
 				WrongAnimal.cpp \
 				WrongCat.cpp
-		
+
 OBJS		=	$(SRCS:%cpp=%o)
 
-CC			=	c++
+CC			=	c++ -std=c++98
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 

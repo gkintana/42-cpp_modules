@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 09:55:47 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/14 12:56:10 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:30:24 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@
 #include "Animal.hpp"
 
 /*---------------------------------- CLASS ----------------------------------*/
-class	Dog: public Animal {
+class Dog: public Animal {
 	public:
 		Dog(void);
 		Dog(Dog const &source);
 		~Dog(void);
-		Dog		&operator=(Dog const &data);
-		void	makeSound(void) const;
+		Dog &operator=(Dog const &data);
+		void makeSound(void) const;
 };
 
 #endif
