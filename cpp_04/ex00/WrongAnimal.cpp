@@ -6,19 +6,19 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:07:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/17 21:52:59 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:23:10 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) {
-	std::cout << GREEN WRONGA_CON DEFAULT << std::endl;
-	this->m_type = WRONGA;
+	std::cout << GREEN W_ANIMAL_CON DEFAULT << std::endl;
+	this->m_type = W_ANIMAL;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &source) {
-	std::cout << GREEN WRONGA_CPY DEFAULT << std::endl;
+	std::cout << GREEN W_ANIMAL_CPY DEFAULT << std::endl;
 	*this = source;
 }
 
@@ -28,7 +28,7 @@ WrongAnimal &WrongAnimal::operator=(WrongAnimal const &data) {
 }
 
 WrongAnimal::~WrongAnimal(void) {
-	std::cout << RED WRONGA_DEC DEFAULT << std::endl;
+	std::cout << RED W_ANIMAL_DEC DEFAULT << std::endl;
 }
 
 std::string WrongAnimal::getType(void) const {
@@ -36,5 +36,5 @@ std::string WrongAnimal::getType(void) const {
 }
 
 void WrongAnimal::makeSound(void) const {
-	std::cout << WRONGA_SND << std::endl;
+	std::cout << W_ANIMAL_SND << std::endl;
 }

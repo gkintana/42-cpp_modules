@@ -6,19 +6,19 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:19:59 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/17 22:00:51 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:22:49 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat(void) {
-	std::cout << GREEN WRONGC_CON DEFAULT << std::endl;
-	this->m_type = WRONGC;
+	std::cout << GREEN W_CAT_CON DEFAULT << std::endl;
+	this->m_type = W_CAT;
 }
 
 WrongCat::WrongCat(WrongCat const &source) {
-	std::cout << GREEN WRONGC_CPY DEFAULT << std::endl;
+	std::cout << GREEN W_CAT_CPY DEFAULT << std::endl;
 	*this = source;
 }
 
@@ -28,9 +28,9 @@ WrongCat &WrongCat::operator=(WrongCat const &data) {
 }
 
 WrongCat::~WrongCat(void) {
-	std::cout << RED WRONGC_DEC DEFAULT << std::endl;
+	std::cout << RED W_CAT_DEC DEFAULT << std::endl;
 }
 
 void WrongCat::makeSound(void) const {
-	std::cout << WRONGC_SND << std::endl;
+	std::cout << W_CAT_SND << std::endl;
 }

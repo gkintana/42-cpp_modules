@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/17 22:43:30 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:25:08 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void doRecommendedTests(void) {
 	meta->makeSound();
 	std::cout << DEFAULT;
 
-	delete meta;
-	delete j;
 	delete i;
+	delete j;
+	delete meta;
 }
 
 void doWrongAnimalTests(void) {
@@ -43,8 +43,8 @@ void doWrongAnimalTests(void) {
 	wrongCat->makeSound();
 	std::cout << DEFAULT;
 	
-	delete wrongAnimal;
 	delete wrongCat;
+	delete wrongAnimal;
 }
 
 void doExtraTests(void) {
