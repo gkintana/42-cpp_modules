@@ -6,11 +6,11 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#              #
-#    Updated: 2022/05/10 21:06:30 by gkintana         ###   ########.fr        #
+#    Updated: 2022/05/28 00:34:33 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	PhoneBook
+NAME		=	phonebook
 
 SRCS		=	main.cpp \
 				Contact.cpp \
@@ -18,7 +18,6 @@ SRCS		=	main.cpp \
 				
 OBJS		=	$(SRCS:%cpp=%o)
 
-# https://stackoverflow.com/questions/12606713/enforcing-the-c98-standard-in-gcc
 CC			=	c++ -std=c++98
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf

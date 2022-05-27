@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/10 21:39:48 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 01:14:06 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,21 @@ void Contact::setDarkestSecret(std::string darkestSecret) {
 }
 
 std::string Contact::getFirstName(void) {
-	return (this->m_firstName);
+	return this->m_firstName;
 }
 
 std::string Contact::getLastName(void) {
-	return (this->m_lastName);
+	return this->m_lastName;
 }
 
 std::string Contact::getNickname(void) {
-	return (this->m_nickname);
+	return this->m_nickname;
 }
 
 std::string Contact::getPhoneNumber(void) {
-	return (this->m_phoneNumber);
+	return this->m_phoneNumber;
 }
 
 std::string Contact::getDarkestSecret(void) {
-	return (this->m_darkestSecret);
+	return this->m_darkestSecret;
 }

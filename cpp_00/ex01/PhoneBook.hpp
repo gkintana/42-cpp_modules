@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/10 22:31:39 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 00:44:39 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@
 #define KO_INDEX	"Invalid Contact Index"
 #define NO_INDEX	"Contact Index Does Not Exist"
 #define NUM_KO		"Invalid Phone Number"
+#define REG_ERR_01	"Input contains invalid characters, please try again"
+#define REG_ERR_02	"Field cannot be left empty"
 
 #define SPEC_01		"\nContact Index ["
 #define SPEC_02		"]'s Complete Information"

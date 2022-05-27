@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/09 23:19:03 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 01:08:37 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ bool checkInput(std::string registrationInfo) {
 			isValid = true;
 		} else if (registrationInfo[i] == 32) {
 			;
+		} else if (registrationInfo[i] == 9) {
+			return (false);
 		} else {
 			return (isValid);
 		}
@@ -71,9 +73,9 @@ bool checkInput(std::string registrationInfo) {
 
 void registrationError(std::string temp) {
 	if (temp.length()) {
-		std::cout << RED "Input contains invalid characters, please try again" DEFAULT << std::endl;
+		std::cout << RED REG_ERR_01 DEFAULT << std::endl;
 	} else {
-		std::cout << RED "Field cannot be left empty" DEFAULT << std::endl; 
+		std::cout << RED REG_ERR_02 DEFAULT << std::endl; 
 	}
 }
 
@@ -81,9 +83,14 @@ void registrationError(std::string temp) {
 void PhoneBook::registrationType(int type) {
 	std::string temp;
 	int i;
+	int	endOfFile = 0;
 
 	type == NEW ? i = this->m_index : i = this->m_replace;
-	while (std::cout << REG_FN && std::getline(std::cin, temp)) {
+	while (std::cout << REG_FN && std::getline(std::cin, temp) && !endOfFile) {
+		if (!std::cin) {
+			endOfFile = 1;
+			break;
+		}
 		if (checkInput(temp)) {
 			this->m_list[i].setFirstName(temp);
 			break ;
@@ -92,7 +99,11 @@ void PhoneBook::registrationType(int type) {
 			registrationError(temp);
 		}
 	}
-	while (std::cout << REG_LN && std::getline(std::cin, temp)) {
+	while (std::cout << REG_LN && std::getline(std::cin, temp) && !endOfFile) {
+		if (!std::cin) {
+			endOfFile = 1;
+			break;
+		}
 		if (checkInput(temp)) {
 			this->m_list[i].setLastName(temp);
 			break ;
@@ -101,7 +112,11 @@ void PhoneBook::registrationType(int type) {
 			registrationError(temp);
 		}
 	}
-	while (std::cout << REG_NN && std::getline(std::cin, temp)) {
+	while (std::cout << REG_NN && std::getline(std::cin, temp) && !endOfFile) {
+		if (!std::cin) {
+			endOfFile = 1;
+			break;
+		}
 		if (checkInput(temp)) {
 			this->m_list[i].setNickname(temp);
 			break ;
@@ -110,7 +125,11 @@ void PhoneBook::registrationType(int type) {
 			registrationError(temp);
 		}
 	}
-	while (std::cout << REG_PN && std::getline(std::cin, temp)) {
+	while (std::cout << REG_PN && std::getline(std::cin, temp) && !endOfFile) {
+		if (!std::cin) {
+			endOfFile = 1;
+			break;
+		}
 		if (checkPhoneNumber(temp)) {
 			this->m_list[i].setPhoneNumber(temp);
 			break ;
@@ -118,7 +137,11 @@ void PhoneBook::registrationType(int type) {
 			registrationError(temp);
 		}
 	}
-	while (std::cout << REG_DS && std::getline(std::cin, temp)) {
+	while (std::cout << REG_DS && std::getline(std::cin, temp) && !endOfFile) {
+		if (!std::cin) {
+			endOfFile = 1;
+			break;
+		}
 		if (checkInput(temp)) {
 			this->m_list[i].setDarkestSecret(temp);
 			break ;
@@ -126,6 +149,9 @@ void PhoneBook::registrationType(int type) {
 		else {
 			registrationError(temp);
 		}
+	}
+	if (endOfFile) {
+		exit(1);
 	}
 }
 
@@ -155,13 +181,13 @@ void PhoneBook::registerContact(void) {
 }
 
 void PhoneBook::displaySpecificContact(int index) {
-	std::cout << CYAN SPEC_01 << index + 1 << SPEC_02 DEFAULT << std::endl;
-	std::cout << SPEC_03 << m_list[index].getFirstName() << std::endl;
-	std::cout << SPEC_04 << m_list[index].getLastName() << std::endl;
-	std::cout << SPEC_05 << m_list[index].getNickname() << std::endl;
-	std::cout << SPEC_06 << m_list[index].getPhoneNumber() << std::endl;
-	std::cout << SPEC_07 << m_list[index].getDarkestSecret() << std::endl;
-	std::cout << GREEN SEARCH_04 DEFAULT << std::endl;
+	std::cout << CYAN SPEC_01 << index + 1 << SPEC_02 DEFAULT << std::endl
+			  << SPEC_03 << m_list[index].getFirstName() << std::endl
+			  << SPEC_04 << m_list[index].getLastName() << std::endl
+			  << SPEC_05 << m_list[index].getNickname() << std::endl
+			  << SPEC_06 << m_list[index].getPhoneNumber() << std::endl
+			  << SPEC_07 << m_list[index].getDarkestSecret() << std::endl
+			  << GREEN SEARCH_04 DEFAULT << std::endl;
 }
 
 bool indexIsDigit(std::string index) {
@@ -187,6 +213,9 @@ void PhoneBook::askSpecificContact(int i) {
 	std::string index;
 
 	while (std::getline(std::cin, index)) {
+		if (!std::cin) {
+			break;
+		}
 		if (!indexIsDigit(index)) {
 			std::cout << RED KO_INDEX DEFAULT << std::endl;
 			std::cout << SEARCH_03;
@@ -200,6 +229,9 @@ void PhoneBook::askSpecificContact(int i) {
 			std::cout << RED NO_INDEX DEFAULT << std::endl;
 			std::cout << SEARCH_03;
 		}
+	}
+	if (std::cin.eof()) {
+		exit(1);
 	}
 }
 
