@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:02:15 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 00:32:33 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 11:59:24 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void Account::_displayTimestamp() {
          	  << std::setw(2) << std::setfill('0') << now->tm_mday << "_"
 			  << std::setw(2) << std::setfill('0') << now->tm_hour
 			  << std::setw(2) << std::setfill('0') << now->tm_min
-			  << std::setw(2) << std::setfill('0') << now->tm_sec	<< "] ";
+			  << std::setw(2) << std::setfill('0') << now->tm_sec << "] ";
 }
 
 void Account::makeDeposit(int deposit) {

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 01:08:37 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 11:58:48 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,15 @@ void registrationError(std::string temp) {
 	}
 }
 
-// https://stackoverflow.com/questions/48493256/ignore-tabs-and-line-breaks-in-user-input-using-getline
 void PhoneBook::registrationType(int type) {
 	std::string temp;
 	int i;
-	int	endOfFile = 0;
 
 	type == NEW ? i = this->m_index : i = this->m_replace;
-	while (std::cout << REG_FN && std::getline(std::cin, temp) && !endOfFile) {
-		if (!std::cin) {
-			endOfFile = 1;
-			break;
+	while (std::cout << REG_FN) {
+		if (!std::getline(std::cin, temp)) {
+			std::cout << std::endl;
+			exit (1);
 		}
 		if (checkInput(temp)) {
 			this->m_list[i].setFirstName(temp);
@@ -99,10 +97,10 @@ void PhoneBook::registrationType(int type) {
 			registrationError(temp);
 		}
 	}
-	while (std::cout << REG_LN && std::getline(std::cin, temp) && !endOfFile) {
-		if (!std::cin) {
-			endOfFile = 1;
-			break;
+	while (std::cout << REG_LN) {
+		if (!std::getline(std::cin, temp)) {
+			std::cout << std::endl;
+			exit (1);
 		}
 		if (checkInput(temp)) {
 			this->m_list[i].setLastName(temp);
@@ -112,10 +110,10 @@ void PhoneBook::registrationType(int type) {
 			registrationError(temp);
 		}
 	}
-	while (std::cout << REG_NN && std::getline(std::cin, temp) && !endOfFile) {
-		if (!std::cin) {
-			endOfFile = 1;
-			break;
+	while (std::cout << REG_NN) {
+		if (!std::getline(std::cin, temp)) {
+			std::cout << std::endl;
+			exit (1);
 		}
 		if (checkInput(temp)) {
 			this->m_list[i].setNickname(temp);
@@ -125,10 +123,10 @@ void PhoneBook::registrationType(int type) {
 			registrationError(temp);
 		}
 	}
-	while (std::cout << REG_PN && std::getline(std::cin, temp) && !endOfFile) {
-		if (!std::cin) {
-			endOfFile = 1;
-			break;
+	while (std::cout << REG_PN) {
+		if (!std::getline(std::cin, temp)) {
+			std::cout << std::endl;
+			exit (1);
 		}
 		if (checkPhoneNumber(temp)) {
 			this->m_list[i].setPhoneNumber(temp);
@@ -137,10 +135,10 @@ void PhoneBook::registrationType(int type) {
 			registrationError(temp);
 		}
 	}
-	while (std::cout << REG_DS && std::getline(std::cin, temp) && !endOfFile) {
-		if (!std::cin) {
-			endOfFile = 1;
-			break;
+	while (std::cout << REG_DS) {
+		if (!std::getline(std::cin, temp)) {
+			std::cout << std::endl;
+			exit (1);
 		}
 		if (checkInput(temp)) {
 			this->m_list[i].setDarkestSecret(temp);
@@ -149,9 +147,6 @@ void PhoneBook::registrationType(int type) {
 		else {
 			registrationError(temp);
 		}
-	}
-	if (endOfFile) {
-		exit(1);
 	}
 }
 
