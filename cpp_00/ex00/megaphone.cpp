@@ -6,25 +6,25 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 00:15:29 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 22:36:44 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
+std::string strUpper(std::string str) {
+	for (std::string::size_type i = 0; i < str.length(); i++)
+		str[i] = toupper(str[i]);
+	return str;
+}
+
 int main(int argc, char **argv) {
 	if (argc == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	} else {
-		int	i = 0;
-		while (++i < argc) {
-			int	j = 0;
-			while (argv[i][j]) {
-				std::cout << (char)toupper(argv[i][j++]);
-			}
-			std::cout << " ";
-		}
+		for (int i = 1; i < argc; i++)
+			std::cout << strUpper(argv[i]);
 		std::cout << std::endl;
 	}
-	return (0);
+	return 0;
 }

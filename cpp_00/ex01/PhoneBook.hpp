@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 00:44:39 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 23:08:07 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,9 @@
 #define SPEC_07		"Darkest Secret\t: "
 
 /*------------------------------- IDENTIFIERS -------------------------------*/
-#define NEW			42
-#define REPLACE		-42
+#define ALPHANUM		"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#define new_reg			1
+#define replace_reg		0
 
 /*-------------------------------- LIBRARIES --------------------------------*/
 #include "Contact.hpp"
@@ -84,15 +85,16 @@ class PhoneBook {
 		Contact m_list[8];
 		int m_index;
 		int m_replace;
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+		void saveInfo(std::string field, int type, int function);
 		void registrationType(int type);
 		bool checkRegistration(int type);
-		void registerContact(void);
-		void displayAllContacts(void);
 		void askSpecificContact(int i);
 		void displaySpecificContact(int total);
+	public:
+		PhoneBook();
+		~PhoneBook();
+		void registerContact();
+		void displayAllContacts();
 };
 
 #endif

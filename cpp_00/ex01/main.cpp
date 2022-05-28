@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 13:24:42 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 22:43:30 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@ void printWelcomeMessage(void) {
 }
 
 std::string strUpper(std::string command) {
-	int	i = -1;
-	while (command[++i]) {
-		command[i] = toupper(command[i]);
+	for (std::string::size_type i = 0; i < command.length(); i++) {
+		command[i] = std::toupper(command[i]);
 	}
-	return (command);
+	return command;
 }
 
-// https://stackoverflow.com/questions/1598514/infinite-loop-on-eof-in-c
 int main(void) {
 	PhoneBook content;
 	std::string command;
@@ -46,5 +44,5 @@ int main(void) {
 			std::cout << RED ERROR DEFAULT << std::endl;
 		}
 	}
-	return (0);
+	return 0;
 }

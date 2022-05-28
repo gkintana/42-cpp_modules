@@ -6,69 +6,47 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 11:58:48 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 23:09:42 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-// https://www.tutorialspoint.com/cplusplus/cpp_class_access_modifiers.htm
-// https://www.tutorialspoint.com/5-different-methods-to-find-length-of-a-string-in-cplusplus
-// https://www.delftstack.com/howto/cpp/how-to-determine-if-a-string-is-number-cpp/
-// https://stackoverflow.com/questions/9047671/invalid-use-of-this-in-non-member-function
-
-PhoneBook::PhoneBook(void) {
+PhoneBook::PhoneBook() {
 	this->m_index = 0;
 	this->m_replace = 0;
 }
 
-PhoneBook::~PhoneBook(void) {}
+PhoneBook::~PhoneBook() {}
 
 bool PhoneBook::checkRegistration(int type) {
-	int i;
-	
-	type == NEW ? i = this->m_index : i = this->m_replace;
-	if (!this->m_list[i].getFirstName().length()) {
-		return (false);
-	} if (!this->m_list[i].getLastName().length()) {
-		return (false);
-	} if (!this->m_list[i].getNickname().length()) {
-		return (false);
-	} if (!this->m_list[i].getPhoneNumber().length()) {
-		return (false);
-	} if (!this->m_list[i].getDarkestSecret().length()) {
-		return (false);
+	int i = type == new_reg ? this->m_index : this->m_replace;
+
+	if (this->m_list[i].getFirstName().length() &&
+		this->m_list[i].getLastName().length() &&
+		this->m_list[i].getNickname().length() &&
+		this->m_list[i].getPhoneNumber().length() &&
+		this->m_list[i].getDarkestSecret().length()) {
+		return true;
 	}
-	return (true);
+	return false;
 }
 
-bool checkPhoneNumber(std::string phoneNumber) {
-	if (!phoneNumber.length()) {
-		return (false);
+bool checkInput(std::string info, int checkNumber) {
+	if ((checkNumber && !info.length()) || !info.length()) {
+		return false;
 	}
-	for (size_t i = 0; i < phoneNumber.length(); i++) {
-		if (!isdigit(phoneNumber[i])) {
-			return (false);
+	for (std::string::size_type i = 0; i < info.length(); i++) {
+		if (!checkNumber && info[i] == 9) {
+			return false;
+		} else if (checkNumber && !std::isdigit(info[i])) {
+			return false;
 		}
 	}
-	return (true);
-}
-
-bool checkInput(std::string registrationInfo) {
-	int isValid = false;
-
-	for (size_t i = 0; i < registrationInfo.length(); i++) {
-		if (isalnum(registrationInfo[i])) {
-			isValid = true;
-		} else if (registrationInfo[i] == 32) {
-			;
-		} else if (registrationInfo[i] == 9) {
-			return (false);
-		} else {
-			return (isValid);
-		}
+	if (info.find(ALPHANUM)) {
+		return true;
 	}
-	return (isValid);
+	return false;
 }
 
 void registrationError(std::string temp) {
@@ -79,98 +57,62 @@ void registrationError(std::string temp) {
 	}
 }
 
-void PhoneBook::registrationType(int type) {
+void PhoneBook::saveInfo(std::string field, int i, int function) {
 	std::string temp;
-	int i;
 
-	type == NEW ? i = this->m_index : i = this->m_replace;
-	while (std::cout << REG_FN) {
+	while (std::cout << field) {
 		if (!std::getline(std::cin, temp)) {
-			std::cout << std::endl;
-			exit (1);
+			std::exit(1);
 		}
-		if (checkInput(temp)) {
+		if (checkInput(temp, 0) && function == 1) {
 			this->m_list[i].setFirstName(temp);
 			break ;
-		}
-		else {
-			registrationError(temp);
-		}
-	}
-	while (std::cout << REG_LN) {
-		if (!std::getline(std::cin, temp)) {
-			std::cout << std::endl;
-			exit (1);
-		}
-		if (checkInput(temp)) {
+		} else if (checkInput(temp, 0) && function == 2) {
 			this->m_list[i].setLastName(temp);
 			break ;
-		}
-		else {
-			registrationError(temp);
-		}
-	}
-	while (std::cout << REG_NN) {
-		if (!std::getline(std::cin, temp)) {
-			std::cout << std::endl;
-			exit (1);
-		}
-		if (checkInput(temp)) {
+		} else if (checkInput(temp, 0) && function == 3) {
 			this->m_list[i].setNickname(temp);
 			break ;
-		}
-		else {
-			registrationError(temp);
-		}
-	}
-	while (std::cout << REG_PN) {
-		if (!std::getline(std::cin, temp)) {
-			std::cout << std::endl;
-			exit (1);
-		}
-		if (checkPhoneNumber(temp)) {
+		} else if (checkInput(temp, 1) && function == 4) {
 			this->m_list[i].setPhoneNumber(temp);
 			break ;
-		} else {
-			registrationError(temp);
-		}
-	}
-	while (std::cout << REG_DS) {
-		if (!std::getline(std::cin, temp)) {
-			std::cout << std::endl;
-			exit (1);
-		}
-		if (checkInput(temp)) {
+		} else if (checkInput(temp, 0) && function == 5) {
 			this->m_list[i].setDarkestSecret(temp);
 			break ;
-		}
-		else {
+		} else {
 			registrationError(temp);
 		}
 	}
 }
 
-void PhoneBook::registerContact(void) {
+void PhoneBook::registrationType(int type) {
+	int i = type == new_reg ? this->m_index : this->m_replace;
+
+	saveInfo(REG_FN, i, 1);
+	saveInfo(REG_LN, i, 2);
+	saveInfo(REG_NN, i, 3);
+	saveInfo(REG_PN, i, 4);
+	saveInfo(REG_DS, i, 5);
+}
+
+void PhoneBook::registerContact() {
 	if (this->m_index >= 0 && this->m_index < 8) {
-		registrationType(NEW);
-		if (checkRegistration(NEW) == true) {
+		registrationType(new_reg);
+		if (checkRegistration(new_reg) == true) {
 			std::cout << GREEN REG_OK DEFAULT << std::endl;
 			this->m_index++;
 		} else {
 			std::cout << RED REG_KO DEFAULT << std::endl;
-			return;
 		}
 	} else {
-		registrationType(REPLACE);
-		if (checkRegistration(REPLACE) == true) {
+		registrationType(replace_reg);
+		if (checkRegistration(replace_reg) == true) {
 			std::cout << GREEN REG_OK DEFAULT << std::endl;
-			this->m_replace++;
+			if (++this->m_replace == 8) {
+				this->m_replace = 0;
+			}
 		} else {
 			std::cout << RED REG_KO DEFAULT << std::endl;
-			return;
-		}
-		if (this->m_replace == 8) {
-			this->m_replace = 0;
 		}
 	}
 }
@@ -186,9 +128,8 @@ void PhoneBook::displaySpecificContact(int index) {
 }
 
 bool indexIsDigit(std::string index) {
-	int	i = 0;
-	while (index[i]) {
-		if (!isdigit(index[i++])) {
+	for (std::string::size_type i = 0; i < index.length(); i++) {
+		if (!std::isdigit(index[i])) {
 			return (false);
 		}
 	}
@@ -204,29 +145,24 @@ std::string checkLength(std::string contactInfo) {
 }
 
 void PhoneBook::askSpecificContact(int i) {
-	std::cout << SEARCH_01 SEARCH_02 SEARCH_03;
 	std::string index;
+	std::cout << SEARCH_01 SEARCH_02;
 
-	while (std::getline(std::cin, index)) {
-		if (!std::cin) {
-			break;
+	while (std::cout << SEARCH_03) {
+		if (!std::getline(std::cin, index)) {
+			std::exit(1);
 		}
 		if (!indexIsDigit(index)) {
 			std::cout << RED KO_INDEX DEFAULT << std::endl;
-			std::cout << SEARCH_03;
-		} else if (atoi(index.c_str()) >= 1 && atoi(index.c_str()) <= i) {
-			displaySpecificContact(atoi(index.c_str()) - 1);
+		} else if (std::atoi(index.c_str()) >= 1 && std::atoi(index.c_str()) <= i) {
+			displaySpecificContact(std::atoi(index.c_str()) - 1);
 			break;
-		} else if (!atoi(index.c_str())) {
+		} else if (!std::atoi(index.c_str())) {
 			std::cout << PURPLE CANCEL DEFAULT << std::endl;
 			break;
 		} else {
 			std::cout << RED NO_INDEX DEFAULT << std::endl;
-			std::cout << SEARCH_03;
 		}
-	}
-	if (std::cin.eof()) {
-		exit(1);
 	}
 }
 
@@ -238,7 +174,7 @@ void setWidth10(std::string info, int addNewline) {
 	}
 }
 
-void PhoneBook::displayAllContacts(void) {
+void PhoneBook::displayAllContacts() {
 	if (!this->m_index) {
 		std::cout << CYAN ZERO DEFAULT << std::endl;
 	} else {
