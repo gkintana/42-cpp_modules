@@ -6,20 +6,20 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 00:29:46 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/28 13:24:42 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void	printWelcomeMessage(void) {
+void printWelcomeMessage(void) {
 	std::cout << YELLOW TITLE << std::endl
 			  << COM_ADD << std::endl
 			  << COM_SEARCH << std::endl
 			  << COM_EXIT DEFAULT << std::endl;
 }
 
-std::string	strUpper(std::string command) {
+std::string strUpper(std::string command) {
 	int	i = -1;
 	while (command[++i]) {
 		command[i] = toupper(command[i]);
@@ -28,7 +28,7 @@ std::string	strUpper(std::string command) {
 }
 
 // https://stackoverflow.com/questions/1598514/infinite-loop-on-eof-in-c
-int	main(void) {
+int main(void) {
 	PhoneBook content;
 	std::string command;
 
