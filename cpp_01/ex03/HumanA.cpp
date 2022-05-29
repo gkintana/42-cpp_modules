@@ -6,13 +6,16 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 22:59:35 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/10 21:43:11 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 00:01:58 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &type): m_name(name), m_type(type) {}
+// https://stackoverflow.com/questions/19576458/constructor-for-must-explicitly-initialize-the-reference-member
+HumanA::HumanA(std::string name, Weapon &type): m_type(type) {
+	this->m_name = name;
+}
 
 HumanA::~HumanA() {}
 

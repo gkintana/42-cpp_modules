@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:28:36 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/10 22:28:33 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 10:37:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@
 #define RED			"\033[0;31m"
 #define GREEN		"\033[0;32m"
 
-/*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
-#define BRAINZ		": BraiiiiiiinnnzzzZ..."
-#define TYPE_N		"Zombie"
-#define TYPE_S		"Screamer"
-#define TYPE_R		"Random Zombie"
-#define END			" has been slain"
-
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>
 
@@ -34,8 +27,8 @@ class Zombie {
 		std::string m_name;
 	public:
 		Zombie(std::string name);
-		~Zombie(void);
-		void announce(void);
+		~Zombie();
+		void announce();
 };
 
 /*--------------------------- FUNCTION PROTOTYPES ---------------------------*/

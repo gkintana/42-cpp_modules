@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 01:39:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/10 22:26:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 11:15:09 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@
 class File {
 	private:
 		std::string m_filename;
+		std::string m_replacement;
 		std::string m_s1;
 		std::string m_s2;
 		std::ifstream m_fileRef;

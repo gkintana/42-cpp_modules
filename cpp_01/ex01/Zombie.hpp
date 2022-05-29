@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:28:36 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/10 21:37:32 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 10:42:54 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@
 #define RED			"\033[0;31m"
 #define GREEN		"\033[0;32m"
 
-/*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
-#define BRAINZ		": BraiiiiiiinnnzzzZ..."
-#define ZOMBIE		"Zombie "
-
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>
 
 /*---------------------------------- CLASS ----------------------------------*/
 class Zombie {
 	public:
-		void announce(void);
+		Zombie();
+		~Zombie();
+		void announce();
 };
 
 /*--------------------------- FUNCTION PROTOTYPE ----------------------------*/

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 16:52:31 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/10 21:35:30 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 10:48:57 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ Zombie *zombieHorde(int N, std::string name) {
 		horde->announce();
 		std::cout << DEFAULT;
 	}
-	return (horde);
+	return horde;
 }
