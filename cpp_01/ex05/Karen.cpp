@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 15:47:29 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 19:32:03 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 22:54:38 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,11 @@ static std::string strUpper(std::string command) {
 }
 
 void Karen::complain(std::string level) {
-	bool complained = false;
-
 	for (int i = 0; i < 4; i++) {
 		if (!m_level[i].compare(strUpper(level))) {
 			(this->*functionPtr[i])();
-			complained = true;
 			return;
 		}
 	}
-	if (!complained) {
-		std::cout << LVL_U PURPLE UNKNOWN DEFAULT << std::endl;
-	}
+	std::cout << LVL_U PURPLE UNKNOWN DEFAULT << std::endl;
 }

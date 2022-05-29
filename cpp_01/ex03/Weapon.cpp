@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 22:59:56 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 00:19:54 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 23:29:21 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void Weapon::setType(std::string weaponType) {
 	this->m_type = weaponType;
 }
 
-std::string const &Weapon::getType(void) const {
+std::string const &Weapon::getType(void) {
 	return m_type;
 }
