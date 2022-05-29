@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 23:09:42 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 20:29:08 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void PhoneBook::displaySpecificContact(int index) {
 			  << SPEC_05 << m_list[index].getNickname() << std::endl
 			  << SPEC_06 << m_list[index].getPhoneNumber() << std::endl
 			  << SPEC_07 << m_list[index].getDarkestSecret() << std::endl
-			  << GREEN SEARCH_04 DEFAULT << std::endl;
+			  << GREEN SEARCH_03 DEFAULT << std::endl;
 }
 
 bool indexIsDigit(std::string index) {
@@ -146,9 +146,9 @@ std::string checkLength(std::string contactInfo) {
 
 void PhoneBook::askSpecificContact(int i) {
 	std::string index;
-	std::cout << SEARCH_01 SEARCH_02;
+	std::cout << SEARCH_01;
 
-	while (std::cout << SEARCH_03) {
+	while (std::cout << SEARCH_02) {
 		if (!std::getline(std::cin, index)) {
 			std::exit(1);
 		}

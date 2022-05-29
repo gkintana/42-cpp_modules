@@ -6,18 +6,11 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 22:43:30 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 20:23:21 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
-void printWelcomeMessage(void) {
-	std::cout << YELLOW TITLE << std::endl
-			  << COM_ADD << std::endl
-			  << COM_SEARCH << std::endl
-			  << COM_EXIT DEFAULT << std::endl;
-}
 
 std::string strUpper(std::string command) {
 	for (std::string::size_type i = 0; i < command.length(); i++) {
@@ -30,8 +23,8 @@ int main(void) {
 	PhoneBook content;
 	std::string command;
 
-	printWelcomeMessage();
-	while (std::cout << COMMAND && std::getline(std::cin, command)) {
+	std::cout << YELLOW TITLE DEFAULT << std::endl;
+	while (std::cout << PROMPT && std::getline(std::cin, command)) {
 		if (strUpper(command) == "ADD")	{
 			std::cout << YELLOW ADD DEFAULT << std::endl;
 			content.registerContact();

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 23:08:07 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 20:29:04 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@
 #define REG_OK		"Contact Information Successfully Registered\n"
 #define REG_KO		"Found an empty field. Contact list not updated"
 
-#define TITLE		"My Awesome PhoneBook!\n\nAvailable Commands:"
-#define COMMAND		"Command: "
-#define COM_ADD		"  • Add\t   = Register a New Contact"
-#define COM_SEARCH	"  • Search = Show All Saved Contacts"
-#define COM_EXIT	"  • Exit   = Close Phonebook\n"
+#define TITLE		"My Awesome PhoneBook!\n\nAvailable Commands:\n" \
+					"  • Add\t   = Register a New Contact\n" \
+					"  • Search = Show All Saved Contacts\n" \
+					"  • Exit   = Close Phonebook\n"
+#define PROMPT		"Command: "
 
 #define ADD			"Adding New Contact 📇"
 #define SEARCH		"Displaying Contact Information 🧐"
@@ -48,10 +48,10 @@
 #define COL_03		"Last Name"
 #define COL_04		"Nickname"
 
-#define SEARCH_01	"\nProvide an index number to learn more about a specific contact.\n"
-#define SEARCH_02	"To end search process, leave field empty or set it to zero.\n\n"
-#define SEARCH_03	"Index Number: "
-#define SEARCH_04	"Search Process Complete\n"
+#define SEARCH_01	"\nProvide an index number to learn more about a specific contact.\n" \
+					"To end search process, leave field empty or set it to zero.\n\n"
+#define SEARCH_02	"Index Number: "
+#define SEARCH_03	"Search Process Complete\n"
 #define CANCEL		"Search Process Cancelled"
 #define KO_INDEX	"Invalid Contact Index"
 #define NO_INDEX	"Contact Index Does Not Exist"
