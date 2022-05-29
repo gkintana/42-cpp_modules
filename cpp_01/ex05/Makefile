@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/05 15:33:02 by gkintana          #+#    #+#              #
-#    Updated: 2022/05/12 23:00:56 by gkintana         ###   ########.fr        #
+#    Updated: 2022/05/29 21:17:39 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,11 @@ $(NAME):	$(OBJS)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted object files 🗃️"$(DEFAULT)
+			@echo $(RED)"Deleted exercise 05 object files"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted executable file 😢"$(DEFAULT)
+			@echo $(RED)"Deleted exercise 05 executable file"$(DEFAULT)
 
 re:			fclean all
 

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 01:42:10 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 11:26:33 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 22:07:35 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,22 @@ void File::initialize(std::string filename, std::string s1, std::string s2) {
 bool File::openFileRef() {
 	m_fileRef.open(m_filename.c_str());
 	if (!m_fileRef) {
-		std::cout << m_filename << NO_FILE << std::endl;
+		std::cerr << m_filename << NO_FILE << std::endl;
 		return false;
-	} else {
-		std::cout << GREEN OPEN << m_filename << DEFAULT << std::endl;
-		return true;
 	}
+	std::cout << GREEN OPEN << m_filename << DEFAULT << std::endl;
+	return true;
 }
 
 bool File::createRep() {
 	std::cout << CYAN CREATE << m_replacement.append(DOT_REP) << DEFAULT << std::endl;
 	m_fileRep.open(m_replacement.c_str());
 	if (!m_fileRep) {
-		std::cout << RED FAILED << m_replacement << DEFAULT << std::endl;
+		std::cerr << RED FAILED << m_replacement << DEFAULT << std::endl;
 		return false;
-	} else {
-		std::cout << GREEN OPEN << m_replacement << COPY;
-		std::cout << m_filename << DEFAULT << std::endl;
-		return true;
 	}
+	std::cout << GREEN OPEN << m_replacement << COPY << m_filename << DEFAULT << std::endl;
+	return true;
 }
 
 void File::copyToRep() {
@@ -54,8 +51,7 @@ void File::copyToRep() {
 	for (int i = 1; std::getline(m_fileRef, temp); i++) {
 		std::size_t	start = temp.find(m_s1);
 		if (start != std::string::npos) {
-			std::cout << BP << m_s1 << FOUND << i << REPLACE
-					  << m_s2 << "\"" << std::endl;
+			std::cout << BP << m_s1 << FOUND << i << REPLACE << m_s2 << "\"" << std::endl;
 			temp.erase(start, m_s1.length());
 			temp.insert(start, m_s2);
 		}

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 22:59:48 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/28 23:20:42 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 22:04:08 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-int	main(void) 
+int	main() 
 {
 	{
 		Weapon club = Weapon("crude spiked club");

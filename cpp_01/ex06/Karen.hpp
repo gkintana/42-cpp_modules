@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 15:34:03 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 21:05:24 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 22:02:28 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 					" since last month."
 #define ERROR		"This is unacceptable! I want to speak to the manager now."
 #define UNKNOWN		"Probably complaining about insignificant problems."
+#define ARG_ERROR	"\033[0;31mError!\n\033[0;33mExpected: ./karenFilter" \
+					" \"Debug or Info or Warning or Error\"\033[0m"
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>

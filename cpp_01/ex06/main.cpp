@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 16:13:10 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 20:54:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/29 22:01:56 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv) {
 	Karen simulator;
 
 	if (argc != 2) {
-		std::cout << "Error!" << std::endl;
+		std::cerr << ARG_ERROR << std::endl;
 		return 1;
 	}
 	simulator.complain(strUpper(argv[1]));
