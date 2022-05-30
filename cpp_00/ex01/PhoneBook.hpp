@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 20:29:04 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/31 00:10:46 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@
 #define KO_INDEX	"Invalid Contact Index"
 #define NO_INDEX	"Contact Index Does Not Exist"
 #define NUM_KO		"Invalid Phone Number"
-#define REG_ERR_01	"Input contains invalid characters, please try again"
+#define REG_ERR_01	"Invalid input, please try again"
 #define REG_ERR_02	"Field cannot be left empty"
 
 #define SPEC_01		"\nContact Index ["
@@ -85,16 +85,16 @@ class PhoneBook {
 		Contact m_list[8];
 		int m_index;
 		int m_replace;
-		void saveInfo(std::string field, int type, int function);
-		void registrationType(int type);
+		void saveInfo(std::string field, int type, int function, bool &eof);
+		bool registrationType(int type);
 		bool checkRegistration(int type);
-		void askSpecificContact(int i);
+		bool askSpecificContact(int i);
 		void displaySpecificContact(int total);
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void registerContact();
-		void displayAllContacts();
+		bool registerContact();
+		bool displayAllContacts();
 };
 
 #endif

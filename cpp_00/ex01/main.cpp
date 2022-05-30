@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 20:23:21 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/31 00:11:06 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,20 @@ int main(void) {
 
 	std::cout << YELLOW TITLE DEFAULT << std::endl;
 	while (std::cout << PROMPT && std::getline(std::cin, command)) {
-		if (strUpper(command) == "ADD")	{
+		if (!strUpper(command).compare("ADD"))	{
 			std::cout << YELLOW ADD DEFAULT << std::endl;
-			content.registerContact();
-		} else if (strUpper(command) == "SEARCH") {
-			content.displayAllContacts();
-		} else if (strUpper(command) == "EXIT") {
+			if (!content.registerContact()) {
+				break;
+			}
+		} else if (!strUpper(command).compare("SEARCH")) {
+			if (!content.displayAllContacts()) {
+				break;
+			}
+		} else if (!strUpper(command).compare("EXIT")) {
 			std::cout << PURPLE EXIT DEFAULT << std::endl;
 			break;
 		} else {
-			std::cout << RED ERROR DEFAULT << std::endl;
+			std::cerr << RED ERROR DEFAULT << std::endl;
 		}
 	}
 	return 0;
