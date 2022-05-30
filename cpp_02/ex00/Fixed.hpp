@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:55:19 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/06 02:27:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/30 07:54:22 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@
 /*---------------------------------- CLASS ----------------------------------*/
 class	Fixed {
 	private:
-		int					m_fixedPoint;
-		static const int	m_fractionalBit = 8;
+		int m_fixedPoint;
+		static const int m_fractionalBit = 8;
 	public:
-		Fixed(void);
+		Fixed();
 		Fixed(Fixed const &original);
-		~Fixed(void);
-		Fixed 	&operator=(Fixed const &num);
-		int		getRawBits(void) const;
-		void	setRawBits(int const integer);
+		~Fixed();
+		Fixed &operator=(Fixed const &num);
+		int getRawBits() const;
+		void setRawBits(int const integer);
 };
 
 #endif

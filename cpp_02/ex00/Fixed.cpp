@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:02:35 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/06 02:28:05 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/30 07:55:04 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void) {
+Fixed::Fixed() {
 	std::cout << DEF_CONS << std::endl;
 	this->m_fixedPoint = 0;
 }
@@ -27,21 +27,21 @@ Fixed::Fixed(Fixed const &original) {
 	*this = original;
 }
 
-Fixed	&Fixed::operator=(Fixed const &num) {
+Fixed &Fixed::operator=(Fixed const &num) {
 	std::cout << COPY_OPER << std::endl;
 	this->m_fixedPoint = num.getRawBits();
-	return (*this);
+	return *this;
 }
 
-Fixed::~Fixed(void) {
+Fixed::~Fixed() {
 	std::cout << DESTRUCT << std::endl;
 }
 
-int		Fixed::getRawBits(void) const {
+int Fixed::getRawBits() const {
 	std::cout << FN_GRB << std::endl;
-	return (this->m_fixedPoint);
+	return this->m_fixedPoint;
 }
 
-void	Fixed::setRawBits(int const integer) {
+void Fixed::setRawBits(int const integer) {
 	this->m_fixedPoint = integer;
 }

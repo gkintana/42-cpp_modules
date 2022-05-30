@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:55:19 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/06 19:47:11 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/30 08:20:00 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,23 @@
 #include <cmath>
 
 /*---------------------------------- CLASS ----------------------------------*/
-class	Fixed {
+class Fixed {
 	private:
-		int					m_fixedPoint;
-		static const int	m_fractionalBit = 8;
+		int m_fixedPoint;
+		static const int m_fractionalBit = 8;
+		int getRawBits() const;
 	public:
-		Fixed(void);
+		Fixed();
 		Fixed(Fixed const &original);
 		Fixed(int const a_integer);
 		Fixed(float const a_float);
-		~Fixed(void);
-		Fixed	&operator=(Fixed const &num);
-		int		getRawBits(void) const;
-		// void	setRawBits(int const a_integer);
-		// void	setRawBits(float const a_float);
-		float	toFloat(void) const;
-		int		toInt(void) const;
+		~Fixed();
+		Fixed &operator=(Fixed const &num);
+		float toFloat() const;
+		int toInt() const;
 };
 
-std::ostream	&operator<<(std::ostream &out, Fixed const &num);
+std::ostream &operator<<(std::ostream &out, Fixed const &num);
 
 // https://stackoverflow.com/questions/3247285/const-int-int-const
 

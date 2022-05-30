@@ -6,13 +6,13 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:02:35 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/06 22:51:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/30 08:19:53 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void) {
+Fixed::Fixed() {
 	std::cout << DEF_CONS << std::endl;
 	this->m_fixedPoint = 0;
 }
@@ -22,13 +22,13 @@ Fixed::Fixed(Fixed const &original) {
 	*this = original;
 }
 
-Fixed	&Fixed::operator=(Fixed const &num) {
+Fixed &Fixed::operator=(Fixed const &num) {
 	std::cout << COPY_OPER << std::endl;
 	this->m_fixedPoint = num.getRawBits();
-	return (*this);
+	return *this;
 }
 
-Fixed::~Fixed(void) {
+Fixed::~Fixed() {
 	std::cout << DESTRUCT << std::endl;
 }
 
@@ -42,29 +42,19 @@ Fixed::Fixed(float const a_float) {
 	this->m_fixedPoint = roundf(a_float * (1 << this->m_fractionalBit));
 }
 
-int		Fixed::getRawBits(void) const {
-	return (this->m_fixedPoint);
+int Fixed::getRawBits() const {
+	return this->m_fixedPoint;
 }
 
-// // setRawBits for Constant Integers
-// void	Fixed::setRawBits(int const a_integer) {
-// 	this->m_fixedPoint = a_integer;
-// }
-
-// // setRawBits for Constant Floats
-// void	Fixed::setRawBits(float const a_float) {
-// 	this->m_fixedPoint = a_float;
-// }
-
-float	Fixed::toFloat(void) const {
+float Fixed::toFloat() const {
 	return (roundf(this->m_fixedPoint) / (1 << this->m_fractionalBit));
 }
 
-int		Fixed::toInt(void) const {
+int Fixed::toInt() const {
 	return (this->m_fixedPoint >> this->m_fractionalBit);
 }
 
-std::ostream	&operator<<(std::ostream &out, Fixed const &num) {
+std::ostream &operator<<(std::ostream &out, Fixed const &num) {
 	out << num.toFloat();
-	return (out);
+	return out;
 }
