@@ -6,47 +6,66 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:02:35 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/31 20:14:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/05/31 21:41:59 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed() {
-	// std::cout << "Default constructor called" << std::endl;
 	this->m_fixedPoint = 0;
 }
 
+Fixed::~Fixed() {}
+
 Fixed::Fixed(Fixed const &original) {
-	// std::cout << "Copy constructor called" << std::endl;
 	*this = original;
 }
 
 Fixed &Fixed::operator=(Fixed const &num) {
-	// std::cout << "Copy assignment operator called" << std::endl;
 	this->m_fixedPoint = num.getRawBits();
 	return *this;
 }
 
-// Addition Overload Operators
+bool Fixed::operator>(Fixed const &num) {
+	return (this->toFloat() > num.toFloat());
+}
+
+bool Fixed::operator<(Fixed const &num) {
+	return (this->toFloat() < num.toFloat());
+}
+
+bool Fixed::operator>=(Fixed const &num) {
+	return (this->toFloat() >= num.toFloat());
+}
+
+bool Fixed::operator<=(Fixed const &num) {
+	return (this->toFloat() <= num.toFloat());
+}
+
+bool Fixed::operator==(Fixed const &num) {
+	return (this->toFloat() == num.toFloat());
+}
+
+bool Fixed::operator!=(Fixed const &num) {
+	return (this->toFloat() != num.toFloat());
+}
+
 Fixed Fixed::operator+(Fixed const &num) {
 	Fixed sum = this->toFloat() + num.toFloat();
 	return sum;
 }
 
-// Subtraction Overload Operators
 Fixed Fixed::operator-(Fixed const &num) {
 	Fixed difference = this->toFloat() - num.toFloat();
 	return difference;
 }
 
-// Multiplication Overload Operators
 Fixed Fixed::operator*(Fixed const &num) {
 	Fixed product = this->toFloat() * num.toFloat();
 	return product;
 }
 
-// Division Overload Operators
 Fixed Fixed::operator/(Fixed const &num) {
 	Fixed quotient = this->toFloat() / num.toFloat();
 	return quotient;
@@ -78,17 +97,11 @@ Fixed Fixed::operator--(int) {
 	return postDecrement;
 }
 
-Fixed::~Fixed() {
-	// std::cout << "Destructor called" << std::endl;
-}
-
 Fixed::Fixed(int const a_integer) {
-	// std::cout << "Int constructor called" << std::endl;
 	this->m_fixedPoint = a_integer << this->m_fractionalBit;
 }
 
 Fixed::Fixed(float const a_float) {
-	// std::cout << "Float constructor called" << std::endl;
 	this->m_fixedPoint = roundf(a_float * (1 << this->m_fractionalBit));
 }
 
