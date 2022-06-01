@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:05:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/12 23:48:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:59:29 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ FragTrap::~FragTrap(void) {
 }
 
 void FragTrap::hiFivesGuys(void) {
-	std::cout << F_MODEL << this->m_name << HIGH_FIVE << std::endl;
+	std::cout << F_MODEL << this->m_name << HIGH_FIVE;
 }

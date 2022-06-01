@@ -6,13 +6,13 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:51:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/12 23:27:41 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:58:19 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) {
+ClapTrap::ClapTrap() {
 	std::cout << CREATE_U << std::endl;
 	this->m_name = UNKNOWN;
 	this->m_hitPoints = 10;
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(std::string modelName) {
 	this->m_hitPoints = 10;
 	this->m_energyPoints = 10;
 	this->m_attackDamage = 0;
-	std::cout << CREATE << m_name << std::endl << std::endl;
+	std::cout << CREATE << m_name << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &source) {
@@ -42,10 +42,10 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &data) {
 	this->m_hitPoints = data.m_hitPoints;
 	this->m_energyPoints = data.m_energyPoints;
 	this->m_attackDamage = data.m_attackDamage;
-	return (*this);
+	return *this;
 }
 
-ClapTrap::~ClapTrap(void) {
+ClapTrap::~ClapTrap() {
 	std::cout << MODEL << this->m_name << DESTROYED << std::endl;
 }
 
@@ -53,14 +53,12 @@ void ClapTrap::attack(const std::string &target) {
 	if (!this->m_energyPoints) {
 		std::cout << RED MODEL << this->m_name << NO_ENERGY << std::endl;
 		return;
-	}
-	if (!target.length()) {
+	} else if (!target.length()) {
 		std::cout << MODEL << this->m_name << ATK_01 NO_TARGET ATK_02;
-		std::cout << this->m_attackDamage << ATK_03 << std::endl;
 	} else {
 		std::cout << MODEL << this->m_name << ATK_01 << target << ATK_02;
-		std::cout << this->m_attackDamage << ATK_03 << std::endl;
 	}
+	std::cout << this->m_attackDamage << ATK_03 << std::endl;
 	this->m_energyPoints--;
 }
 
@@ -83,7 +81,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		return;
 	}
 	if ((int)amount < 0) {
-		std::cout << INVALID_R << (int)amount << "]" << std::endl;
+		std::cout << RED INVALID_R << (int)amount << "]" GREEN << std::endl;
 		return;
 	}
 	std::cout << MODEL << this->m_name << REP_01 << amount << REP_02 << std::endl;

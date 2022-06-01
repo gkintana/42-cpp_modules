@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 21:49:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/31 22:01:31 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/01 09:34:45 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void comparisonTests() {
 }
 
 void arithmeticTests() {
-	Fixed n1 = 6, n2 = 1, n3 = 2022;
+	Fixed n1 = 1000, n2 = 5, n3 = 2.5f;
 
 	std::cout << "  " << n1 << " + " << n2 << " + " << n3 << " = " << (n1 + n2 + n3) << std::endl
 			  << "  " << n1 << " - " << n2 << " - " << n3 << " = " << (n1 - n2 - n3) << std::endl

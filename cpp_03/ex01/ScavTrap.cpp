@@ -6,13 +6,13 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:45:30 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/12 23:41:20 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:02:18 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) {
+ScavTrap::ScavTrap() {
 	std::cout << S_CREATE_U << std::endl << std::endl;
 	this->m_name = UNKNOWN;
 	this->m_hitPoints = 100;
@@ -42,10 +42,10 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &data) {
 	this->m_hitPoints = data.m_hitPoints;
 	this->m_energyPoints = data.m_energyPoints;
 	this->m_attackDamage = data.m_attackDamage;
-	return (*this);
+	return *this;
 }
 
-ScavTrap::~ScavTrap(void) {
+ScavTrap::~ScavTrap() {
 	std::cout << S_MODEL << this->m_name << DESTROYED;
 }
 
@@ -56,14 +56,13 @@ void ScavTrap::attack(const std::string &target) {
 	}
 	if (!target.length()) {
 		std::cout << S_MODEL << this->m_name << ATK_01 NO_TARGET ATK_02;
-		std::cout << this->m_attackDamage << ATK_03 << std::endl;
 	} else {
 		std::cout << S_MODEL << this->m_name << ATK_01 << target << ATK_02;
-		std::cout << this->m_attackDamage << ATK_03 << std::endl;
 	}
+	std::cout << this->m_attackDamage << ATK_03 << std::endl;
 	this->m_energyPoints--;
 }
 
-void ScavTrap::guardGate(void) {
-	std::cout << S_MODEL << this->m_name << S_GKM << std::endl;
+void ScavTrap::guardGate() {
+	std::cout << S_MODEL << this->m_name << S_GKM;
 }

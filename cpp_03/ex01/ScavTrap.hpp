@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:45:28 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/12 23:41:00 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:41:24 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@
 /*---------------------------------- CLASS ----------------------------------*/
 class ScavTrap: public ClapTrap {
 	public:
-		ScavTrap(void);
+		ScavTrap();
 		ScavTrap(std::string modelName);
 		ScavTrap(ScavTrap const &source);
-		~ScavTrap(void);
+		~ScavTrap();
 		ScavTrap &operator=(ScavTrap const &data);
 		void attack(const std::string &target);
-		void guardGate(void);
+		void guardGate();
 };
 
 #endif
