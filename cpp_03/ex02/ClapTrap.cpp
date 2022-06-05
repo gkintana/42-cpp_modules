@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:51:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/01 14:59:41 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:27:43 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(ClapTrap const &source) {
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &data) {
 	std::cout << CLONE CAO << std::endl;
-	this->m_name = data.m_attackDamage;
+	this->m_name = data.m_name;
 	this->m_hitPoints = data.m_hitPoints;
 	this->m_energyPoints = data.m_energyPoints;
 	this->m_attackDamage = data.m_attackDamage;

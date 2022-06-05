@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 20:44:06 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/01 13:03:06 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:51:33 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(void) {
 	}
 	std::cout << YELLOW LINE LINE_E_ATK LINE;
 	for (int i = 0; i < 11; i++) {
-		modelDummy.attack(strCases[i % 10]);
+		modelDummy.attack(strCases[i]);
 	}
 	std::cout << YELLOW LINE LINE_E_REP LINE;
 	for (int i = 0; i < 11; i++) {

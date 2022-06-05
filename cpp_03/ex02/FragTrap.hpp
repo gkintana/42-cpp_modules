@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:03:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/12 23:48:35 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:14:37 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class FragTrap: public ClapTrap {
 		FragTrap(void);
 		FragTrap(std::string modelName);
 		FragTrap(FragTrap const &source);
-		~FragTrap(void);
 		FragTrap &operator=(FragTrap const &data);
+		~FragTrap(void);
 		void hiFivesGuys(void);
 };
 

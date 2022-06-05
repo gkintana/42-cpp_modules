@@ -6,14 +6,14 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:51:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/01 14:58:19 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:27:12 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-	std::cout << CREATE_U << std::endl;
+	std::cout << CREATE_U;
 	this->m_name = UNKNOWN;
 	this->m_hitPoints = 10;
 	this->m_energyPoints = 10;
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(ClapTrap const &source) {
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &data) {
 	std::cout << CLONE CAO << std::endl;
-	this->m_name = data.m_attackDamage;
+	this->m_name = data.m_name;
 	this->m_hitPoints = data.m_hitPoints;
 	this->m_energyPoints = data.m_energyPoints;
 	this->m_attackDamage = data.m_attackDamage;
@@ -46,7 +46,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &data) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << MODEL << this->m_name << DESTROYED << std::endl;
+	std::cout << MODEL << this->m_name << DESTROYED;
 }
 
 void ClapTrap::attack(const std::string &target) {

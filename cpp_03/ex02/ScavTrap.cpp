@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:45:30 by gkintana          #+#    #+#             */
-/*   Updated: 2022/03/10 12:03:26 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:27:50 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ScavTrap::ScavTrap(ScavTrap const &source): ClapTrap(source) {
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &data) {
 	std::cout << CLONE CAO << std::endl;
-	this->m_name = data.m_attackDamage;
+	this->m_name = data.m_name;
 	this->m_hitPoints = data.m_hitPoints;
 	this->m_energyPoints = data.m_energyPoints;
 	this->m_attackDamage = data.m_attackDamage;

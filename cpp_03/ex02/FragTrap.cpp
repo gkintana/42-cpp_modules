@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:05:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/01 14:59:29 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:28:17 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ FragTrap::FragTrap(FragTrap const &source): ClapTrap(source) {
 
 FragTrap &FragTrap::operator=(FragTrap const &data) {
 	std::cout << F_CLONE CAO << std::endl;
-	this->m_name = data.m_attackDamage;
+	this->m_name = data.m_name;
 	this->m_hitPoints = data.m_hitPoints;
 	this->m_energyPoints = data.m_energyPoints;
 	this->m_attackDamage = data.m_attackDamage;
