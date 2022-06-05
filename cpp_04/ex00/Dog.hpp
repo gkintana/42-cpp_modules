@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 09:55:47 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/17 21:30:24 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:14:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@
 /*---------------------------------- CLASS ----------------------------------*/
 class Dog: public Animal {
 	public:
-		Dog(void);
+		Dog();
 		Dog(Dog const &source);
-		~Dog(void);
+		~Dog();
 		Dog &operator=(Dog const &data);
-		void makeSound(void) const;
+		void makeSound() const;
 };
 
 #endif

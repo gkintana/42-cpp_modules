@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:23:10 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/18 16:22:38 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:15:09 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@
 /*---------------------------------- CLASS ----------------------------------*/
 class WrongCat: public WrongAnimal {
 	public:
-		WrongCat(void);
+		WrongCat();
 		WrongCat(WrongCat const &source);
 		WrongCat &operator=(WrongCat const &data);
-		~WrongCat(void);
-		void makeSound(void) const;
+		~WrongCat();
+		void makeSound() const;
 };
 
 #endif

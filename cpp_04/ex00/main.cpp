@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/18 13:25:08 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:16:12 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-void doRecommendedTests(void) {
+void doSubjectTests() {
 	const Animal *meta = new Animal;
 	const Animal *j = new Dog;
 	const Animal *i = new Cat;
@@ -33,7 +33,7 @@ void doRecommendedTests(void) {
 	delete meta;
 }
 
-void doWrongAnimalTests(void) {
+void doWrongAnimalTests() {
 	const WrongAnimal *wrongAnimal = new WrongAnimal;
 	const WrongAnimal *wrongCat = new WrongCat;
 
@@ -47,12 +47,10 @@ void doWrongAnimalTests(void) {
 	delete wrongAnimal;
 }
 
-void doExtraTests(void) {
-	Animal animal;
+void doExtraTests() {
 	Dog dogClass;
 	Cat catClass;
-	Animal &dog = dogClass;
-	Animal &cat = catClass;
+	Animal animal, &dog = dogClass, &cat = catClass;
 	
 	std::cout << CYAN << animal.getType() << ": ";
 	animal.makeSound();
@@ -63,9 +61,9 @@ void doExtraTests(void) {
 	std::cout << DEFAULT;
 }
 
-int	main(void) {
-	std::cout << YELLOW "Recommended Tests" DEFAULT << std::endl;
-	doRecommendedTests();
+int	main() {
+	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
+	doSubjectTests();
 	std::cout << std::endl << YELLOW "Wrong Animal Tests" DEFAULT << std::endl;
 	doWrongAnimalTests();
 	std::cout << std::endl << YELLOW "Extra Tests" DEFAULT << std::endl;

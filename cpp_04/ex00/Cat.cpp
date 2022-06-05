@@ -6,13 +6,13 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:25:33 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/17 22:21:39 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:13:48 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) {
+Cat::Cat() {
 	std::cout << GREEN CAT_CON DEFAULT << std::endl;
 	this->m_type = CAT;
 }
@@ -28,10 +28,10 @@ Cat &Cat::operator=(Cat const &data) {
 	return *this;
 }
 
-Cat::~Cat(void) {
+Cat::~Cat() {
 	std::cout << RED CAT_DEC DEFAULT << std::endl;
 }
 
-void Cat::makeSound(void) const {
+void Cat::makeSound() const {
 	std::cout << CAT_SND << std::endl;
 }

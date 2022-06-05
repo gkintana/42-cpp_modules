@@ -6,13 +6,13 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 09:58:40 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/17 22:23:38 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:14:18 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) {
+Dog::Dog() {
 	std::cout << GREEN DOG_CON DEFAULT << std::endl;
 	this->m_type = DOG;
 }
@@ -28,10 +28,10 @@ Dog	&Dog::operator=(Dog const &data) {
 	return *this;
 }
 
-Dog::~Dog(void) {
+Dog::~Dog() {
 	std::cout << RED DOG_DEC DEFAULT << std::endl;
 }
 
-void Dog::makeSound(void) const {
+void Dog::makeSound() const {
 	std::cout << DOG_SND << std::endl;
 }

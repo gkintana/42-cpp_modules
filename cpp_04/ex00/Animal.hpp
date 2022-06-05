@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:46:57 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/17 21:49:59 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:13:38 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ class Animal {
 	protected:
 		std::string m_type;
 	public:
-		Animal(void);
+		Animal();
 		Animal(Animal const &source);
-		virtual ~Animal(void);
+		virtual ~Animal();
 		Animal &operator=(Animal const &data);
-		std::string getType(void) const;
-		virtual void makeSound(void) const;
+		std::string getType() const;
+		virtual void makeSound() const;
 };
 
 #endif
