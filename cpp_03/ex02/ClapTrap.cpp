@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:51:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/05 15:27:43 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 21:50:50 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ ClapTrap::~ClapTrap() {
 }
 
 void ClapTrap::attack(const std::string &target) {
-	if (!this->m_energyPoints) {
-		std::cout << RED MODEL << this->m_name << NO_ENERGY << std::endl;
+	if (!this->m_energyPoints || !this->m_hitPoints) {
+		std::cout << RED MODEL << this->m_name << (!this->m_energyPoints ? NO_ENERGY : NO_HEALTH) << std::endl;
 		return;
 	} else if (!target.length()) {
 		std::cout << MODEL << this->m_name << ATK_01 NO_TARGET ATK_02;
@@ -63,7 +63,7 @@ void ClapTrap::attack(const std::string &target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if ((int)amount < 0) {		// turns UINT_MAX into 0
+	if ((int)amount < 0) {
 		amount = 0;
 	}
 	std::cout << MODEL << this->m_name << DMG_01 << amount << ATK_03 << std::endl;
@@ -76,8 +76,8 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (!this->m_energyPoints) {
-		std::cout << RED MODEL << this->m_name << NO_ENERGY << std::endl;
+	if (!this->m_energyPoints || !this->m_hitPoints) {
+		std::cout << RED MODEL << this->m_name << (!this->m_energyPoints ? NO_ENERGY : NO_HEALTH) << std::endl;
 		return;
 	}
 	if ((int)amount < 0) {

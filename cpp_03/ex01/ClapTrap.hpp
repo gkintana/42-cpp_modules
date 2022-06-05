@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:27:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/05 15:13:20 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 21:43:12 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@
 #define DESTROYED	" has been destroyed\n"
 #define NO_TARGET	"???"
 #define NO_ENERGY	" ran out of energy points"
+#define NO_HEALTH	" ran out of hit points. Unable to complete task"
 #define INVALID_D	"Invalid damage amount of ["
 #define INVALID_R	"Invalid repair amount of ["
 

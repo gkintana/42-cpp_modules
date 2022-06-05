@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:45:30 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/05 15:27:50 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/05 21:52:39 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ ScavTrap::~ScavTrap(void) {
 }
 
 void	ScavTrap::attack(const std::string &target) {
-	if (!this->m_energyPoints) {
-		std::cout << RED S_MODEL << this->m_name << NO_ENERGY << std::endl;
+	if (!this->m_energyPoints || !this->m_hitPoints) {
+		std::cout << RED S_MODEL << this->m_name << (!this->m_energyPoints ? NO_ENERGY : NO_HEALTH) << std::endl;
 		return;
 	}
 	if (!target.length()) {
