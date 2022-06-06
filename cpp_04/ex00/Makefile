@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/13 23:54:36 by gkintana          #+#    #+#              #
-#    Updated: 2022/05/17 22:46:18 by gkintana         ###   ########.fr        #
+#    Updated: 2022/06/06 23:40:45 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ SRCS		=	main.cpp \
 
 OBJS		=	$(SRCS:%cpp=%o)
 
-CC			=	c++ -std=c++98
-CFLAGS		=	-Wall -Wextra -Werror
+CXX			=	c++
+CPPFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 RM			=	rm -rf
 
 DEFAULT		=	"\033[0m"
@@ -32,21 +32,21 @@ CYAN		=	"\033[3;36m"
 
 %.o : %.cpp
 			@printf $(CYAN)
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CXX) $(CPPFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			@$(CC) $(CFLAGS) $(OBJS) -o $@
+			@$(CXX) $(CPPFLAGS) $(OBJS) -o $@
 			@echo $(DEFAULT)$(GREEN)"C++ Module 04: Exercise 00 Ready"$(DEFAULT)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted object files 🗃️"$(DEFAULT)
+			@echo $(RED)"Deleted exercise 00 object files"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted executable file 😢"$(DEFAULT)
+			@echo $(RED)"Deleted exercise 00 executable file"$(DEFAULT)
 
 re:			fclean all
 

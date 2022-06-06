@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:46:57 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/05 23:13:38 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/06 23:55:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,6 @@
 #define PURPLE		"\033[0;35m"
 #define CYAN		"\033[0;36m"
 
-/*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
-#define ANIMAL_CON	"Animal Constructor"
-#define ANIMAL_CPY	"Animal Copy Constructor"
-#define ANIMAL_CAO	"Animal Copy Assignment Operator"
-#define ANIMAL_DEC	"Animal Deconstructor"
-#define ANIMAL_SND	"\"Rawr\""
-#define ANIMAL		"Tiger"
-
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>
 
@@ -39,8 +31,8 @@ class Animal {
 	public:
 		Animal();
 		Animal(Animal const &source);
-		virtual ~Animal();
 		Animal &operator=(Animal const &data);
+		virtual ~Animal();
 		std::string getType() const;
 		virtual void makeSound() const;
 };

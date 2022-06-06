@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/05 23:16:12 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/06 23:48:04 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,17 @@ void doWrongAnimalTests() {
 	std::cout << wrongCat->getType() << ": ";
 	wrongCat->makeSound();
 	std::cout << DEFAULT;
-	
+
 	delete wrongCat;
 	delete wrongAnimal;
 }
 
 void doExtraTests() {
+	Animal animal;
 	Dog dogClass;
 	Cat catClass;
-	Animal animal, &dog = dogClass, &cat = catClass;
-	
+	Animal &dog = dogClass, &cat = catClass;
+
 	std::cout << CYAN << animal.getType() << ": ";
 	animal.makeSound();
 	std::cout << dog.getType() << ": ";
@@ -64,9 +65,9 @@ void doExtraTests() {
 int	main() {
 	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
 	doSubjectTests();
-	std::cout << std::endl << YELLOW "Wrong Animal Tests" DEFAULT << std::endl;
+	std::cout << YELLOW "\nWrong Animal Tests" DEFAULT << std::endl;
 	doWrongAnimalTests();
-	std::cout << std::endl << YELLOW "Extra Tests" DEFAULT << std::endl;
+	std::cout << YELLOW "\nExtra Tests" DEFAULT << std::endl;
 	doExtraTests();
 
 	return 0;

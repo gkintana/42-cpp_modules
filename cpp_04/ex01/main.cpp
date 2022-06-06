@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/18 23:52:35 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 00:20:46 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "Brain.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 void doRecommendedTests() {
 	const Animal *j = new Dog;
@@ -26,13 +24,17 @@ void doRecommendedTests() {
 }
 
 void doArrayTests() {
-	Animal *array[10];
+	int size = 6;
+	Animal *array[size];
 
-	for (int i = 0; i < 10 / 2; i++) {
-		array[i] = new Dog;
-	} for (int i = 5; i < 10; i++) {
-		array[i] = new Cat;
-	} for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < size; i++) {
+		if (i < size / 2) {
+			array[i] = new Dog;
+		} else {
+			array[i] = new Cat;
+		}
+	}
+	for (int i = 0; i < size; i++) {
 		delete array[i];
 	}
 }
@@ -66,5 +68,7 @@ int	main(void) {
 	doArrayTests();
 	std::cout << std::endl << YELLOW "Deep Copy Tests" DEFAULT << std::endl;
 	doDeepCopyTests();
+	std::cout << std::endl << YELLOW "Show Idea Tests" DEFAULT << std::endl;
+
 	return 0;
 }

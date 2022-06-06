@@ -6,26 +6,18 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:23:10 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/05 23:15:09 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 00:41:48 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGCAT_HPP
 #define WRONGCAT_HPP
 
-/*------------------------ PRINT TO STANDARD OUTPUT -------------------------*/
-#define W_CAT_CON	"Wrong Cat Constructor"
-#define W_CAT_CPY	"Wrong Cat Copy Constructor"
-#define W_CAT_CAO	"Wrong Cat Copy Assignment Operator"
-#define W_CAT_DEC	"Wrong Cat Deconstructor"
-#define W_CAT_SND	"\"Bark!\""
-#define W_CAT		"Cat"
-
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include "WrongAnimal.hpp"
 
 /*---------------------------------- CLASS ----------------------------------*/
-class WrongCat: public WrongAnimal {
+class WrongCat : public WrongAnimal {
 	public:
 		WrongCat();
 		WrongCat(WrongCat const &source);
