@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/07 22:32:33 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/08 00:08:17 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,33 @@ void doArrayTests() {
 }
 
 void doDeepCopyTests() {
-	Dog *dog = new Dog;
-
+	Dog dog;
 	std::cout << CYAN "Dog: ";
-	dog->makeSound();
-	dog->shareIdeas();
+	dog.makeSound();
+	dog.shareIdeas();
+	
+	Dog dogCopy(dog);
+	std::cout << CYAN "Dog Clone: ";
+	dogCopy.makeSound();
+	dogCopy.shareIdeas();
 
-	Dog dogCopyCon(*dog);
-	std::cout << CYAN "Dog Clone from Copy Constructor: ";
-	dogCopyCon.makeSound();
-	dogCopyCon.shareIdeas();
+	Cat cat;
+	std::cout << CYAN "Cat: ";
+	cat.makeSound();
+	cat.shareIdeas();
 
-	Dog dogCopyOp = *dog;
-	std::cout << CYAN "Dog Clone from Copy Assignment Operator: ";
-	dogCopyOp.makeSound();
-	dogCopyOp.shareIdeas();
-
-	delete dog;
+	Cat catCopy = cat;
+	std::cout << CYAN "Cat Clone: ";
+	catCopy.makeSound();
+	catCopy.shareIdeas();
 }
 
 int	main() {
 	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
 	doSubjectTests();
-	std::cout << std::endl << YELLOW "Animal Array Tests" DEFAULT << std::endl;
+	std::cout << YELLOW "\nAnimal Array Tests" DEFAULT << std::endl;
 	doArrayTests();
-	std::cout << std::endl << YELLOW "Deep Copy Tests" DEFAULT << std::endl;
+	std::cout << YELLOW "\nDeep Copy Tests" DEFAULT << std::endl;
 	doDeepCopyTests();
 
 	return 0;
