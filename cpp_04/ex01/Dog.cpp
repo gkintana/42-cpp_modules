@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 09:58:40 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/07 00:06:33 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:41:46 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog() {
 	this->m_brain = new Brain();
 }
 
-Dog::Dog(Dog const &source) {
+Dog::Dog(Dog const &source) : Animal() {
 	std::cout << GREEN "Dog Copy Constructor" DEFAULT << std::endl;
 	*this = source;
 }

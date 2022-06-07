@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:25:33 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/06 21:55:24 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:13:48 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Cat::Cat() {
 	this->m_type = "Cat";
 }
 
-Cat::Cat(Cat const &source) {
+Cat::Cat(Cat const &source) : Animal() {
 	std::cout << GREEN "Cat Copy Constructor" DEFAULT << std::endl;
 	*this = source;
 }

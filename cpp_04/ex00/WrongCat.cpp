@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:19:59 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/06 23:31:00 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:48:35 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ WrongCat::WrongCat() {
 	this->m_type = "Cat";
 }
 
-WrongCat::WrongCat(WrongCat const &source) {
+WrongCat::WrongCat(WrongCat const &source) : WrongAnimal() {
 	std::cout << GREEN "Wrong Cat Copy Constructor" DEFAULT << std::endl;
 	*this = source;
 }

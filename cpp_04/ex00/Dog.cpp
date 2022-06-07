@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 09:58:40 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/06 23:18:17 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:48:22 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Dog::Dog() {
 	this->m_type = "Dog";
 }
 
-Dog::Dog(Dog const &source) {
+Dog::Dog(Dog const &source) : Animal() {
 	std::cout << GREEN "Dog Copy Constructor" DEFAULT << std::endl;
 	*this = source;
 }
