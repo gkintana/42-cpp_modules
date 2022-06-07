@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:46:57 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/06 23:28:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:45:36 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ class WrongAnimal {
 		WrongAnimal();
 		WrongAnimal(WrongAnimal const &source);
 		WrongAnimal &operator=(WrongAnimal const &data);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 		std::string getType() const;
-		virtual void makeSound() const;
+		void makeSound() const;
 };
 
 #endif

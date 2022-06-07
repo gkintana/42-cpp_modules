@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:07:20 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/06 23:30:23 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:48:38 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ std::string WrongAnimal::getType() const {
 }
 
 void WrongAnimal::makeSound() const {
-	std::cout << "\"Meow\"" << std::endl;
+	std::cout << "\"Bark!\"" << std::endl;
 }
