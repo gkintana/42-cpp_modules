@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/07 15:47:14 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:03:11 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-void doRecommendedTests() {
+void doSubjectTests() {
 	const Animal *j = new Dog;
 	const Animal *i = new Cat;
 
@@ -25,7 +25,7 @@ void doRecommendedTests() {
 
 void doArrayTests() {
 	int size = 6;
-	Animal *array[size];
+	const Animal *array[size];
 
 	for (int i = 0; i < size; i++) {
 		if (i < size / 2) {
@@ -34,40 +34,34 @@ void doArrayTests() {
 			array[i] = new Cat;
 		}
 	}
-	for (int i = 0; i < size; i++) {
+	for (int i = size - 1; i > -1; i--) {
 		delete array[i];
 	}
 }
 
 void doDeepCopyTests() {
 	Dog *dog = new Dog;
-	Cat *cat = new Cat;
+
+	std::cout << CYAN "Dog: ";
+	dog->makeSound();
+	dog->shareIdeas();
 
 	Dog dogCopyCon(*dog);
-	Dog dogCopyOp = *dog;
-	Cat catCopyCon(*cat);
-	Cat catCopyOp = *cat;
-
-	cat->shareIdeas();
-
-	delete cat;
-	delete dog;
-	
 	std::cout << CYAN "Dog Clone from Copy Constructor: ";
 	dogCopyCon.makeSound();
+	dogCopyCon.shareIdeas();
+
+	Dog dogCopyOp = *dog;
 	std::cout << CYAN "Dog Clone from Copy Assignment Operator: ";
 	dogCopyOp.makeSound();
-	std::cout << CYAN "Cat Clone from Copy Constructor: ";
-	catCopyCon.makeSound();
-	catCopyCon.shareIdeas();
-	std::cout << CYAN "Cat Clone from Copy Assignment Operator: ";
-	catCopyOp.makeSound();
-	catCopyOp.shareIdeas();
+	dogCopyOp.shareIdeas();
+
+	delete dog;
 }
 
 int	main(void) {
-	std::cout << YELLOW "Recommended Tests" DEFAULT << std::endl;
-	doRecommendedTests();
+	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
+	doSubjectTests();
 	std::cout << std::endl << YELLOW "Animal Array Tests" DEFAULT << std::endl;
 	doArrayTests();
 	std::cout << std::endl << YELLOW "Deep Copy Tests" DEFAULT << std::endl;
