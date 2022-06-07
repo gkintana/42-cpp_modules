@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/07 22:03:11 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:32:33 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void doDeepCopyTests() {
 	delete dog;
 }
 
-int	main(void) {
+int	main() {
 	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
 	doSubjectTests();
 	std::cout << std::endl << YELLOW "Animal Array Tests" DEFAULT << std::endl;
