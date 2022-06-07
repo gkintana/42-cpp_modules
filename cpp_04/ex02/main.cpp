@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:43:39 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/07 23:03:53 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/08 00:18:51 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 int	main() {
 	const Animal *j = new Dog;
 	const Animal *i = new Cat;
+
+	/*
+		in the event that we uncomment the following code below it should
+		display some error messages during compilation since we are trying to
+		instantiate an object from a class with a pure virtual function, also
+		known as an abstract class
+	*/
 
 	// const Animal k;
 	// k.makeSound();
