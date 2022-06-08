@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:25:33 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/07 21:40:41 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/08 09:55:09 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void Cat::setIdeas() {
 								  "drink water 🌊",
 								  "watch a movie 📺" };
 	for (int i = 0; i < 100; i++) {
-		this->m_brain->m_ideas[i] = dailyGoals[std::rand() % 4];
+		this->m_brain->m_ideas[i] = dailyGoals[std::rand() % 5];
 	}
 }
 

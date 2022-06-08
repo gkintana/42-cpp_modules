@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 09:58:40 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/07 21:43:24 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/08 09:56:18 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void Dog::setIdeas() {
 								  "drink water 🌊",
 								  "watch a movie 📺" };
 	for (int i = 0; i < 100; i++) {
-		this->m_brain->m_ideas[i] = dailyGoals[std::rand() % 4];
+		this->m_brain->m_ideas[i] = dailyGoals[std::rand() % 5];
 	}
 }
 
