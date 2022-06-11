@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:15 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/11 20:10:54 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/12 00:51:38 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@
 #define RED			"\033[0;31m"
 #define GREEN		"\033[0;32m"
 #define YELLOW		"\033[1;4;33m"
+#define YELLOW2		"\033[0;33m"
 #define PURPLE		"\033[0;35m"
 #define CYAN		"\033[0;36m"
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>
+#include "Form.hpp"
 
 /*---------------------------------- CLASS ----------------------------------*/
+class Form;
+
 class Bureaucrat {
 	private:
 		std::string m_name;
@@ -50,6 +54,7 @@ class Bureaucrat {
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
+		void signForm(Form &f);
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &info);

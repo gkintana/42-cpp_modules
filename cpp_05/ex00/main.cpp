@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/11 19:38:43 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/12 02:20:22 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,34 +25,32 @@ int main() {
 	decrementTests();
 }
 
-void basicTests() {
+void basicTryCatch(std::string name, int grade, bool newline) {
+	if (newline) {
+		std::cout << std::endl;
+	}
 	try {
-		Bureaucrat b;
+		Bureaucrat b(name, grade);
 		std::cout << b;
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
+}
+
+void basicTests() {
+	basicTryCatch("Norman", 100, false);
+	basicTryCatch("Holly", 0, true);
+	basicTryCatch("Leo", 200, true);
 
 	std::cout << std::endl;
 	try {
-		Bureaucrat b("Fred", 0);
+		Bureaucrat b("Charlie", 42);
 		Bureaucrat bCopy = b;
 		std::cout << bCopy;
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	std::cout << std::endl;
-	try {
-		Bureaucrat b("Steven", 200);
-		Bureaucrat bCopy;
-		bCopy = b;
-		std::cout << b;
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 

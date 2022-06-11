@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:13 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 02:07:47 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/12 01:31:28 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat() {
 Bureaucrat::Bureaucrat(std::string name, int grade) {
 	std::cout << GREEN "Bureaucrat Constructor" DEFAULT << std::endl;
 	this->m_name = name;
-	// try {
+	try {
 		if (grade > 150) {
 			throw Bureaucrat::GradeTooLowException();
 		} else if (grade < 1) {
@@ -29,11 +29,11 @@ Bureaucrat::Bureaucrat(std::string name, int grade) {
 		} else {
 			this->m_grade = grade;
 		}
-	// }
-	// catch (std::exception &e) {
-	// 	std::cerr << e.what() << CYAN "\nBureaucrat grade set to 150" DEFAULT << std::endl;
-	// 	this->m_grade = 150;
-	// }
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << CYAN "\nBureaucrat grade set to 150" DEFAULT << std::endl;
+		this->m_grade = 150;
+	}
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &source) {
@@ -83,6 +83,21 @@ void Bureaucrat::decrementGrade() {
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::signForm(Form &f) {
+	try {
+		if (this->getGrade() <= f.getGradeToSign()) {
+			std::cout << GREEN << this->m_name << " signed " << f.getFormName() << DEFAULT << std::endl;
+			f.updateSign();
+		} else {
+			throw std::out_of_range("their grade is below the specified grade to sign the form");
+		}
+	}
+	catch (std::exception &e) {
+		std::cerr << RED << this->m_name << " couldn't sign " << f.getFormName()
+				  << " because " << e.what() << DEFAULT << std::endl;
 	}
 }
 
