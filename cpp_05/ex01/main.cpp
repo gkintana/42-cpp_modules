@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 21:41:01 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/13 00:05:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int main() {
 	signFormTests();
 }
 
-void basicTryCatch(std::string name, int signGrade, int execGrade, bool newline) {
-	if (newline) {
-		std::cout << std::endl;
-	}
+void basicTryCatch(std::string name, int signGrade, int execGrade) {
+	std::cout << std::endl;
 	try {
 		Form f(name, signGrade, execGrade);
 		std::cout << f;
@@ -38,9 +36,14 @@ void basicTryCatch(std::string name, int signGrade, int execGrade, bool newline)
 }
 
 void basicTests() {
-	basicTryCatch("Form No. 1A", 125, 100, false);
-	basicTryCatch("Form No. 2B", 0, 100, true);
-	basicTryCatch("Form No. 3C", 125, 1000, true);
+	{
+		Form f;
+		std::cout << f;
+	}
+	
+	basicTryCatch("Form No. 1A", 125, 100);
+	basicTryCatch("Form No. 2B", 0, 100);
+	basicTryCatch("Form No. 3C", 125, 1000);
 
 	try {
 		std::cout << std::endl;

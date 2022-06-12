@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/11 20:10:00 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/13 01:19:16 by gkintana         ###   ########.fr       */
+/*   Created: 2022/06/08 12:00:15 by gkintana          #+#    #+#             */
+/*   Updated: 2022/06/12 00:51:38 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
+/*------------------------------- COLOR CODES -------------------------------*/
+#define DEFAULT		"\033[0m"
+#define RED			"\033[0;31m"
+#define GREEN		"\033[0;32m"
+#define YELLOW		"\033[1;4;33m"
+#define YELLOW2		"\033[0;33m"
+#define PURPLE		"\033[0;35m"
+#define CYAN		"\033[0;36m"
 
 /*--------------------------------- LIBRARY ---------------------------------*/
-#include "Bureaucrat.hpp"
+#include <iostream>
+#include "Form.hpp"
 
 /*---------------------------------- CLASS ----------------------------------*/
-class Bureaucrat;
+class Form;
 
-class Form {
+class Bureaucrat {
 	private:
-		const std::string m_name;
-		bool m_signed;
-		const int m_gradeToSign;
-		const int m_gradeToExecute;
+		std::string m_name;
+		int m_grade;
 
 		class GradeTooHighException : public std::exception {
 			public:
@@ -36,20 +44,19 @@ class Form {
 		};
 
 	public:
-		Form();
-		Form(const std::string name, const int gradeToSign, const int gradeToExecute);
-		Form(Form const &source);
-		Form &operator=(Form const &data);
-		~Form();
+		Bureaucrat();
+		Bureaucrat(Bureaucrat const &source);
+		Bureaucrat(std::string name, int grade);
+		Bureaucrat &operator=(Bureaucrat const &data);
+		~Bureaucrat();
 
-		void beSigned(Bureaucrat &b);
-		std::string getFormName() const;
-		bool hasBeenSigned() const;
-		int getGradeToSign() const;
-		int getGradeToExecute() const;
-		void updateSign();
+		std::string getName() const;
+		int getGrade() const;
+		void incrementGrade();
+		void decrementGrade();
+		void signForm(Form &f);
 };
 
-std::ostream &operator<<(std::ostream &out, Form const &info);
+std::ostream &operator<<(std::ostream &out, Bureaucrat const &info);
 
 #endif

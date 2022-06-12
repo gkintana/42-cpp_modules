@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 20:10:00 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/13 01:19:16 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/13 01:19:01 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ class Form {
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 		void updateSign();
+		virtual void execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, Form const &info);
