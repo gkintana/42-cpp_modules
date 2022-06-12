@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 20:10:03 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 02:00:15 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/12 21:22:19 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Form::Form() : m_name("Standard Form"),
 			   m_signed(false),
-			   m_gradeToSign(42),
-			   m_gradeToExecute(1) {
+			   m_gradeToSign(100),
+			   m_gradeToExecute(50) {
 	std::cout << GREEN "Form Default Constructor" DEFAULT << std::endl;
 }
 
@@ -37,14 +37,16 @@ Form::Form(Form const &source) : m_name(source.m_name),
 								 m_signed(source.m_signed),
 								 m_gradeToSign(source.m_gradeToSign),
 								 m_gradeToExecute(source.m_gradeToExecute) {
-	std::cout << "Form Copy Constructor" << std::endl;
+	std::cout << GREEN "Form Copy Constructor" DEFAULT << std::endl;
 }
 
 Form &Form::operator=(Form const &data) {
-	std::cout << "Form Copy Assignment Operator" << std::endl;
+	std::cout << GREEN "Form Copy Assignment Operator" DEFAULT << std::endl;
 	if (this != &data) {
-		;
-		// this->m_name = data.m_name;
+		const_cast <std::string &>(m_name) = data.m_name;
+		this->m_signed = data.m_signed;
+		const_cast <int &>(m_gradeToSign) = data.m_gradeToSign;
+		const_cast <int &>(m_gradeToExecute) = data.m_gradeToExecute;
 	}
 	return *this;
 }

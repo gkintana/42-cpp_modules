@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 02:27:17 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/12 21:41:01 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,37 @@ void basicTests() {
 	basicTryCatch("Form No. 2B", 0, 100, true);
 	basicTryCatch("Form No. 3C", 125, 1000, true);
 
-	// copy cons
+	try {
+		std::cout << std::endl;
+		Form f("Form No. 4D", 123, 45);
+		Form fCopy1 = f;
+		std::cout << fCopy1;
+
+		std::cout << std::endl;
+		Form fCopy2;
+		fCopy2 = f;
+		std::cout << fCopy2;
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
 }
 
-void signAttempt(Bureaucrat &b, Form &f, bool newline) {
+/*
+   signType 1 = beSigned();
+   signType 2 = signForm();
+*/
+void signAttempt(Bureaucrat &b, Form &f, bool newline, int signType) {
 	std::cout << b << std::endl
 			  << CYAN << b.getName() << " attempts to sign "
 			  << f.getFormName() << DEFAULT << std::endl;
-	f.beSigned(b);
+			  
+	if (signType == 1) {
+		f.beSigned(b);
+	} else {
+		b.signForm(f);
+	}
+	
 	if (newline) {
 		std::cout << f << std::endl;
 	} else {
@@ -62,10 +85,10 @@ void beSignedTests() {
 	std::cout << f << std::endl;
 
 	Bureaucrat b1("Howard", 100);
-	signAttempt(b1, f, true);
+	signAttempt(b1, f, true, 1);
 
 	Bureaucrat b2("Nelson", 60);
-	signAttempt(b2, f, false);
+	signAttempt(b2, f, false, 1);
 }
 
 void signFormTests() {
@@ -73,8 +96,8 @@ void signFormTests() {
 	std::cout << f << std::endl;
 
 	Bureaucrat b1("Rose", 123);
-	signAttempt(b1, f, true);
+	signAttempt(b1, f, true, 2);
 
 	Bureaucrat b2("Catherine", 100);
-	signAttempt(b2, f, false);
+	signAttempt(b2, f, false, 2);
 }
