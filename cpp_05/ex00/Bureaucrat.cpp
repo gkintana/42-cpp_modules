@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:13 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 02:07:47 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/12 21:57:51 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,13 @@ Bureaucrat::Bureaucrat() {
 Bureaucrat::Bureaucrat(std::string name, int grade) {
 	std::cout << GREEN "Bureaucrat Constructor" DEFAULT << std::endl;
 	this->m_name = name;
-	// try {
-		if (grade > 150) {
-			throw Bureaucrat::GradeTooLowException();
-		} else if (grade < 1) {
-			throw Bureaucrat::GradeTooHighException();
-		} else {
-			this->m_grade = grade;
-		}
-	// }
-	// catch (std::exception &e) {
-	// 	std::cerr << e.what() << CYAN "\nBureaucrat grade set to 150" DEFAULT << std::endl;
-	// 	this->m_grade = 150;
-	// }
+	if (grade > 150) {
+		throw Bureaucrat::GradeTooLowException();
+	} else if (grade < 1) {
+		throw Bureaucrat::GradeTooHighException();
+	} else {
+		this->m_grade = grade;
+	}
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &source) {
@@ -43,8 +37,10 @@ Bureaucrat::Bureaucrat(Bureaucrat const &source) {
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &data) {
 	std::cout << GREEN "Bureaucrat Copy Assignment Operator" DEFAULT << std::endl;
-	this->m_name = data.m_name;
-	this->m_grade = data.m_grade;
+	if (this != &data) {
+		this->m_name = data.m_name;
+		this->m_grade = data.m_grade;
+	}
 	return *this;
 }
 
