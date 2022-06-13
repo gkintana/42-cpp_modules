@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:13 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 01:31:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/14 01:17:46 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ Bureaucrat::Bureaucrat(Bureaucrat const &source) {
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &data) {
 	std::cout << GREEN "Bureaucrat Copy Assignment Operator" DEFAULT << std::endl;
-	this->m_name = data.m_name;
-	this->m_grade = data.m_grade;
+	if (this != &data) {
+		this->m_name = data.m_name;
+		this->m_grade = data.m_grade;
+	}
 	return *this;
 }
 
