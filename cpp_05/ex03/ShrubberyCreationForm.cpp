@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 22:14:14 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/13 19:23:32 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/14 00:41:18 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,22 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << PURPLE "Shrubbery Creation Form Destructor" DEFAULT << std::endl;
 }
 
+void ShrubberyCreationForm::createTarget() const {
+	std::ofstream asciiTree;
+	std::string file = this->m_target + "_shrubbery";
+	asciiTree.open(file.c_str());
+	if (!asciiTree) {
+		throw std::invalid_argument(RED "Failed to create <target>_shrubbery" DEFAULT);
+	}
+	asciiTree << ASCII_TREE << std::endl;
+	asciiTree.close();
+}
+
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	if (this->hasBeenSigned()) {
 		try {
 			if (this->hasBeenSigned() && executor.getGrade() <= this->getGradeToExecute()) {
-				std::ofstream asciiTree;
-				std::string file = this->m_target + "_shrubbery";
-				asciiTree.open(file.c_str());
-				asciiTree << ASCII_TREE << std::endl;
-				asciiTree.close();
-
+				createTarget();
 				std::cout << CYAN << this->m_target << "_shrubbery has been created" DEFAULT << std::endl;
 			} else {
 				throw std::out_of_range(RED "Bureaucrat is unqualified to execute the orders of this form" DEFAULT);
