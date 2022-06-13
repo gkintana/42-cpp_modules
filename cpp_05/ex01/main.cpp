@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/13 00:05:26 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/14 00:04:43 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ void signFormTests();
 int main() {
 	std::cout << YELLOW "Form Constructor & Destructor Tests" DEFAULT << std::endl;
 	basicTests();
-	std::cout << YELLOW "\nbeSigned() Member Function Tests" DEFAULT << std::endl;
+	std::cout << YELLOW "\nForm::beSigned() Tests" DEFAULT << std::endl;
 	beSignedTests();
-	std::cout << YELLOW "\nsignForm() Member Function Tests" DEFAULT << std::endl;
+	std::cout << YELLOW "\nBureaucrat::signForm() Tests" DEFAULT << std::endl;
 	signFormTests();
+
+	return 0;
 }
 
-void basicTryCatch(std::string name, int signGrade, int execGrade) {
+void tryCatch(std::string name, int signGrade, int execGrade) {
 	std::cout << std::endl;
 	try {
 		Form f(name, signGrade, execGrade);
@@ -40,10 +42,10 @@ void basicTests() {
 		Form f;
 		std::cout << f;
 	}
-	
-	basicTryCatch("Form No. 1A", 125, 100);
-	basicTryCatch("Form No. 2B", 0, 100);
-	basicTryCatch("Form No. 3C", 125, 1000);
+
+	tryCatch("Form No. 1A", 125, 100);
+	tryCatch("Form No. 2B", 0, 100);
+	tryCatch("Form No. 3C", 125, 1000);
 
 	try {
 		std::cout << std::endl;
@@ -66,16 +68,15 @@ void basicTests() {
    signType 2 = signForm();
 */
 void signAttempt(Bureaucrat &b, Form &f, bool newline, int signType) {
-	std::cout << b << std::endl
-			  << CYAN << b.getName() << " attempts to sign "
+	std::cout << b << CYAN << b.getName() << " attempts to sign "
 			  << f.getFormName() << DEFAULT << std::endl;
-			  
+
 	if (signType == 1) {
 		f.beSigned(b);
 	} else {
 		b.signForm(f);
 	}
-	
+
 	if (newline) {
 		std::cout << f << std::endl;
 	} else {

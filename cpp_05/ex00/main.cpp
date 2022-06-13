@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 02:20:22 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/13 23:40:37 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ int main() {
 	incrementTests();
 	std::cout << YELLOW "\nBureaucrat Decrement Tests" DEFAULT << std::endl;
 	decrementTests();
+
+	return 0;
 }
 
-void basicTryCatch(std::string name, int grade, bool newline) {
+void tryCatch(std::string name, int grade, bool newline) {
 	if (newline) {
 		std::cout << std::endl;
 	}
@@ -39,9 +41,9 @@ void basicTryCatch(std::string name, int grade, bool newline) {
 }
 
 void basicTests() {
-	basicTryCatch("Norman", 100, false);
-	basicTryCatch("Holly", 0, true);
-	basicTryCatch("Leo", 200, true);
+	tryCatch("Norman", 100, false);
+	tryCatch("Holly", 0, true);
+	tryCatch("Leo", 200, true);
 
 	std::cout << std::endl;
 	try {

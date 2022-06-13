@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/13 23:21:24 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/14 00:18:59 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main() {
 	Bureaucrat b1("Martin", 1);
 	Bureaucrat b150("Luna", 150);
 	Intern i;
-	
+
 	tryCatch(b150, i, "Shrubbery Creation", "Limelight");
 	tryCatch(b150, i, "Robotomy Request", "Bob");
 	tryCatch(b150, i, "Presidential Pardon", "Claire");
@@ -48,5 +48,6 @@ int main() {
 	tryCatch(b1, i, "Robotomy Request", "Bob");
 	tryCatch(b1, i, "Presidential Pardon", "Claire");
 	tryCatch(b1, i, "Hogwarts Enrollment", "Dumbledore");
+
 	return 0;
 }

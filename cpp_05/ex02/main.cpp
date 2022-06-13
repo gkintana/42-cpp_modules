@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/13 21:29:37 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/14 00:08:01 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int main() {
 	presidentialTests();
 	std::cout << YELLOW "\nBureaucrat::executeForm() Tests" DEFAULT << std::endl;
 	executeFormTests();
+
+	return 0;
 }
 
 void tryCatch(std::string name, int grade, Form &f) {
@@ -57,7 +59,7 @@ void shrubberyTests() {
 void robotomyTests() {
 	RobotomyRequestForm f("Robert");
 	std::cout << f;
-	
+
 	tryCatch("Jade", 150, f);
 	tryCatch("Sam", 72, f);
 	tryCatch("Sasha", 45, f);
@@ -74,7 +76,7 @@ void presidentialTests() {
 
 void executeFormTests() {
 	Bureaucrat b("Jill", 1);
-	
+
 	{
 		ShrubberyCreationForm s("outdoor");
 		b.signForm(s);
@@ -87,7 +89,7 @@ void executeFormTests() {
 		b.signForm(r);
 		b.executeForm(r);
 	}
-	
+
 	{
 		std::cout << std::endl;
 		PresidentialPardonForm p("Emmeline");
