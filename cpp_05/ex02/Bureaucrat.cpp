@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:13 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/13 00:40:56 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/13 19:48:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,25 @@ void Bureaucrat::signForm(Form &f) {
 	catch (std::exception &e) {
 		std::cerr << RED << this->m_name << " couldn't sign " << f.getFormName()
 				  << " because " << e.what() << DEFAULT << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(Form const &form) {
+	if (form.hasBeenSigned()) {
+		try {
+			if (this->getGrade() <= form.getGradeToExecute()) {
+				std::cout << GREEN << this->m_name << " executed " << form.getFormName() << DEFAULT << std::endl;
+				form.execute(*this);
+			} else {
+				throw std::out_of_range("their grade is below the specified grade to execute the form");
+			}
+		}
+		catch (std::exception &e) {
+			std::cerr << RED << this->m_name << " couldn't execute " << form.getFormName()
+					<< " because " << e.what() << DEFAULT << std::endl;
+		}
+	} else {
+		std::cerr << RED << form.getFormName() << " has not been signed" << DEFAULT << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/13 23:54:36 by gkintana          #+#    #+#              #
-#    Updated: 2022/06/13 01:42:41 by gkintana         ###   ########.fr        #
+#    Updated: 2022/06/13 19:15:16 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME		=	exercise_02
 SRCS		=	main.cpp \
 				Bureaucrat.cpp \
 				Form.cpp \
+				ShrubberyCreationForm.cpp \
 				RobotomyRequestForm.cpp \
 				PresidentialPardonForm.cpp
 
@@ -40,8 +41,8 @@ $(NAME):	$(OBJS)
 			@echo $(DEFAULT)$(GREEN)"C++ Module 05: Exercise 02 Ready"$(DEFAULT)
 
 clean:
-			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted exercise 02 object files"$(DEFAULT)
+			@$(RM) $(OBJS) *_shrubbery
+			@echo $(RED)"Deleted exercise 02 object files and <target>_shrubbery"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
