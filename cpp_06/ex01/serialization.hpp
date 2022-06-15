@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:46:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/15 14:23:06 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:06:24 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 #define RED			"\033[0;31m"
 #define GREEN		"\033[0;32m"
 #define YELLOW		"\033[1;4;33m"
-#define YELLOW2		"\033[0;33m"
 #define PURPLE		"\033[0;35m"
 #define CYAN		"\033[1;36m"
 
