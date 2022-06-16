@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 21:48:14 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/16 17:20:27 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:20:16 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #include <sstream>
 
 #include <climits>
-// #include <string>
+#include <string>
 // #include <iomanip>
 
 /*------------------------------- COLOR CODES -------------------------------*/
@@ -31,6 +31,13 @@
 #define YELLOW		"\033[0;33m"
 #define PURPLE		"\033[0;35m"
 #define CYAN		"\033[0;36m"
+
+/*---------------------------------- MACROS ----------------------------------*/
+#define F_CHECK	decimal == 1 && \
+				this->m_literal[this->m_literal.length() - 1] == 'f' && \
+				std::isdigit(this->m_literal[this->m_literal.length() - 2])
+#define D_CHECK decimal == 1 && \
+				std::isdigit(this->m_literal[this->m_literal.length() - 1])
 
 /*---------------------------------- CLASS ----------------------------------*/
 class Converter {
@@ -52,6 +59,7 @@ class Converter {
 		void implicitDouble();
 		void error();
 
+		bool isPseudoLiteral(std::string nan, std::string nInf, std::string pInf);
 		void printPseudoLiteral();
 		void printAll(bool addZero);
 		

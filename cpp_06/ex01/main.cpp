@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 11:21:11 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/15 14:21:27 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/17 00:59:31 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int main() {
 	Data data;
 	initData(data);	
-	std::cout << "Data Structure Memory Address: " CYAN << &data << DEFAULT << std::endl;
+	std::cout << "Memory Address of Data Structure: " CYAN << &data << DEFAULT << std::endl;
 	printDataStruct(data);
 
-	uintptr_t uintPtr = serialize(&data);
-	Data *dataPtr = deserialize(uintPtr);
-	std::cout << "\nSerialized Memory Address: " CYAN << &uintPtr << DEFAULT << std::endl;
-	std::cout << "\nDeserialized Data Structure Memory Address: " CYAN << dataPtr << DEFAULT << std::endl;
+	uintptr_t temp = serialize(&data);
+	Data *dataPtr = deserialize(temp);
+	std::cout << "\nSerialized Memory Address: " CYAN << &temp << DEFAULT << std::endl
+			  << "\nMemory Address of Deserialized Data Structure: " CYAN << dataPtr << DEFAULT << std::endl;
 	printDataStruct(*dataPtr);
 
 	return 0;

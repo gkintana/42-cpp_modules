@@ -6,15 +6,13 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:26:52 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/15 19:15:04 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:38:27 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-Base::~Base() {
-	std::cout << RED "Base Destructor" DEFAULT << std::endl;
-}
+Base::~Base() {}
 
 Base *generate() {
 	std::srand(time(NULL));
@@ -31,12 +29,12 @@ void identify(Base *p) {
 
 void identify(Base &p) {
 	try {
-		dynamic_cast<A&>(p);
+		A classA = dynamic_cast<A&>(p);
 		PRINT_A;
 	}
 	catch (std::exception &e) {
 		try {
-			dynamic_cast<B&>(p);
+			B classB = dynamic_cast<B&>(p);
 			PRINT_B;
 		}
 		catch (std::exception &e) {
