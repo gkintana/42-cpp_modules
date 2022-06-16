@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 21:48:14 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/16 01:24:35 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/16 17:20:27 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ class Converter {
 		int m_int;
 		float m_float;
 		double m_double;
-		// bool hasPrecision;
 
 		bool isChar();
 		bool isInt();
@@ -54,6 +53,7 @@ class Converter {
 		void error();
 
 		void printPseudoLiteral();
+		void printAll(bool addZero);
 		
 	public:
 		Converter();
