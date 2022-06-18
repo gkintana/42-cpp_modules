@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:34:43 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/19 00:20:38 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/19 01:09:17 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <climits>
 #include <cstdlib>
+#include <string>
 
 /*------------------------------- COLOR CODES -------------------------------*/
 #define DEFAULT		"\033[0m"
@@ -24,6 +25,10 @@
 #define YELLOW		"\033[1;4;33m"
 #define PURPLE		"\033[0;35m"
 #define CYAN		"\033[0;36m"
+
+/*---------------------------------- MACROS ---------------------------------*/
+#define RAND_INT	(random ? (this->m_array[i] = rand() % 1998) : this->m_array[i])
+#define RAND_DOUBLE	(random ? (this->m_array[i] = 1.2345 * (rand() % 1998)) : this->m_array[i])
 
 /*-------------------------------- TEMPLATES --------------------------------*/
 template <typename T>
@@ -42,7 +47,7 @@ class Array {
 		~Array();
 
 		unsigned int size();
-		void printArray(bool randomize);
+		void printArray(bool random, bool isInt);
 };
 
 #include "Array.tpp"

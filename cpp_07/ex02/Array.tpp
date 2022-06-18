@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:34:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/19 00:20:24 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/19 01:15:44 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,15 @@ unsigned int Array<T>::size() {
 }
 
 template <typename T>
-void Array<T>::printArray(bool randomize) {
+void Array<T>::printArray(bool random, bool isInt) {
 	try {
 		std::cout << CYAN "Array Size: " DEFAULT << this->m_size
-				<< CYAN "\nArray Contents: " DEFAULT << std::endl;
+				  << CYAN "\nArray Contents: " DEFAULT << std::endl;
 		if (this->m_size) {
 			for (unsigned int i = 0; i < this->m_size; i++) {
-				std::cout << "  • " 
-						  << (randomize ? (this->m_array[i] = rand() % 1998) : this->m_array[i])
-						  << (i == this->m_size - 1 ? "\n" : "");
+				std::cout << "  • " << (isInt ? RAND_INT : RAND_DOUBLE);
 			}
+			std::cout << std::endl;
 		} else {
 			throw std::out_of_range(RED "  Unable to print array elements\n" DEFAULT);
 		}
