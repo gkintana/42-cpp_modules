@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 21:48:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/17 01:21:50 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/18 11:49:38 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void Converter::convert() {
 }
 
 bool Converter::isChar() {
-	return std::isprint(this->m_literal[0]) && this->m_literal.length() == 1 ? true : false;
+	return std::isprint(this->m_literal[0]) && !std::isdigit(this->m_literal[0]) && this->m_literal.length() == 1 ? true : false;
 }
 
 bool Converter::isInt() {
