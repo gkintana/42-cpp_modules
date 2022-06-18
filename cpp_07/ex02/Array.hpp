@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:34:43 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/18 17:08:34 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/19 00:20:38 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <climits>
+#include <cstdlib>
 
 /*------------------------------- COLOR CODES -------------------------------*/
 #define DEFAULT		"\033[0m"
@@ -28,19 +29,20 @@
 template <typename T>
 class Array {
 	private:
-		T *m_array;
 		unsigned int m_size;
+		T *m_array;
 
 	public:
 		Array();
 		Array(unsigned int n);
 		Array(Array const &source);
 		Array &operator=(Array const &data);
-		Array &operator[](Array const &data);				// write
-		Array const &operator[](Array const &data) const;	// read
+		T &operator[](unsigned int i);				// read + write
+		T const &operator[](unsigned int i) const;	// read only
 		~Array();
 
 		unsigned int size();
+		void printArray(bool randomize);
 };
 
 #include "Array.tpp"
