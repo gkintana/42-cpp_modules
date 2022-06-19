@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:15 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 00:51:38 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:21:13 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Form;
 
 class Bureaucrat {
 	private:
-		std::string m_name;
+		std::string const m_name;
 		int m_grade;
 
 		class GradeTooHighException : public std::exception {

@@ -6,21 +6,19 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:00:13 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/12 21:57:51 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:22:17 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {
+Bureaucrat::Bureaucrat() : m_name("Bureaucrat Sample") {
 	std::cout << GREEN "Bureaucrat Default Constructor" DEFAULT << std::endl;
-	this->m_name = "Bureaucrat Sample";
 	this->m_grade = 150;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) {
+Bureaucrat::Bureaucrat(std::string name, int grade) : m_name(name) {
 	std::cout << GREEN "Bureaucrat Constructor" DEFAULT << std::endl;
-	this->m_name = name;
 	if (grade > 150) {
 		throw Bureaucrat::GradeTooLowException();
 	} else if (grade < 1) {
@@ -38,7 +36,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &source) {
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &data) {
 	std::cout << GREEN "Bureaucrat Copy Assignment Operator" DEFAULT << std::endl;
 	if (this != &data) {
-		this->m_name = data.m_name;
+		const_cast<std::string&>(m_name) = data.m_name;
 		this->m_grade = data.m_grade;
 	}
 	return *this;
