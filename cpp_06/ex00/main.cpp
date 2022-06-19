@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 21:38:18 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/17 00:04:08 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:11:34 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int main(int argc, char **argv) {
 		Converter scalar;
 		scalar.setLiteral(argv[1]);
 		scalar.convert();
+		return 0;
 	} else {
 		std::cerr << RED "Invalid Arguments" DEFAULT << std::endl;
 		return 1;
 	}
-	return 0;
 }

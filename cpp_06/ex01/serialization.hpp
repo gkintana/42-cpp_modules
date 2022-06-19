@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:46:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/15 17:06:24 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:03:47 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 
 /*-------------------------------- STRUCTURE --------------------------------*/
 struct Data {
-	const char *name;
-	const char *email;
+	std::string name;
+	std::string email;
 	int phoneNumber;
 	char gender;
 	int age;

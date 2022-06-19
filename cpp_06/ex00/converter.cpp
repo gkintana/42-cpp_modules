@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 21:48:17 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/18 11:49:38 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:10:56 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ bool Converter::isInt() {
 	return true;
 }
 
-// https://stackoverflow.com/questions/447206/c-isfloat-function
 bool Converter::isFloat() {
 	if (!this->m_literal.compare("-inff") || !this->m_literal.compare("+inff") ||
 		!this->m_literal.compare("nanf")) {
@@ -104,7 +103,6 @@ bool Converter::isDouble() {
 	return D_CHECK ? true : false;
 }
 
-// https://www.freecodecamp.org/news/string-to-int-in-c-how-to-convert-a-string-to-an-integer-example/#:~:text=One%20effective%20way%20to%20convert,the%20integer%20version%20of%20it.
 void Converter::implicitChar() {
 	std::stringstream c;
 	c << this->m_literal;
@@ -180,9 +178,9 @@ void Converter::printAll(bool addZero) {
 	} else if (!std::isprint(this->m_char)) {
 		std::cout << "non displayable" << std::endl;
 	} else {
-		std::cout << this->m_char << std::endl;
+		std::cout << "'" << this->m_char << "'" << std::endl;
 	}
-	
+
 	std::cout << CYAN "int: " DEFAULT;
 	long temp = static_cast<long>(this->m_double);
 	if (temp < INT_MIN || temp > INT_MAX) {
@@ -190,7 +188,7 @@ void Converter::printAll(bool addZero) {
 	} else {
 		std::cout << this->m_int << std::endl;
 	}
-	
+
 	std::cout << CYAN "float: " DEFAULT << this->m_float << (addZero ? ".0f" : "f") << std::endl
 			  << CYAN "double: " DEFAULT << this->m_double << (addZero ? ".0" : "") << std::endl;
 }
