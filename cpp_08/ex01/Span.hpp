@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:42:58 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/20 00:25:09 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 01:31:48 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <iterator>
 
 /*------------------------------- COLOR CODES -------------------------------*/
 #define DEFAULT		"\033[0m"
@@ -44,8 +45,8 @@ class Span {
 		int longestSpan();
 		void fillSpan();
 
-		size_t checkSize();
 		void printVector();
+		size_t checkSize();
 };
 
 void printElement(int n);

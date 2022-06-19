@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:42:54 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/20 00:53:29 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 02:09:17 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,29 @@ void doSubjectTests() {
 	sp.addNumber(11);
 	sp.printVector();
 
-	// std::cout << sp.shortestSpan() << std::endl;
-	// std::cout << sp.longestSpan() << std::endl;
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 }
 
 int main() {
-
 	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
 	doSubjectTests();
-	Span sp = Span(5);
+	
+	srand(time(NULL));
+	Span sp = Span(1);
 
 	std::cout << sp.checkSize() << std::endl;
 
 	sp.fillSpan();
 	sp.printVector();
 
-	// std::cout << sp.shortestSpan() << std::endl;
-	// std::cout << sp.longestSpan() << std::endl;
+	try {
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 
 	// try {
 	// 	sp.addNumber(22);
