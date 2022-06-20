@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:47:53 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/17 18:43:39 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 23:41:46 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,14 @@
 
 /*-------------------------------- TEMPLATES --------------------------------*/
 template <typename T>
-void iter(T &array, size_t arrayLen, void (*funcPtr)(T const &)) {
-	T *ptr = &array;
+void iter(T *array, size_t arrayLen, void (*funcPtr)(T const &)) {
 	for (size_t i = 0; i < arrayLen; i++) {
-		funcPtr(*ptr++);
+		funcPtr(array[i]);
 	}
 }
 
 template <typename T>
-void print(T const &element) {
+void printElements(T const &element) {
 	std::cout << CYAN "\t• " << element << DEFAULT;
 }
 
@@ -46,11 +45,11 @@ void printIntValue(T const &element) {
 template <typename T>
 void printAll(std::string arrayName, T &array) {
 	std::cout << YELLOW << arrayName << DEFAULT << std::endl
-			  << PURPLE "  ⮩  Array Elements" DEFAULT << std::endl;
-	iter(*array, sizeof(array) / sizeof(array[0]), print);
+			  << PURPLE "  ‣ Array Elements" DEFAULT << std::endl;
+	iter(array, sizeof(array) / sizeof(array[0]), printElements);
 
-	std::cout << PURPLE "\n  ⮩  Elements Explicitly Cast to Int" DEFAULT << std::endl;
-	iter(*array, sizeof(array) / sizeof(array[0]), printIntValue);
+	std::cout << PURPLE "\n  ‣ Elements Explicitly Cast to Int" DEFAULT << std::endl;
+	iter(array, sizeof(array) / sizeof(array[0]), printIntValue);
 	std::cout << std::endl;
 }
 

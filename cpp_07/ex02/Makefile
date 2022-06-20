@@ -6,13 +6,15 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/13 23:54:36 by gkintana          #+#    #+#              #
-#    Updated: 2022/06/18 15:55:12 by gkintana         ###   ########.fr        #
+#    Updated: 2022/06/20 23:50:02 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	exercise_02
 
 SRCS		=	main.cpp
+
+INCLUDES	=	.
 
 OBJS		=	$(SRCS:%cpp=%o)
 
@@ -27,7 +29,7 @@ CYAN		=	"\033[3;36m"
 
 %.o : %.cpp
 			@printf $(CYAN)
-			$(CXX) $(CPPFLAGS) -c $< -o $@
+			$(CXX) $(CPPFLAGS) -I $(INCLUDES) -c $< -o $@
 
 all:		$(NAME)
 

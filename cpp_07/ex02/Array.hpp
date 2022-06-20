@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:34:43 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/19 01:09:17 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 23:50:32 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ class Array {
 		Array(unsigned int n);
 		Array(Array const &source);
 		Array &operator=(Array const &data);
-		T &operator[](unsigned int i);				// read + write
-		T const &operator[](unsigned int i) const;	// read only
+		T &operator[](unsigned int i);
 		~Array();
 
 		unsigned int size();

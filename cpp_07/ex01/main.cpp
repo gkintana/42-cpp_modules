@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:47:40 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/17 18:35:37 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 23:41:58 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int main() {
 	std::string strArray[] = { "42", "Abu", "Dhabi", "is", "Awesome!" };
 	std::cout << YELLOW "String Array" DEFAULT << std::endl
-			  << PURPLE "  ⮩  Array Elements" DEFAULT << std::endl;
-	iter(*strArray, sizeof(strArray) / sizeof(std::string), print);
+			  << PURPLE "  ‣ Array Elements" DEFAULT << std::endl;
+	iter(strArray, sizeof(strArray) / sizeof(std::string), printElements);
 
 	char charArray[] = { 'a', 'b', 'c', 'D', 'E', 'F', '~', '!', '@' };
 	printAll("\n\nCharacter Array", charArray);

@@ -6,13 +6,12 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:34:35 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/19 01:16:24 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 23:50:15 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-// #include <Array.hpp>
-#include "Array.hpp"
+#include <Array.hpp>
 
 #define MAX_VAL 750
 void useSubjectMain();

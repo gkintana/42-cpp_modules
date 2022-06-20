@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:34:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/19 01:15:44 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 23:50:45 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,6 @@ Array<T> &Array<T>::operator=(Array const &data) {
 // https://en.cppreference.com/w/cpp/language/operators
 template <typename T>
 T &Array<T>::operator[](unsigned int i) {
-	if (i < 0 || i >= this->m_size) {
-		throw std::out_of_range(RED "Index is out of range" DEFAULT);
-	}
-	return this->m_array[i];
-}
-
-template <typename T>
-T const &Array<T>::operator[](unsigned int i) const {
 	if (i < 0 || i >= this->m_size) {
 		throw std::out_of_range(RED "Index is out of range" DEFAULT);
 	}
