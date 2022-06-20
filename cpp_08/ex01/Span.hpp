@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:42:58 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/20 01:31:48 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:34:10 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class Span {
 		void fillSpan();
 
 		void printVector();
-		size_t checkSize();
+		size_t getSize();
 };
 
 void printElement(int n);

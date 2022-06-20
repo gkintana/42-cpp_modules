@@ -6,13 +6,13 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:42:56 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/20 02:20:47 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:03:25 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span() {}
+Span::Span() : m_max(0) {}
 
 Span::Span(unsigned int max) {
 	this->m_max = max;
@@ -36,22 +36,20 @@ void Span::addNumber(int n) {
 	if (this->m_vector.size() < this->m_max) {
 		this->m_vector.push_back(n);
 	} else {
-		throw std::length_error("Vector has reached the maximum storage limit");
+		throw std::length_error(RED "Vector has reached the maximum storage limit" DEFAULT);
 	}
 }
 
 int Span::shortestSpan() {
 	if (this->m_vector.size() < 2) {
-		throw std::logic_error("Unable to compute shortest span from a vector with a size less than 2");
+		throw std::logic_error(RED "Unable to compute span. Vector size is less than 2" DEFAULT);
 	}
 
 	int min = *std::max_element(this->m_vector.begin(), this->m_vector.end());
-	for (size_t i = 0; i < this->m_vector.size(); i++) {
-		for (size_t j = i + 1; j < this->m_vector.size(); j++) {
-			int diff = std::abs(this->m_vector.at(i) - this->m_vector.at(j));
-			if (diff < min) {
-				min = diff;
-			}
+	for (size_t i = 0; i < this->m_vector.size() - 1; i++) {
+		int diff = std::abs(this->m_vector.at(i) - this->m_vector.at(i + 1));
+		if (diff < min) {
+			min = diff;
 		}
 	}
 	return min;
@@ -59,7 +57,7 @@ int Span::shortestSpan() {
 
 int Span::longestSpan() {
 	if (this->m_vector.size() < 2) {
-		throw std::logic_error("Unable to compute longest span from a vector with a size less than 2");
+		throw std::logic_error(RED "Unable to compute span. Vector size is less than 2" DEFAULT);
 	}
 
 	std::vector<int>::iterator min = std::min_element(this->m_vector.begin(), this->m_vector.end());
@@ -76,7 +74,7 @@ void Span::printVector() {
 	std::for_each(this->m_vector.begin(), this->m_vector.end(), printElement);
 }
 
-size_t Span::checkSize() {
+size_t Span::getSize() {
 	return this->m_vector.size();
 }
 
@@ -85,5 +83,5 @@ int randomNumber() {
 }
 
 void printElement(int n) {
-	std::cout << "  • " << n << std::endl;
+	std::cout << "    • " << n << std::endl;
 }
