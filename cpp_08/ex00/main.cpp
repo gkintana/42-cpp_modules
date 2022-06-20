@@ -6,26 +6,20 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 13:30:10 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/19 21:58:16 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:10:16 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
-// https://www.techiedelight.com/print-contents-array-cpp/
-void printElement(int n) {
-	std::cout << "  • " << n << std::endl;
-}
-
-int randomInt() {
-	return rand() % 512;
-}
+int randomInt();
+void printElement(int n);
 
 int main() {
-	srand(time(NULL));
 	std::cout << YELLOW "Vector<int> A" DEFAULT << std::endl;
 	std::vector<int> a(5);
 
+	srand(time(NULL));
 	std::generate(a.begin(), a.end(), randomInt);
 	std::for_each(a.begin(), a.end(), printElement);
 
@@ -40,4 +34,12 @@ int main() {
 	}
 
 	return 0;
+}
+
+void printElement(int n) {
+	std::cout << "  • " << n << std::endl;
+}
+
+int randomInt() {
+	return rand() % 512;
 }

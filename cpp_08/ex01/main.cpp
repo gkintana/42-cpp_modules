@@ -6,11 +6,36 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:42:54 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/20 14:02:59 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:44:25 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+void doSubjectTests();
+void constructionTests();
+void addNumberTests();
+void shortestSpanTests();
+void longestSpanTests();
+void largeSpanTests();
+
+int main() {
+	srand(time(NULL));
+	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
+	doSubjectTests();
+	std::cout << YELLOW "\nConstruction Tests" DEFAULT << std::endl;
+	constructionTests();
+	std::cout << YELLOW "\nSpan::addNumber() & Span::fillSpan() Tests" DEFAULT << std::endl;
+	addNumberTests();
+	std::cout << YELLOW "\nSpan::shortestSpan() Tests" DEFAULT << std::endl;
+	shortestSpanTests();
+	std::cout << YELLOW "\nSpan::longestSpan() Tests" DEFAULT << std::endl;
+	longestSpanTests();
+	std::cout << YELLOW "\nLarge Span Tests" DEFAULT << std::endl;
+	largeSpanTests();
+
+	return 0;
+}
 
 void doSubjectTests() {
 	Span sp = Span(5);
@@ -20,7 +45,7 @@ void doSubjectTests() {
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);
-	
+
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 }
@@ -65,7 +90,7 @@ void addNumberTests() {
 		a.addNumber(45);
 		a.addNumber(46);
 		std::cout << "Vector A size = " << a.getSize() << std::endl;
-		
+
 		a.addNumber(47);
 		std::cout << "Vector A size = " << a.getSize() << std::endl;
 	}
@@ -91,15 +116,14 @@ void addNumberTests() {
 void shortestSpanTests() {
 	Span a(5);
 	a.addNumber(12);
-	a.addNumber(14);
-	a.addNumber(3);
-	a.addNumber(20);
+	a.addNumber(1);
+	a.addNumber(24);
+	a.addNumber(0);
 	a.addNumber(5);
 	std::cout << CYAN "Contents of Vector A" DEFAULT << std::endl;
 	a.printVector();
 	std::cout << PURPLE "Shortest Span = " << a.shortestSpan() << DEFAULT << std::endl;
 
-	
 	Span b(5);
 	b.fillSpan();
 	std::cout << CYAN "Contents of Vector B" DEFAULT << std::endl;
@@ -130,27 +154,4 @@ void largeSpanTests() {
 	std::cout << PURPLE "Elements inside Vector<int> A = " << a.getSize() << DEFAULT << std::endl;
 	a.fillSpan();
 	std::cout << PURPLE "Elements inside Vector<int> A = " << a.getSize() << DEFAULT << std::endl;
-}
-
-int main() {
-	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
-	doSubjectTests();
-
-	srand(time(NULL));
-	std::cout << YELLOW "\nConstruction Tests" DEFAULT << std::endl;
-	constructionTests();
-
-	std::cout << YELLOW "\nSpan::addNumber() & Span::fillSpan() Tests" DEFAULT << std::endl;
-	addNumberTests();
-
-	std::cout << YELLOW "\nSpan::shortestSpan() Tests" DEFAULT << std::endl;
-	shortestSpanTests();
-
-	std::cout << YELLOW "\nSpan::longestSpan() Tests" DEFAULT << std::endl;
-	longestSpanTests();
-
-	std::cout << YELLOW "\nSpan::largeSpan() Tests" DEFAULT << std::endl;
-	largeSpanTests();
-
-	return 0;
 }

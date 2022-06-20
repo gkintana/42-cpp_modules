@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/19 21:42:58 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/20 15:28:03 by gkintana         ###   ########.fr       */
+/*   Created: 2022/06/20 14:10:53 by gkintana          #+#    #+#             */
+/*   Updated: 2022/06/20 21:53:16 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-#define SPAN_HPP
+#ifndef MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>
+#include <iomanip>
 #include <algorithm>
+#include <stack>
 #include <vector>
-#include <iterator>
+#include <list>
 
 /*------------------------------- COLOR CODES -------------------------------*/
 #define DEFAULT		"\033[0m"
@@ -27,29 +29,23 @@
 #define PURPLE		"\033[0;35m"
 #define CYAN		"\033[0;36m"
 
-/*---------------------------------- CLASS ----------------------------------*/
-class Span {
-	private:
-		std::vector<int> m_vector;
-		unsigned int m_max;
-
+/*-------------------------------- TEMPLATES --------------------------------*/
+template <typename T>
+class MutantStack : public std::stack<T> {
 	public:
-		Span();
-		Span(unsigned int max);
-		Span(Span const &source);
-		Span &operator=(Span const &source);
-		~Span();
+		MutantStack();
+		MutantStack(MutantStack const &source);
+		MutantStack &operator=(MutantStack const &data);
+		~MutantStack();
 
-		void addNumber(int n);
-		int shortestSpan();
-		int longestSpan();
-		void fillSpan();
-
-		void printVector();
-		size_t getSize();
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator begin();
+		iterator end();
 };
 
-void printElement(int n);
-int randomNumber();
+template <typename T>
+void pushToContainer(T &container);
+
+#include "MutantStack.tpp"
 
 #endif

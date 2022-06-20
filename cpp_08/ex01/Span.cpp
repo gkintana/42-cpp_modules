@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:42:56 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/20 14:03:25 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:41:54 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int Span::shortestSpan() {
 	}
 
 	int min = *std::max_element(this->m_vector.begin(), this->m_vector.end());
+	std::sort(this->m_vector.begin(), this->m_vector.end());
 	for (size_t i = 0; i < this->m_vector.size() - 1; i++) {
 		int diff = std::abs(this->m_vector.at(i) - this->m_vector.at(i + 1));
 		if (diff < min) {
