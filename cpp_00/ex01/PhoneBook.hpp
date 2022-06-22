@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/31 00:10:46 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:36:26 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 #define REG_PN		"Enter Phone Number\t: "
 #define REG_DS		"Enter Darkest Secret\t: "
 #define REG_OK		"Contact Information Successfully Registered\n"
-#define REG_KO		"Found an empty field. Contact list not updated"
+#define REG_KO		"Contact list not updated"
 
 #define TITLE		"My Awesome PhoneBook!\n\nAvailable Commands:\n" \
 					"  • Add\t   = Register a New Contact\n" \
@@ -78,6 +78,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include <iostream>
+#include <csignal>
 
 /*---------------------------------- CLASS ----------------------------------*/
 class PhoneBook {
@@ -85,14 +86,17 @@ class PhoneBook {
 		Contact m_list[8];
 		int m_index;
 		int m_replace;
+
 		void saveInfo(std::string field, int type, int function, bool &eof);
 		bool registrationType(int type);
 		bool checkRegistration(int type);
 		bool askSpecificContact(int i);
 		void displaySpecificContact(int total);
+
 	public:
 		PhoneBook();
 		~PhoneBook();
+
 		bool registerContact();
 		bool displayAllContacts();
 };

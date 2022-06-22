@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/31 00:12:51 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:41:51 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,43 +21,30 @@ PhoneBook::~PhoneBook() {}
 
 bool PhoneBook::checkRegistration(int type) {
 	int i = type == new_reg ? this->m_index : this->m_replace;
-
-	if (this->m_list[i].getFirstName().length() &&
-		this->m_list[i].getLastName().length() &&
-		this->m_list[i].getNickname().length() &&
-		this->m_list[i].getPhoneNumber().length() &&
-		this->m_list[i].getDarkestSecret().length()) {
-		return true;
-	}
-	return false;
+	return (this->m_list[i].getFirstName().length() &&
+			this->m_list[i].getLastName().length() &&
+			this->m_list[i].getNickname().length() &&
+			this->m_list[i].getPhoneNumber().length() &&
+			this->m_list[i].getDarkestSecret().length());
 }
 
 bool checkInput(std::string info, int checkNumber) {
 	if ((checkNumber && !info.length()) || !info.length()) {
 		return false;
 	} else if (checkNumber && info.length() > 15) {
-		std::cerr << RED "Internationally, phone lengths vary, but the ITU E.164 states that phone numbers around the globe are recommended to not be longer than 15 digits." DEFAULT << std::endl;
+		std::cerr << PURPLE "Internationally, phone lengths vary, but the ITU E.164 states "\
+					 "that phone numbers around the globe are recommended to not be longer "\
+					 "than 15 digits." DEFAULT << std::endl;
 		return false;
 	}
+
 	for (std::string::size_type i = 0; i < info.length(); i++) {
-		if (!checkNumber && info[i] == 9) {
-			return false;
-		} else if (checkNumber && !std::isdigit(info[i])) {
+		if ((!checkNumber && std::isspace(info[i]) && info[i] != 32) || 
+			(checkNumber && !std::isdigit(info[i]))) {
 			return false;
 		}
 	}
-	if (info.find(ALPHANUM)) {
-		return true;
-	}
-	return false;
-}
-
-void registrationError(std::string temp) {
-	if (temp.length()) {
-		std::cerr << RED REG_ERR_01 DEFAULT << std::endl;
-	} else {
-		std::cerr << RED REG_ERR_02 DEFAULT << std::endl; 
-	}
+	return info.find(ALPHANUM) ? true : false;
 }
 
 void PhoneBook::saveInfo(std::string field, int i, int function, bool &eof) {
@@ -69,6 +56,7 @@ void PhoneBook::saveInfo(std::string field, int i, int function, bool &eof) {
 			std::cout << CYAN "EOF" DEFAULT << std::endl;
 			return;
 		}
+
 		if (checkInput(temp, 0) && function == 1) {
 			this->m_list[i].setFirstName(temp);
 			break ;
@@ -85,7 +73,8 @@ void PhoneBook::saveInfo(std::string field, int i, int function, bool &eof) {
 			this->m_list[i].setDarkestSecret(temp);
 			break ;
 		} else {
-			registrationError(temp);
+			std::cerr << RED << (temp.length() ? REG_ERR_01 : REG_ERR_02) 
+					  << DEFAULT << std::endl;
 		}
 	}
 }
@@ -98,18 +87,14 @@ bool PhoneBook::registrationType(int type) {
 	for (int j = 0; j < 5; j++) {
 		if (!eof) {
 			saveInfo(prompt[j], i, j + 1, eof);
-		} else {
-			return false;
 		}
 	}
-	return true;
+	return !eof ? true : false;
 }
 
 bool PhoneBook::registerContact() {
 	if (this->m_index >= 0 && this->m_index < 8) {
-		if (!registrationType(new_reg)) {
-			return false;
-		}
+		registrationType(new_reg);
 		if (checkRegistration(new_reg)) {
 			std::cout << GREEN REG_OK DEFAULT << std::endl;
 			this->m_index++;
@@ -119,8 +104,7 @@ bool PhoneBook::registerContact() {
 			return false;
 		}
 	} else {
-		if (!registrationType(new_reg))
-			return false;
+		registrationType(replace_reg);
 		if (checkRegistration(replace_reg)) {
 			std::cout << GREEN REG_OK DEFAULT << std::endl;
 			if (++this->m_replace == 8) {
@@ -147,10 +131,10 @@ void PhoneBook::displaySpecificContact(int index) {
 bool indexIsDigit(std::string index) {
 	for (std::string::size_type i = 0; i < index.length(); i++) {
 		if (!std::isdigit(index[i])) {
-			return (false);
+			return false;
 		}
 	}
-	return (true);
+	return true;
 }
 
 std::string checkLength(std::string contactInfo) {
@@ -158,7 +142,7 @@ std::string checkLength(std::string contactInfo) {
 		contactInfo.resize(9);
 		contactInfo.append(".");
 	}
-	return (contactInfo);
+	return contactInfo;
 }
 
 bool PhoneBook::askSpecificContact(int i) {
@@ -170,6 +154,7 @@ bool PhoneBook::askSpecificContact(int i) {
 			std::cout << CYAN "EOF" DEFAULT << std::endl;
 			return false;
 		}
+
 		if (!indexIsDigit(index)) {
 			std::cerr << RED KO_INDEX DEFAULT << std::endl;
 		} else if (std::atol(index.c_str()) >= 1 && std::atol(index.c_str()) <= i) {
@@ -204,6 +189,7 @@ bool PhoneBook::displayAllContacts() {
 		setWidth10(COL_03, 0);
 		setWidth10(COL_04, 1);
 		std::cout << LINE << std::endl;
+		
 		int i = -1;
 		while (++i < this->m_index) {
 			std::cout << "|" << std::setw(10) << i + 1;

@@ -6,7 +6,7 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:04 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/31 00:11:06 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:37:51 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ std::string strUpper(std::string command) {
 int main(void) {
 	PhoneBook content;
 	std::string command;
+
+	signal(SIGINT, SIG_IGN);
+	signal(SIGQUIT, SIG_IGN);
 
 	std::cout << YELLOW TITLE DEFAULT << std::endl;
 	while (std::cout << PROMPT && std::getline(std::cin, command)) {
