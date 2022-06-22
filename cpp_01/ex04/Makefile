@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 22:17:31 by gkintana          #+#    #+#              #
-#    Updated: 2022/05/29 21:17:09 by gkintana         ###   ########.fr        #
+#    Updated: 2022/06/22 14:50:00 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ SRCS		=	main.cpp \
 		
 OBJS		=	$(SRCS:%cpp=%o)
 
-CC			=	c++ -std=c++98
-CFLAGS		=	-Wall -Wextra -Werror
+CXX			=	c++
+CPPFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 RM			=	rm -rf
 
 DEFAULT		=	"\033[0m"
@@ -28,12 +28,12 @@ CYAN		=	"\033[3;36m"
 
 %.o : %.cpp
 			@printf $(CYAN)
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CXX) $(CPPFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			@$(CC) $(CFLAGS) $(OBJS) -o $@
+			@$(CXX) $(CPPFLAGS) $(OBJS) -o $@
 			@echo $(DEFAULT)$(GREEN)"C++ Module 01: Exercise 04 Ready"$(DEFAULT)
 
 clean:

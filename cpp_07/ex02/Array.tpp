@@ -6,14 +6,13 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:34:46 by gkintana          #+#    #+#             */
-/*   Updated: 2022/06/20 23:50:45 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:24:03 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_TPP
 #define ARRAY_TPP
 
-// https://stackoverflow.com/questions/3102353/what-happens-if-i-initialize-an-array-to-size-0
 template <typename T>
 Array<T>::Array() : m_size(0),
 					m_array(0) {
@@ -58,7 +57,6 @@ Array<T> &Array<T>::operator=(Array const &data) {
 	return *this;
 }
 
-// https://en.cppreference.com/w/cpp/language/operators
 template <typename T>
 T &Array<T>::operator[](unsigned int i) {
 	if (i < 0 || i >= this->m_size) {

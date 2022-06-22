@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.cpp                                          :+:      :+:    :+:   */
+/*   Harl.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 15:47:29 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 21:45:59 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:37:00 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-Karen::Karen() {
+Harl::Harl() {
 	this->m_level[0] = "DEBUG";
 	this->m_level[1] = "INFO";
 	this->m_level[2] = "WARNING";
 	this->m_level[3] = "ERROR";
-	this->functionPtr[0] = &Karen::debug;
-	this->functionPtr[1] = &Karen::info;
-	this->functionPtr[2] = &Karen::warning;
-	this->functionPtr[3] = &Karen::error;
+	this->functionPtr[0] = &Harl::debug;
+	this->functionPtr[1] = &Harl::info;
+	this->functionPtr[2] = &Harl::warning;
+	this->functionPtr[3] = &Harl::error;
 }
 
-Karen::~Karen() {}
+Harl::~Harl() {}
 
-void Karen::debug() {
+void Harl::debug() {
 	std::cout << LVL_D CYAN DEBUG DEFAULT << std::endl;
 }
 
-void Karen::info() {
+void Harl::info() {
 	std::cout << LVL_I YELLOW INFO DEFAULT << std::endl;
 }
 
-void Karen::warning() {
+void Harl::warning() {
 	std::cout << LVL_W PURPLE WARNING DEFAULT << std::endl;
 }
 
-void Karen::error() {
+void Harl::error() {
 	std::cout << LVL_E RED ERROR DEFAULT << std::endl;
 }
 
-void Karen::complain(std::string level) {
+void Harl::complain(std::string level) {
 	int i;
 
 	for (i = 0; i < 4; i++) {

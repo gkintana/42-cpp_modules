@@ -6,14 +6,14 @@
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 16:13:10 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 19:13:39 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:36:10 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int	main() {
-	Karen simulator;
+	Harl simulator;
 
 	simulator.complain("DEBUG");
 	simulator.complain("INFO");

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 15:34:03 by gkintana          #+#    #+#             */
-/*   Updated: 2022/05/29 22:02:28 by gkintana         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:46:59 by gkintana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-#define KAREN_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
 /*------------------------------- COLOR CODES -------------------------------*/
 #define DEFAULT		"\033[0m"
@@ -38,24 +38,24 @@
 					" since last month."
 #define ERROR		"This is unacceptable! I want to speak to the manager now."
 #define UNKNOWN		"Probably complaining about insignificant problems."
-#define ARG_ERROR	"\033[0;31mError!\n\033[0;33mExpected: ./karenFilter" \
+#define ARG_ERROR	"\033[0;31mError!\n\033[0;33mExpected: ./harlFilter" \
 					" \"Debug or Info or Warning or Error\"\033[0m"
 
 /*--------------------------------- LIBRARY ---------------------------------*/
 #include <iostream>
 
 /*---------------------------------- CLASS ----------------------------------*/
-class Karen {
+class Harl {
 	private:
 		std::string m_level[4];
 		void debug();
 		void info();
 		void warning ();
 		void error();
-		void (Karen::*functionPtr[4])();
+		void (Harl::*functionPtr[4])();
 	public:
-		Karen();
-		~Karen();
+		Harl();
+		~Harl();
 		void complain(std::string level);
 };
 
